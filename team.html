@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Our Team — WPC Web Pro Creation</title>
+<style id="wpc-shared-css">
+/* ============================================================
+   WPC — Web Pro Creation | Shared Stylesheet
+   Light Premium · Cinematic Animations
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --cream:        #FAF8F3;
+  --cream-2:      #F4F1EA;
+  --cream-3:      #EDE9DF;
+  --white:        #FFFFFF;
+  --ink:          #0F0E0C;
+  --ink-2:        #1C1B18;
+  --ink-3:        #2E2C27;
+  --charcoal:     #4A4840;
+  --muted:        #8C8A83;
+  --light-muted:  #BAB8B1;
+  --gold:         #B8933A;
+  --gold-light:   #D4AF5A;
+  --gold-pale:    #F0E4C4;
+  --gold-dim:     #7A6128;
+  --border:       rgba(15,14,12,0.08);
+  --border-mid:   rgba(15,14,12,0.14);
+  --border-strong:rgba(15,14,12,0.22);
+  --shadow-sm:    0 2px 16px rgba(15,14,12,0.06);
+  --shadow-md:    0 8px 40px rgba(15,14,12,0.10);
+  --shadow-lg:    0 24px 80px rgba(15,14,12,0.14);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Outfit', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CURSOR ─────────────────────────────────────────── */
+#wpc-cursor {
+  width: 10px; height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform 0.08s, background 0.3s, width 0.3s, height 0.3s;
+  mix-blend-mode: multiply;
+}
+#wpc-cursor-ring {
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(15,14,12,0.25);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.4s var(--ease-out), height 0.4s var(--ease-out), border-color 0.3s;
+}
+body.cursor-hover #wpc-cursor { width: 6px; height: 6px; background: var(--gold); }
+body.cursor-hover #wpc-cursor-ring { width: 64px; height: 64px; border-color: var(--gold); }
+body.cursor-click #wpc-cursor { transform: translate(-50%,-50%) scale(0.6); }
+
+/* ── NAV ─────────────────────────────────────────────── */
+#wpc-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 32px 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: padding 0.5s var(--ease-out), background 0.5s, box-shadow 0.5s;
+}
+#wpc-nav.scrolled {
+  padding: 18px 64px;
+  background: rgba(250,248,243,0.94);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex; gap: 36px; list-style: none;
+  align-items: center;
+}
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+  position: relative;
+}
+.nav-links > li > a::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 100%;
+  height: 1px; background: var(--gold);
+  transition: right 0.35s var(--ease-out);
+}
+.nav-links > li > a:hover { color: var(--ink); }
+.nav-links > li > a:hover::after { right: 0; }
+.nav-links > li > a.active { color: var(--gold); }
+.nav-links > li > a.active::after { right: 0; background: var(--gold); }
+
+/* Services dropdown */
+.nav-dropdown {
+  position: absolute; top: calc(100% + 2px); left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  min-width: 260px;
+  padding: 12px 0;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, transform 0.4s var(--ease-out);
+  border-radius: 2px;
+}
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px; left: 0; right: 0;
+  height: 16px;
+}
+.nav-dropdown.open {
+  opacity: 1; pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown a {
+  display: block;
+  padding: 9px 24px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--charcoal);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+}
+.nav-dropdown a:hover { background: var(--cream); color: var(--gold); padding-left: 32px; }
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--ink);
+  padding: 12px 28px;
+  text-decoration: none;
+  transition: background 0.35s, color 0.35s;
+  border: 1px solid var(--ink);
+}
+.nav-cta:hover { background: var(--gold); border-color: var(--gold); }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px;
+}
+.nav-hamburger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--ink); transition: all 0.3s;
+}
+
+/* ── HERO BASE ───────────────────────────────────────── */
+.page-hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 64px 80px;
+  position: relative; overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(160px, 20vw, 280px);
+  font-weight: 700;
+  color: rgba(15,14,12,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+  user-select: none;
+  z-index: 0;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-eyebrow::before { content:''; width:28px; height:1px; background:var(--gold); }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 110px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 36px;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-desc {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--charcoal);
+  max-width: 540px;
+  line-height: 1.85;
+  margin-bottom: 48px;
+}
+
+/* ── SECTION PATTERNS ────────────────────────────────── */
+.section { padding: 120px 64px; position: relative; }
+.section-sm { padding: 80px 64px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.section-label::before { content:''; width:24px; height:1px; background:var(--gold); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+/* ── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 36px;
+  transition: all 0.35s var(--ease-out);
+  cursor: none;
+  border: none; outline: none;
+}
+.btn-dark { background: var(--ink); color: var(--white); }
+.btn-dark:hover { background: var(--ink-3); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border-strong); }
+.btn-outline:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(184,147,58,0.3); }
+.btn-arrow::after { content: '→'; transition: transform 0.3s; }
+.btn-arrow:hover::after { transform: translateX(5px); }
+
+/* ── REVEAL ANIMATIONS ───────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+[data-reveal="up"]    { transform: translateY(50px); }
+[data-reveal="left"]  { transform: translateX(-50px); }
+[data-reveal="right"] { transform: translateX(50px); }
+[data-reveal="scale"] { transform: scale(0.92); }
+[data-reveal="fade"]  { transform: none; }
+[data-reveal].revealed { opacity: 1; transform: none !important; }
+[data-delay="1"] { transition-delay: 0.1s; }
+[data-delay="2"] { transition-delay: 0.2s; }
+[data-delay="3"] { transition-delay: 0.3s; }
+[data-delay="4"] { transition-delay: 0.4s; }
+[data-delay="5"] { transition-delay: 0.5s; }
+[data-delay="6"] { transition-delay: 0.6s; }
+
+/* ── MARQUEE ─────────────────────────────────────────── */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border-mid);
+  border-bottom: 1px solid var(--border-mid);
+  padding: 18px 0;
+  background: var(--cream-2);
+}
+.marquee-track {
+  display: flex; gap: 0;
+  animation: marquee 22s linear infinite;
+  white-space: nowrap;
+}
+.marquee-track.reverse { animation-direction: reverse; }
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+  padding: 0 36px;
+  display: flex; align-items: center; gap: 36px;
+}
+.marquee-item::after { content:'◆'; font-style:normal; font-size:7px; color:var(--light-muted); }
+
+/* ── CARDS ───────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.4s var(--ease-out), border-color 0.3s;
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--border-mid);
+}
+.card-accent {
+  position: absolute; top:0; left:0; right:0;
+  height: 3px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+.card:hover .card-accent { transform: scaleX(1); }
+
+/* ── DIVIDER ─────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border-mid); }
+.divider-ornament {
+  display: flex; align-items: center; gap: 20px;
+  color: var(--light-muted);
+}
+.divider-ornament::before, .divider-ornament::after {
+  content: ''; flex: 1; height: 1px; background: var(--border-mid);
+}
+.ornament-text { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--light-muted); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+#wpc-footer {
+  background: var(--ink-2);
+  color: var(--cream-3);
+  padding: 80px 64px 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand .f-logo {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-weight: 700;
+  display: block; margin-bottom: 16px;
+}
+.footer-brand p { font-size: 13px; color: rgba(250,248,243,0.45); font-weight: 300; line-height: 1.9; max-width: 280px; }
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  font-size: 13px; font-weight: 300;
+  color: rgba(250,248,243,0.5);
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+  display: block;
+}
+.footer-col ul li a:hover { color: var(--cream); padding-left: 6px; }
+.footer-col p { font-size: 13px; font-weight: 300; color: rgba(250,248,243,0.45); line-height: 1.9; }
+.footer-bottom {
+  padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: rgba(250,248,243,0.25); }
+
+/* ── PARTICLES CANVAS ───────────────────────────────── */
+#particles-canvas {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 1;
+}
+
+/* ── PAGE TRANSITION ────────────────────────────────── */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--ink);
+  z-index: 9990;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+/* ── LOADING SCREEN ─────────────────────────────────── */
+#wpc-loader {
+  position: fixed; inset: 0;
+  background: var(--cream);
+  z-index: 9995;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 24px;
+}
+.loader-logo {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.3em;
+  color: var(--ink);
+  font-weight: 700;
+}
+.loader-logo span { color: var(--gold); }
+.loader-bar-wrap {
+  width: 200px; height: 1px;
+  background: var(--border-mid);
+  position: relative; overflow: hidden;
+}
+.loader-bar {
+  position: absolute; top: 0; left: 0; height: 100%;
+  background: var(--gold);
+  animation: loaderFill 1.6s var(--ease-out) forwards;
+}
+.loader-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+/* ── BACK TO TOP ─────────────────────────────────────── */
+#back-top {
+  position: fixed; bottom: 36px; right: 36px;
+  width: 48px; height: 48px;
+  background: var(--ink);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  cursor: none;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 400;
+  border: 1px solid var(--border);
+}
+#back-top.visible { opacity: 1; pointer-events: all; }
+#back-top:hover { background: var(--gold); transform: translateY(-3px); }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.text-gold { color: var(--gold); }
+.text-muted { color: var(--muted); }
+.text-center { text-align: center; }
+.italic { font-style: italic; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+
+/* ── KEYFRAMES ───────────────────────────────────────── */
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes loaderFill { from{width:0} to{width:100%} }
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+@keyframes rotateSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes shimmer {
+  0%{background-position:-200% center}
+  100%{background-position:200% center}
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+/* MOBILE PANEL CSS */
+
+/* ═══════════════════════════════════════════════
+   WPC PREMIUM MOBILE — Full Overhaul
+   ═══════════════════════════════════════════════ */
+
+/* ── Hamburger button ────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 700;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.nav-hamburger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--ink);
+  position: absolute;
+  left: 9px;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1),
+              opacity 0.3s,
+              top 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-hamburger span:nth-child(1) { top: 14px; }
+.nav-hamburger span:nth-child(2) { top: 21px; }
+.nav-hamburger span:nth-child(3) { top: 28px; }
+
+.nav-hamburger.open span:nth-child(1) { top: 21px; transform: rotate(45deg); background: #fff; }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { top: 21px; transform: rotate(-45deg); background: #fff; }
+
+/* ── Overlay ─────────────────────────────────── */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 590;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Menu panel ──────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #0F0E0C;
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  overflow: hidden;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Menu inner scroll area */
+.mob-inner {
+  flex: 1;
+  overflow-y: auto;
+  padding: 90px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Close button */
+.mobile-menu-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  z-index: 10;
+  transition: background 0.3s, color 0.3s;
+  line-height: 1;
+}
+.mobile-menu-close:hover {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+/* Logo in menu */
+.mobile-nav-logo {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+}
+
+/* Nav links */
+.mobile-nav-links {
+  list-style: none;
+  flex: 1;
+}
+.mobile-nav-links > li {
+  overflow: hidden;
+}
+.mobile-nav-links > li > a,
+.mob-svc-toggle {
+  display: block;
+  padding: 18px 0;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 8vw, 42px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.3s, padding-left 0.35s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+}
+.mobile-nav-links > li > a:hover,
+.mob-svc-toggle:hover {
+  color: var(--gold);
+  padding-left: 10px;
+}
+.mobile-nav-links > li > a.mob-active {
+  color: var(--gold);
+}
+
+/* Services toggle row */
+.mob-svc-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.mob-svc-toggle.open {
+  color: var(--gold);
+  border-bottom-color: rgba(184,147,58,0.2);
+}
+.mob-svc-chevron {
+  font-size: 14px;
+  opacity: 0.5;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.mob-svc-toggle.open .mob-svc-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* Services dropdown list */
+.mob-svc-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.16,1,0.3,1);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 0 4px 4px;
+}
+.mob-svc-list.open {
+  max-height: 600px;
+}
+.mob-svc-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.25s, background 0.25s, padding-left 0.3s;
+  letter-spacing: 0.01em;
+}
+.mob-svc-list a::before {
+  content: '→';
+  font-size: 12px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.3s;
+  transform: translateX(-6px);
+  flex-shrink: 0;
+}
+.mob-svc-list a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(184,147,58,0.06);
+  padding-left: 28px;
+}
+.mob-svc-list a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mob-svc-list a:last-child {
+  border-bottom: none;
+}
+
+/* CTA buttons at bottom */
+.mobile-menu-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.mob-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 16px 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  font-weight: 400;
+}
+.mob-cta-dark {
+  background: var(--gold);
+  color: var(--ink);
+}
+.mob-cta-dark:hover {
+  background: var(--gold-light);
+}
+.mob-cta-wa {
+  background: rgba(37,211,102,0.12);
+  color: #25D366;
+  border: 1px solid rgba(37,211,102,0.25);
+}
+.mob-cta-wa:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+/* Gold accent line at top of menu */
+.mob-accent-line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+  flex-shrink: 0;
+}
+
+/* Menu social/contact strip */
+.mob-contact-strip {
+  padding: 20px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+.mob-contact-strip a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.mob-contact-strip a:hover {
+  color: var(--gold);
+}
+
+/* ── Stagger animation for menu items ────────── */
+.mobile-nav-links > li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.mobile-menu.open .mobile-nav-links > li:nth-child(1) { opacity:1; transform:none; transition-delay: 0.08s; }
+.mobile-menu.open .mobile-nav-links > li:nth-child(2) { opacity:1; transform:none; transition-delay: 0.14s; }
+.mobile-menu.open .mobile-nav-links > li:nth-child(3) { opacity:1; transform:none; transition-delay: 0.20s; }
+.mobile-menu.open .mobile-nav-links > li:nth-child(4) { opacity:1; transform:none; transition-delay: 0.26s; }
+.mobile-menu.open .mobile-nav-links > li:nth-child(5) { opacity:1; transform:none; transition-delay: 0.32s; }
+.mobile-menu-cta { opacity:0; transition: opacity 0.5s 0.38s; }
+.mobile-menu.open .mobile-menu-cta { opacity:1; }
+.mob-contact-strip { opacity:0; transition: opacity 0.5s 0.42s; }
+.mobile-menu.open .mob-contact-strip { opacity:1; }
+
+/* ── TABLET ─────────────────────────────────────── */
+@media(max-width:1024px){
+  .section,.section-sm { padding:80px 40px; }
+  .page-hero            { padding:0 40px 60px; }
+  #wpc-nav,#wpc-nav.scrolled { padding:20px 40px; }
+  .footer-grid          { grid-template-columns:1fr 1fr; gap:40px; }
+  .grid-3               { grid-template-columns:repeat(2,1fr); }
+}
+
+/* ── MOBILE ─────────────────────────────────────── */
+@media(max-width:768px){
+
+  /* ── Base reset ── */
+  #wpc-cursor, #wpc-cursor-ring { display:none !important; }
+  body { cursor:auto; -webkit-tap-highlight-color: transparent; }
+  a, button { cursor:pointer; }
+  html { font-size:15px; }
+
+  /* ── Sections ── */
+  .section,.section-sm { padding:60px 22px; }
+  .page-hero { padding:0 22px 60px; min-height:92vh; }
+  .section-label { font-size:9px; letter-spacing:0.24em; margin-bottom:14px; }
+  .section-title { font-size:clamp(32px,8.5vw,46px); line-height:1.05; }
+
+  /* ── Nav ── */
+  #wpc-nav { padding:18px 22px; }
+  #wpc-nav.scrolled { padding:14px 22px; }
+  .nav-links, .nav-cta, .nav-dropdown { display:none !important; }
+  .nav-hamburger { display:flex; }
+  .nav-logo { font-size:15px; letter-spacing:0.14em; }
+
+  /* ── Hero eyebrow ── */
+  .hero-eyebrow { font-size:9px; letter-spacing:0.22em; margin-bottom:20px; }
+
+  /* ── Buttons ── */
+  .btn { padding:15px 26px; font-size:10px; letter-spacing:0.12em; }
+
+  /* ── Grids ── */
+  .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; gap:16px; }
+
+  /* ── Cards ── */
+  .card { padding:28px 22px; }
+
+  /* ── Marquee ── */
+  .marquee-track { animation-duration:13s; }
+  .marquee-item { font-size:13px; padding:0 24px; gap:24px; }
+
+  /* ── Footer ── */
+  #wpc-footer { padding:52px 22px 0; }
+  .footer-grid { grid-template-columns:1fr; gap:36px; }
+  .footer-brand p { font-size:12px; max-width:100%; }
+  .footer-col h4 { font-size:9px; margin-bottom:14px; }
+  .footer-col ul li a { font-size:12px; padding:4px 0; display:block; }
+  .footer-col p { font-size:12px; }
+  .footer-bottom { padding:18px 0; flex-direction:column; gap:4px; text-align:center; }
+  .footer-bottom p { font-size:9px; }
+
+  /* ── Back to top ── */
+  #back-top { bottom:24px; right:16px; width:44px; height:44px; font-size:15px; }
+
+  /* ── Floating WhatsApp ── */
+  #float-wa { bottom:80px; right:16px; width:52px; height:52px; }
+}
+
+/* ── SMALL PHONES ───────────────────────────── */
+@media(max-width:390px){
+  .section,.section-sm { padding:48px 16px; }
+  #wpc-nav,#wpc-nav.scrolled { padding:14px 16px; }
+  .nav-logo { font-size:13px; }
+  .page-hero { padding:0 16px 48px; }
+}
+  #wpc-nav,#wpc-nav.scrolled { padding:14px 16px; }
+  .nav-logo { font-size:13px; }
+}
+
+</style>
+<style>
+.team-hero {
+  min-height: 60vh;
+  background: var(--ink-2);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 64px 80px;
+  position: relative; overflow: hidden;
+}
+.team-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse 700px 500px at 70% 40%, rgba(184,147,58,0.08) 0%, transparent 65%);
+}
+.team-hero-bg {
+  position:absolute; inset:0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 79px, rgba(255,255,255,0.02) 80px
+  ), repeating-linear-gradient(
+    90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 79px, rgba(255,255,255,0.02) 80px
+  );
+}
+.team-hero .hero-eyebrow { color:var(--gold); }
+.team-hero .hero-title { color:var(--cream); }
+.team-hero .hero-desc { color:rgba(250,248,243,0.55); }
+
+/* Department section */
+
+/* ── LEADERSHIP SECTION ─────────────────── */
+.leadership-section {
+  padding: 100px 64px;
+  background: var(--ink);
+  position: relative; overflow: hidden;
+}
+.leadership-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 800px 500px at 50% 50%, rgba(184,147,58,0.07) 0%, transparent 65%);
+}
+.leadership-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  background: rgba(255,255,255,0.06);
+  position: relative; z-index: 2;
+  margin-top: 60px;
+}
+.leader-exec-card {
+  background: var(--ink-2);
+  padding: 56px 48px;
+  position: relative; overflow: hidden;
+  transition: background 0.4s;
+}
+.leader-exec-card:hover { background: var(--ink-3); }
+.lec-badge {
+  font-family: var(--font-mono); font-size: 9px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.lec-badge::before { content:''; width:20px; height:1px; background:var(--gold); }
+.lec-name {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 400; color: var(--cream); line-height: 1.0;
+  margin-bottom: 12px;
+}
+.lec-title {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(250,248,243,0.4); margin-bottom: 28px;
+}
+.lec-desc {
+  font-size: 14px; font-weight: 300;
+  color: rgba(250,248,243,0.5); line-height: 1.9;
+  max-width: 380px;
+}
+.lec-initial {
+  position: absolute; bottom: -20px; right: 32px;
+  font-family: var(--font-display); font-size: 160px; font-weight: 700;
+  color: rgba(255,255,255,0.025); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.lec-divider {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.dept-section { padding:100px 64px; border-bottom:1px solid var(--border); }
+.dept-section:nth-child(even) { background:var(--cream-2); }
+.dept-header {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  margin-bottom:60px; flex-wrap:wrap; gap:24px;
+}
+.dept-title-wrap {}
+.dept-icon {
+  width:64px; height:64px;
+  border:1px solid var(--border-mid);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px;
+  background:var(--white);
+}
+.dept-icon svg { width:28px; height:28px; stroke:var(--gold); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.dept-name {
+  font-family:var(--font-display);
+  font-size:clamp(32px,4vw,56px); font-weight:400; color:var(--ink);
+  line-height:1.05;
+}
+.dept-name em { font-style:italic; color:var(--gold); }
+.dept-count {
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.22em; color:var(--muted); text-transform:uppercase;
+  margin-top:10px;
+}
+.dept-link-btn {
+  align-self:flex-end;
+}
+
+/* Leader card */
+.leader-card {
+  background: var(--ink);
+  padding:40px 44px;
+  position:relative; overflow:hidden;
+  margin-bottom:32px;
+}
+.leader-card::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--gold);
+}
+.leader-card::after {
+  content:'LEADER';
+  position:absolute; top:20px; right:24px;
+  font-family:var(--font-mono); font-size:9px;
+  letter-spacing:0.28em; color:rgba(184,147,58,0.5);
+}
+.leader-name {
+  font-family:var(--font-display);
+  font-size:34px; font-weight:400; color:var(--cream);
+  line-height:1.1; margin-bottom:10px;
+}
+.leader-title {
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+}
+.leader-initial {
+  position:absolute; bottom:-10px; right:32px;
+  font-family:var(--font-display); font-size:120px; font-weight:700;
+  color:rgba(255,255,255,0.03); line-height:1; pointer-events:none;
+  user-select:none;
+}
+
+/* Members grid */
+.members-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+  gap:2px;
+  background:var(--border-mid);
+}
+.member-card {
+  background:var(--white);
+  padding:32px 28px;
+  position:relative; overflow:hidden;
+  transition:background 0.35s, transform 0.35s var(--ease-out);
+}
+.dept-section:nth-child(even) .member-card { background:var(--cream-3); }
+.member-card:hover { background:var(--cream); transform:translateY(-2px); }
+.member-num {
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.18em; color:var(--light-muted);
+  margin-bottom:14px; display:block;
+}
+.member-name {
+  font-family:var(--font-display);
+  font-size:22px; font-weight:400; color:var(--ink);
+  line-height:1.2;
+}
+.member-bar {
+  width:0; height:2px; background:var(--gold);
+  margin-top:16px;
+  transition:width 0.5s var(--ease-out);
+}
+.member-card:hover .member-bar { width:48px; }
+
+/* Stats row */
+.team-stats-row {
+  padding:80px 64px;
+  background:var(--gold);
+  display:grid; grid-template-columns:repeat(4,1fr);
+  text-align:center;
+  gap:2px;
+}
+.ts-stat { padding:20px; }
+.ts-stat-num {
+  font-family:var(--font-display);
+  font-size:52px; font-weight:400; color:var(--ink); line-height:1;
+}
+.ts-stat-label {
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.22em; color:rgba(15,14,12,0.6);
+  text-transform:uppercase; margin-top:8px;
+}
+
+
+@media(max-width:768px){
+  .leadership-section { padding:60px 22px; }
+  .leadership-grid { grid-template-columns:1fr; gap:2px; background:rgba(255,255,255,0.05); }
+  .leader-exec-card { padding:36px 22px; }
+  .lec-name { font-size:clamp(32px,9vw,48px); }
+  .lec-desc { font-size:13px; }
+  .lec-initial { font-size:100px; }
+  .dept-section { padding:56px 22px; }
+  .dept-header { flex-direction:column; gap:14px; align-items:flex-start; }
+  .dept-name { font-size:clamp(26px,7vw,40px); }
+  .dept-count { font-size:9px; }
+  .members-grid { grid-template-columns:1fr 1fr; gap:2px; }
+  .member-card { padding:24px 18px; }
+  .member-num { font-size:9px; }
+  .member-name { font-size:18px; }
+  .leader-card { padding:28px 22px; }
+  .leader-name { font-size:24px; }
+  .leader-initial { font-size:80px; }
+  .team-stats-row { grid-template-columns:1fr 1fr; padding:44px 22px; gap:0; }
+  .ts-stat-num { font-size:36px; }
+  .ts-stat-label { font-size:9px; }
+  div[style*="grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px"] { grid-template-columns:1fr; }
+}
+@media(max-width:380px){
+  .members-grid { grid-template-columns:1fr; }
+}
+
+  .leadership-grid { grid-template-columns:1fr; }
+  .leader-exec-card { padding:36px 24px; }
+  .lec-name { font-size:clamp(32px,9vw,48px); }
+  .lec-initial { font-size:100px; }
+  .dept-section { padding:60px 20px; }
+  .dept-header { flex-direction:column; gap:16px; }
+  .dept-name { font-size:clamp(24px,7vw,40px); }
+  .members-grid { grid-template-columns:1fr 1fr; }
+  .leader-card { padding:28px 24px; }
+  .leader-name { font-size:26px; }
+  .team-stats-row { grid-template-columns:1fr 1fr; gap:0; padding:40px 20px; }
+  .ts-stat-num { font-size:38px; }
+  div[style*="grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px"] { grid-template-columns:1fr; }
+}
+@media(max-width:400px){
+  .members-grid { grid-template-columns:1fr; }
+}
+
+</style>
+</head>
+<body>
+<div id="wpc-cursor"></div>
+<div id="wpc-cursor-ring"></div>
+<div class="page-transition"></div>
+
+<nav id="wpc-nav">
+  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li data-hover>
+      <a href="#" data-dropdown="services">Services ▾</a>
+      <div class="nav-dropdown">
+        <a href="service-web-development.html">Website Development</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-seo.html">SEO Services</a>
+        <a href="service-digital-marketing.html">Digital Marketing</a>
+        <a href="service-app-development.html">App Development</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ecommerce.html">E-Commerce Solutions</a>
+      </div>
+    </li>
+    <li><a href="team.html" class="active">Team</a></li>
+    
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Start a Project</a>
+  <div class="nav-hamburger" role="button" aria-label="Open menu"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="team-hero">
+  <div class="team-hero-bg"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="hero-eyebrow" data-reveal="up">The People Behind The Magic</div>
+    <h1 class="hero-title" style="font-family:var(--font-display);font-size:clamp(56px,8vw,110px);font-weight:400;line-height:0.94;color:var(--cream);margin-bottom:24px;" data-reveal="up" data-delay="1">
+      Meet Our<br><em style="font-style:italic;color:var(--gold);">Team</em>
+    </h1>
+    <p class="hero-desc" data-reveal="up" data-delay="2">40+ elite specialists across 10 departments — united by craft, driven by excellence, and committed to making your brand unforgettable.</p>
+  </div>
+</section>
+
+<!-- TEAM STATS -->
+<!-- LEADERSHIP -->
+<section class="leadership-section">
+  <div style="position:relative;z-index:2;">
+    <div class="section-label" style="color:var(--gold);" data-reveal="up">Company Leadership</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);font-weight:400;color:var(--cream);line-height:1.0;" data-reveal="up" data-delay="1">
+      The <em style="font-style:italic;color:var(--gold);">Founders</em>
+    </h2>
+  </div>
+  <div class="leadership-grid">
+
+    <div class="leader-exec-card" data-reveal="up" data-tilt>
+      <div class="lec-divider"></div>
+      <div class="lec-badge">CEO &amp; Founder</div>
+      <div class="lec-name">Zeesha</div>
+      <div class="lec-title">Chief Executive Officer · Founder</div>
+      <p class="lec-desc">Visionary behind Web Pro Creation. Zeesha founded WPC in 2021 with a single mission — to make premium digital services accessible to businesses of all sizes. Leading strategy, growth, and client partnerships across London and New York.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://wa.me/16313642268" target="_blank" class="btn btn-gold" style="font-size:10px;padding:10px 22px;text-decoration:none;">💬 WhatsApp</a>
+        <a href="https://calendly.com/workzeesha/30min" target="_blank" class="btn" style="font-size:10px;padding:10px 22px;background:transparent;color:var(--cream);border:1px solid rgba(250,248,243,0.2);text-decoration:none;">📅 Book a Call</a>
+      </div>
+      <div class="lec-initial">Z</div>
+    </div>
+
+    <div class="leader-exec-card" data-reveal="up" data-delay="1" data-tilt>
+      <div class="lec-divider" style="background:linear-gradient(90deg,rgba(184,147,58,0.5),transparent);"></div>
+      <div class="lec-badge">Co-Founder</div>
+      <div class="lec-name">Afan Aziz</div>
+      <div class="lec-title">Co-Founder · Head of Website Maintenance</div>
+      <p class="lec-desc">Co-founder of WPC and Head of Website Maintenance, Afan brings deep technical expertise and operational precision to every project. Oversees the technical health, performance, and reliability of all client websites.</p>
+      <div style="margin-top:28px;">
+        <a href="contact.html" class="btn" style="font-size:10px;padding:10px 22px;background:transparent;color:var(--cream);border:1px solid rgba(250,248,243,0.2);text-decoration:none;">Get in Touch →</a>
+      </div>
+      <div class="lec-initial">A</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="team-stats-row">
+  <div class="ts-stat"><div class="ts-stat-num" data-counter="40" data-suffix="+">40+</div><div class="ts-stat-label">Team Members</div></div>
+  <div class="ts-stat"><div class="ts-stat-num" data-counter="10">10</div><div class="ts-stat-label">Departments</div></div>
+  <div class="ts-stat"><div class="ts-stat-num" data-counter="2000" data-suffix="+">2000+</div><div class="ts-stat-label">Projects Done</div></div>
+  <div class="ts-stat"><div class="ts-stat-num" data-counter="4" data-suffix="+">4+</div><div class="ts-stat-label">Years Active</div></div>
+</div>
+
+<!-- DEPT: WEB DEVELOPMENT -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <div class="dept-name" data-reveal="up">Website <em>Development</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 3 Members</div>
+    </div>
+    <a href="service-web-development.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Syeda Naqvii</div>
+    <div class="leader-title">Head of Website Development</div>
+    <div class="leader-initial">S</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Muhammad Ali</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Hassan Khan</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Bilal Ahmed</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: SOCIAL MEDIA -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+      <div class="dept-name" data-reveal="up">Social Media <em>Management</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
+    </div>
+    <a href="service-social-media.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Ansar Ahmed</div>
+    <div class="leader-title">Head of Social Media</div>
+    <div class="leader-initial">A</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Usman Tariq</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Abdullah Sheikh</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Hamza Malik</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Awais Iqbal</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Zubair Ahmed</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: VIDEO EDITING -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="dept-name" data-reveal="up">Video <em>Editing</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 3 Members</div>
+    </div>
+    <a href="service-video-editing.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Ahmed</div>
+    <div class="leader-title">Head of Video Editing</div>
+    <div class="leader-initial">A</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Saad Hussain</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Umar Farooq</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Talha Anwar</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: GRAPHIC DESIGN -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+      <div class="dept-name" data-reveal="up">Graphic <em>Designers</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
+    </div>
+    <a href="service-graphic-design.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Fawad Ahmad</div>
+    <div class="leader-title">Head of Graphic Designers</div>
+    <div class="leader-initial">F</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Fahad Khan</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Daniyal Ahmed</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Salman Raza</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Shahzaib Ali</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Muneeb Khan</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: SEO -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="dept-name" data-reveal="up">SEO <em>Specialist</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 2 Members</div>
+    </div>
+    <a href="service-seo.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Hoor Fatima</div>
+    <div class="leader-title">SEO Specialist &amp; Team Lead</div>
+    <div class="leader-initial">H</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Haris Ahmed</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Rizwan Malik</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: DIGITAL MARKETING -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg></div>
+      <div class="dept-name" data-reveal="up">Digital <em>Marketing</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 4 Members</div>
+    </div>
+    <a href="service-digital-marketing.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Mohammad Hassan</div>
+    <div class="leader-title">Digital Marketing Specialist</div>
+    <div class="leader-initial">M</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Imran Haider</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Noman Ali</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Adnan Sheikh</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Farhan Ahmed</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: APP DEVELOPMENT -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="dept-name" data-reveal="up">App <em>Development</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">2 Leaders · 5 Members</div>
+    </div>
+    <a href="service-app-development.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px;background:var(--border-mid);" data-reveal="up">
+    <div class="leader-card" style="margin-bottom:0;">
+      <div class="leader-name">Zubair</div>
+      <div class="leader-title">Co-Head of App Development</div>
+      <div class="leader-initial">Z</div>
+    </div>
+    <div class="leader-card" style="margin-bottom:0;">
+      <div class="leader-name">Qasim</div>
+      <div class="leader-title">Co-Head of App Development</div>
+      <div class="leader-initial">Q</div>
+    </div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Yasir Khan</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Kashif Raza</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Waqas Ahmed</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Naveed Iqbal</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Junaid Khan</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: UI/UX -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dept-name" data-reveal="up">UI / UX <em>Design</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">2 Leaders · 5 Members</div>
+    </div>
+    <a href="service-ui-ux.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px;background:var(--border-mid);" data-reveal="up">
+    <div class="leader-card" style="margin-bottom:0;">
+      <div class="leader-name">Zubair</div>
+      <div class="leader-title">Co-Head of UI Development</div>
+      <div class="leader-initial">Z</div>
+    </div>
+    <div class="leader-card" style="margin-bottom:0;">
+      <div class="leader-name">Qasim</div>
+      <div class="leader-title">Co-Head of UI Development</div>
+      <div class="leader-initial">Q</div>
+    </div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Shayan Malik</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Taha Ahmed</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Ayesha Noor</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Syeda Fatima</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Mahnoor Ahmed</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: DESIGN & BRANDING -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div class="dept-name" data-reveal="up">Design &amp; <em>Branding</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
+    </div>
+    <a href="service-branding.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Fawad Ahmad</div>
+    <div class="leader-title">Head of Design &amp; Branding</div>
+    <div class="leader-initial">F</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Zainab Ali</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Eman Fatima</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Alina Raza</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Iqra Khan</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Sana Malik</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- DEPT: WEBSITE MAINTENANCE -->
+<section class="dept-section">
+  <div class="dept-header">
+    <div class="dept-title-wrap">
+      <div class="dept-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="dept-name" data-reveal="up">Website <em>Maintenance</em></div>
+      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
+    </div>
+    <a href="service-maintenance.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
+  </div>
+  <div class="leader-card" data-reveal="up">
+    <div class="leader-name">Afan Aziz</div>
+    <div class="leader-title">Head of Website Maintenance</div>
+    <div class="leader-initial">A</div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Areeba Ahmed</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Laiba Noor</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Maryam Khan</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Hoor Fatima</div><div class="member-bar"></div></div>
+    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Ahmed Raza</div><div class="member-bar"></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--ink-2);text-align:center;">
+  <div class="section-label" data-reveal="up" style="justify-content:center;color:var(--gold);">Join Us</div>
+  <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);font-weight:400;color:var(--cream);margin-bottom:20px;" data-reveal="up" data-delay="1">Work with the <em style="font-style:italic;color:var(--gold);">Best.</em></h2>
+  <p style="color:rgba(250,248,243,0.5);font-size:15px;font-weight:300;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.9;" data-reveal="up" data-delay="2">Ready to start your project? Our team is ready to bring your vision to life.</p>
+  <a href="contact.html" class="btn btn-gold btn-arrow" data-reveal="up" data-delay="3">Start a Project</a>
+</section>
+
+<footer id="wpc-footer">
+  <div class="footer-grid">
+    <div class="footer-brand"><span class="f-logo">WPC</span><p>Web Pro Creation — Premium digital agency. Est. 2021, London &amp; New York.</p></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="service-web-development.html">Website Development</a></li><li><a href="service-social-media.html">Social Media</a></li><li><a href="service-seo.html">SEO Services</a></li><li><a href="service-app-development.html">App Development</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <p>124–128 City Road, London<br>4060 Lawrenceville Hwy, Lilburn</p>
+      <p style="margin-top:10px;">
+        <a href="https://wa.me/16313642268" target="_blank" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+      </p>
+      <p style="margin-top:10px;font-size:12px;color:rgba(250,248,243,0.3);font-family:var(--font-mono);letter-spacing:0.1em;">KARACHI OFFICE</p>
+      <p style="color:rgba(250,248,243,0.35);font-size:12px;font-weight:300;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Web Pro Creation. All rights reserved.</p><p>Crafted with Precision.</p></div>
+</footer>
+<div id="back-top">↑</div>
+<script>
+/* WPC — Shared JavaScript */
+
+(function(){
+'use strict';
+
+/* ── LOADER ────────────────────────────────────────── */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('wpc-loader');
+  if(!loader) return;
+  let n = 0;
+  const numEl = loader.querySelector('.loader-num');
+  const iv = setInterval(()=>{
+    n = Math.min(n + Math.floor(Math.random()*12)+4, 100);
+    if(numEl) numEl.textContent = n + '%';
+    if(n >= 100){
+      clearInterval(iv);
+      setTimeout(()=>{
+        loader.style.transition = 'opacity 0.6s, transform 0.7s cubic-bezier(0.65,0,0.35,1)';
+        loader.style.opacity = '0';
+        loader.style.transform = 'translateY(-100%)';
+        setTimeout(()=>loader.remove(), 700);
+      }, 200);
+    }
+  }, 40);
+});
+
+/* ── CURSOR ────────────────────────────────────────── */
+const cursor = document.getElementById('wpc-cursor');
+const ring   = document.getElementById('wpc-cursor-ring');
+let mx=0, my=0, rx=0, ry=0;
+
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+
+if(cursor && ring){
+  (function tick(){
+    rx += (mx-rx)*0.1; ry += (my-ry)*0.1;
+    cursor.style.left = mx+'px'; cursor.style.top = my+'px';
+    ring.style.left   = rx+'px'; ring.style.top  = ry+'px';
+    requestAnimationFrame(tick);
+  })();
+
+  document.querySelectorAll('a,button,[data-hover]').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+  });
+  document.addEventListener('mousedown',()=>document.body.classList.add('cursor-click'));
+  document.addEventListener('mouseup',()=>document.body.classList.remove('cursor-click'));
+}
+
+/* ── NAV ───────────────────────────────────────────── */
+const nav = document.getElementById('wpc-nav');
+if(nav){
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Services dropdown — use parent li to avoid gap issue
+  const svcParent  = nav.querySelector('[data-dropdown="services"]')?.closest('li');
+  const svcDrop    = nav.querySelector('.nav-dropdown');
+  if(svcParent && svcDrop){
+    let closeTimer;
+    svcParent.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      svcDrop.classList.add('open');
+    });
+    svcParent.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => svcDrop.classList.remove('open'), 80);
+    });
+    svcDrop.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+    svcDrop.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => svcDrop.classList.remove('open'), 80);
+    });
+  }
+
+  // Active link
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  nav.querySelectorAll('.nav-links a').forEach(a=>{
+    if(a.getAttribute('href') === path) a.classList.add('active');
+  });
+}
+
+/* ── SCROLL REVEAL ─────────────────────────────────── */
+const revealEls = document.querySelectorAll('[data-reveal]');
+if(revealEls.length){
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('revealed'); observer.unobserve(e.target); }
+    });
+  },{ threshold: 0.12 });
+  revealEls.forEach(el=>observer.observe(el));
+}
+
+/* ── BACK TO TOP ───────────────────────────────────── */
+const btt = document.getElementById('back-top');
+if(btt){
+  window.addEventListener('scroll',()=>btt.classList.toggle('visible', window.scrollY>600));
+  btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+}
+
+/* ── PARTICLES ─────────────────────────────────────── */
+const canvas = document.getElementById('particles-canvas');
+if(canvas){
+  const ctx = canvas.getContext('2d');
+  let W, H, particles=[];
+  function resize(){ W=canvas.width=canvas.offsetWidth; H=canvas.height=canvas.offsetHeight; }
+  resize(); window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor(){this.reset();}
+    reset(){
+      this.x = Math.random()*W;
+      this.y = Math.random()*H;
+      this.r = Math.random()*1.8+0.4;
+      this.vx= (Math.random()-0.5)*0.3;
+      this.vy= (Math.random()-0.5)*0.3;
+      this.alpha = Math.random()*0.35+0.05;
+    }
+    update(){
+      this.x+=this.vx; this.y+=this.vy;
+      if(this.x<0||this.x>W||this.y<0||this.y>H) this.reset();
+    }
+    draw(){
+      ctx.beginPath();
+      ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(184,147,58,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  for(let i=0;i<80;i++) particles.push(new Particle());
+
+  // Connection lines
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{p.update();p.draw();});
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<100){
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle=`rgba(184,147,58,${0.08*(1-dist/100)})`;
+          ctx.lineWidth=0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* ── PARALLAX ──────────────────────────────────────── */
+document.querySelectorAll('[data-parallax]').forEach(el=>{
+  const speed = parseFloat(el.dataset.parallax)||0.3;
+  window.addEventListener('scroll',()=>{
+    const rect = el.getBoundingClientRect();
+    const offset = (rect.top + rect.height/2 - window.innerHeight/2) * speed;
+    el.style.transform = `translateY(${offset}px)`;
+  });
+});
+
+/* ── COUNTER ANIMATION ─────────────────────────────── */
+document.querySelectorAll('[data-counter]').forEach(el=>{
+  const target = parseInt(el.dataset.counter);
+  const suffix = el.dataset.suffix||'';
+  let started = false;
+  const observer = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !started){
+      started=true;
+      let current=0;
+      const step=Math.ceil(target/60);
+      const iv=setInterval(()=>{
+        current=Math.min(current+step,target);
+        el.textContent=current.toLocaleString()+suffix;
+        if(current>=target) clearInterval(iv);
+      },24);
+    }
+  });
+  observer.observe(el);
+});
+
+/* ── SMOOTH LINK TRANSITIONS ───────────────────────── */
+document.querySelectorAll('a[href]').forEach(a=>{
+  const href=a.getAttribute('href');
+  if(!href||href.startsWith('#')||href.startsWith('mailto')||href.startsWith('http')||href.startsWith('tel')) return;
+  // Skip if inside mobile menu or floating wa btn
+  if(a.closest('.mobile-menu')||a.closest('#float-wa')) return;
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const overlay = document.createElement('div');
+    overlay.className='page-transition';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(()=>{
+      overlay.style.transition='transform 0.5s cubic-bezier(0.65,0,0.35,1)';
+      overlay.style.transform='translateY(0)';
+    });
+    setTimeout(()=>window.location.href=href, 500);
+  });
+});
+
+/* ── TILT CARDS ────────────────────────────────────── */
+document.querySelectorAll('[data-tilt]').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    const rect=el.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width-0.5)*12;
+    const y=((e.clientY-rect.top)/rect.height-0.5)*-12;
+    el.style.transform=`perspective(800px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+  });
+  el.addEventListener('mouseleave',()=>el.style.transform='');
+});
+
+/* ── TEXT SPLIT ANIMATION ──────────────────────────── */
+document.querySelectorAll('[data-split]').forEach(el=>{
+  const text=el.textContent;
+  el.innerHTML=text.split('').map((c,i)=>
+    `<span style="display:inline-block;transition:transform 0.6s ${0.03*i}s,opacity 0.6s ${0.03*i}s;transform:translateY(20px);opacity:0">${c==' '?'&nbsp;':c}</span>`
+  ).join('');
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      el.querySelectorAll('span').forEach(s=>{
+        s.style.transform='translateY(0)';
+        s.style.opacity='1';
+      });
+      obs.unobserve(el);
+    }
+  });
+  obs.observe(el);
+});
+
+})();
+
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/923058218156" target="_blank" rel="noopener"
+   id="float-wa"
+   style="
+     position:fixed; bottom:90px; right:16px; z-index:800;
+     width:54px; height:54px; border-radius:50%;
+     background:#25D366; color:#fff;
+     display:flex; align-items:center; justify-content:center;
+     box-shadow:0 4px 20px rgba(37,211,102,0.4);
+     text-decoration:none; font-size:26px;
+     transition:transform 0.3s, box-shadow 0.3s;
+     animation:floatWA 3s ease-in-out infinite;
+   "
+   title="WhatsApp Us">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<style>
+@keyframes floatWA {
+  0%,100% { transform:translateY(0); }
+  50%      { transform:translateY(-6px); }
+}
+#float-wa:hover {
+  transform:scale(1.12) !important;
+  box-shadow:0 8px 30px rgba(37,211,102,0.5) !important;
+  animation:none !important;
+}
+@media(min-width:769px){ #float-wa { display:none; } }
+</style>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+/* ── PREMIUM MOBILE MENU ─────────────────────────────────────── */
+(function(){
+  var burger = document.querySelector('.nav-hamburger');
+  if(!burger) return;
+
+  var pagePath = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Build overlay
+  var overlay = document.createElement('div');
+  overlay.className = 'mobile-overlay';
+  overlay.id = 'mobileOverlay';
+
+  // Build menu
+  var menu = document.createElement('div');
+  menu.className = 'mobile-menu';
+  menu.id = 'mobileMenu';
+  menu.innerHTML =
+    '<div class="mob-accent-line"></div>' +
+    '<div class="mob-inner">' +
+      '<button class="mobile-menu-close" id="mobileClose" aria-label="Close">&#x2715;</button>' +
+      '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+      '<ul class="mobile-nav-links">' +
+        '<li><a href="index.html" class="' + (pagePath==='index.html'?'mob-active':'') + '">Home</a></li>' +
+        '<li><a href="about.html" class="' + (pagePath==='about.html'?'mob-active':'') + '">About</a></li>' +
+        '<li>' +
+          '<div class="mob-svc-toggle" id="mobSvcToggle">' +
+            'Services' +
+            '<span class="mob-svc-chevron">&#9660;</span>' +
+          '</div>' +
+          '<div class="mob-svc-list" id="mobSvcList">' +
+            '<a href="service-web-development.html">Website Development</a>' +
+            '<a href="service-social-media.html">Social Media Management</a>' +
+            '<a href="service-video-editing.html">Video Editing</a>' +
+            '<a href="service-graphic-design.html">Graphic Designing</a>' +
+            '<a href="service-seo.html">SEO Services</a>' +
+            '<a href="service-digital-marketing.html">Digital Marketing</a>' +
+            '<a href="service-app-development.html">App Development</a>' +
+            '<a href="service-ui-ux.html">UI/UX Design</a>' +
+            '<a href="service-maintenance.html">Website Maintenance</a>' +
+            '<a href="service-branding.html">Design & Branding</a>' +
+            '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '</div>' +
+        '</li>' +
+        '<li><a href="team.html" class="' + (pagePath==='team.html'?'mob-active':'') + '">Team</a></li>' +
+        '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'mob-active':'') + '">Contact</a></li>' +
+      '</ul>' +
+      '<div class="mobile-menu-cta">' +
+        '<a href="contact.html" class="mob-cta-btn mob-cta-dark">&#10003; Start a Project</a>' +
+        '<a href="https://wa.me/923058218156" target="_blank" class="mob-cta-btn mob-cta-wa">&#x1F4AC; WhatsApp Us</a>' +
+      '</div>' +
+    '</div>' +
+    '<div class="mob-contact-strip">' +
+      '<a href="mailto:info@webprocreation.com">Email Us</a>' +
+      '<a href="https://wa.me/16313642268" target="_blank">+1 631 364 2268</a>' +
+      '<a href="https://wa.me/923058218156" target="_blank">+92 305 8218156</a>' +
+    '</div>';
+
+  document.body.appendChild(overlay);
+  document.body.appendChild(menu);
+
+  function openMenu() {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+
+  // Services accordion
+  var svcToggle = document.getElementById('mobSvcToggle');
+  var svcList   = document.getElementById('mobSvcList');
+  svcToggle.addEventListener('click', function() {
+    svcToggle.classList.toggle('open');
+    svcList.classList.toggle('open');
+  });
+  // Auto-open on service pages
+  if(pagePath.indexOf('service-') === 0) {
+    svcToggle.classList.add('open');
+    svcList.classList.add('open');
+  }
+
+  // Navigate directly (bypass page transition)
+  menu.querySelectorAll('a[href]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var href = a.getAttribute('href');
+      if(!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      closeMenu();
+      setTimeout(function(){ window.location.href = href; }, 320);
+    });
+  });
+
+  // Swipe right to close
+  var touchStartX = 0;
+  menu.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  menu.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if(dx > 80) closeMenu();
+  }, {passive:true});
+
+})();
+</script>
+</body>
+</html>

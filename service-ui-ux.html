@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>UI/UX Design Services | Web Pro Creation</title>
-<meta name="description" content="Web Pro Creation designs user-centred digital products — UX research, information architecture, wireframing, high-fidelity UI and interactive Figma prototypes.">
+<meta name="description" content="Web Pro Creation designs user-centred digital products — UX research, information architecture, wireframing, high-fidelity UI, prototyping and usability testing.">
 <meta name="keywords" content="UI UX design agency, user experience design, wireframing, Figma prototyping, design systems, usability testing, Web Pro Creation">
 <link rel="canonical" href="https://webprocreation.com/service-ui-ux.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="UI/UX Design Services | Web Pro Creation">
-<meta property="og:description" content="Thoughtful, conversion-driven digital interfaces — from wireframes to pixel-perfect Figma prototypes.">
+<meta property="og:description" content="Thoughtful, conversion-driven digital interfaces — from wireframes to pixel-perfect Figma prototypes, engineered by Web Pro Creation.">
 <meta property="og:url" content="https://webprocreation.com/service-ui-ux.html">
 <meta property="og:image" content="https://webprocreation.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="UI/UX Design Services | Web Pro Creation">
-<meta name="twitter:description" content="Digital products users love — engineered by Web Pro Creation.">
+<meta name="twitter:description" content="Interfaces users love — engineered by Web Pro Creation.">
 
 <link rel="stylesheet" href="shared.css">
 
@@ -46,119 +46,76 @@
 </script>
 
 <style id="page-css">
-/* ── UX HERO — split with device mockup ──────────────── */
-.ux-hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex; align-items: center;
-  padding: 140px 64px 60px;
-  overflow: hidden;
-  background: var(--grad-mesh), var(--cream);
+/* ── UX HERO — split with wireframe device mockup ────── */
+.ux-hero { min-height: 100vh; display: flex; align-items: center; padding: 150px 48px 60px; position: relative; z-index: 1; }
+.ux-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; }
+.ux-hero-copy h1 {
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em;
+  font-size: clamp(40px, 5.6vw, 78px); line-height: 1.02; color: var(--text); margin: 24px 0 26px;
 }
-.ux-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 0.9fr; gap: 60px; align-items: center; width: 100%; }
-.ux-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--gold-dim);
-  padding: 9px 20px; border-radius: 100px;
-  margin-bottom: 30px;
-}
-.ux-eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--grad-gold); animation: pulseGlow 2s ease-in-out infinite; }
-.ux-hero h1 {
-  font-family: var(--font-display); font-weight: 400;
-  font-size: clamp(46px, 6.4vw, 92px); line-height: 0.98; letter-spacing: -0.02em;
-  color: var(--ink); margin-bottom: 26px;
-}
-.ux-hero h1 em { font-style: italic; }
-.ux-hero-desc { font-size: 17px; color: var(--charcoal); max-width: 520px; line-height: 1.85; margin-bottom: 40px; font-weight: 300; }
-.ux-hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+.ux-hero-copy .lede { font-size: 16.5px; max-width: 500px; margin-bottom: 40px; }
+.ux-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+@media(max-width:1024px){ .ux-hero-grid { grid-template-columns: 1fr; } .ux-device { order: -1; max-width: 380px; margin: 0 auto 20px; } }
+@media(max-width:768px){ .ux-hero { padding: 120px 20px 50px; } }
 
-/* Device mockup */
+/* Wireframe device mockup — divs-only skeleton, orbit-inspired */
 .ux-device { position: relative; }
 .ux-frame {
-  border-radius: 26px; padding: 22px; position: relative; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius-lg);
+  padding: 24px; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);
   animation: floatY 7s ease-in-out infinite;
 }
-.ux-frame-bar { display: flex; gap: 6px; margin-bottom: 18px; }
-.ux-frame-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border-strong); }
-.ux-wire { border-radius: 12px; background: var(--grad-gold-soft); margin-bottom: 12px; }
-.ux-wire.w1 { height: 90px; }
-.ux-wire.w2 { height: 20px; width: 60%; }
-.ux-wire.w3 { height: 20px; width: 40%; margin-bottom: 20px; }
+.ux-frame-bar { display: flex; gap: 6px; margin-bottom: 20px; }
+.ux-frame-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--line-2); }
+.ux-wire { border-radius: 12px; background: var(--surface-3); margin-bottom: 12px; border: 1px dashed var(--line-2); }
+.ux-wire.w1 { height: 92px; background: var(--grad-mesh), var(--surface-3); }
+.ux-wire.w2 { height: 18px; width: 62%; }
+.ux-wire.w3 { height: 18px; width: 40%; margin-bottom: 20px; }
 .ux-wire-row { display: flex; gap: 12px; }
-.ux-wire-row .ux-wire { flex: 1; height: 60px; margin-bottom: 0; }
+.ux-wire-row .ux-wire { flex: 1; height: 58px; margin-bottom: 0; }
 .ux-badge-float {
-  position: absolute; z-index: 3;
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 16px; border-radius: 100px;
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--ink-3);
-  animation: floatSlow 8s ease-in-out infinite;
+  position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: 100px; background: var(--surface-2); border: 1px solid var(--line-2);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--text-dim);
+  box-shadow: var(--shadow-sm); animation: floatSlow 8s ease-in-out infinite;
 }
-.ux-badge-float.b1 { top: -10px; right: -16px; animation-delay: 0s; }
-.ux-badge-float.b2 { bottom: 30px; left: -30px; animation-delay: 2s; }
-@media(max-width:1024px){ .ux-hero-grid { grid-template-columns: 1fr; } .ux-device { max-width: 420px; margin: 0 auto; } }
-@media(max-width:768px){ .ux-hero { padding: 120px 20px 50px; } .ux-badge-float { display: none; } }
-
-/* ── FEATURE GRID (3-col cards, distinct from other pages) ── */
-.ux-feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
-.ux-feat-card { position: relative; }
-.ux-feat-num { font-family: var(--font-mono); font-size: 11px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 18px; display: block; }
-.ux-feat-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--grad-gold-soft); border: 1px solid var(--glass-border);
-  margin-bottom: 18px;
-}
-.ux-feat-icon svg { width: 22px; height: 22px; stroke: var(--gold-dim); fill: none; stroke-width: 1.5; }
-.ux-feat-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
-.ux-feat-card p { font-size: 13.5px; color: var(--charcoal); line-height: 1.75; }
-@media(max-width:900px){ .ux-feat-grid { grid-template-columns: 1fr 1fr; } }
-@media(max-width:600px){ .ux-feat-grid { grid-template-columns: 1fr; } }
-
-/* ── FAQ ──────────────────────────────────────────────── */
-.faq-list { margin-top: 48px; max-width: 780px; }
-.faq-item { border-bottom: 1px solid var(--border-mid); overflow: hidden; }
-.faq-q { padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: pointer; font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--ink); transition: color 0.3s; user-select: none; }
-.faq-q:hover { color: var(--gold); }
-.faq-toggle { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--muted); flex-shrink: 0; transition: transform 0.4s, border-color 0.3s, color 0.3s; }
-.faq-item.open .faq-toggle { transform: rotate(45deg); border-color: var(--gold); color: var(--gold); background: var(--grad-gold-soft); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out), padding 0.3s; font-size: 14.5px; color: var(--charcoal); font-weight: 300; line-height: 1.9; }
-.faq-item.open .faq-a { max-height: 300px; padding-bottom: 26px; }
-@media(max-width:768px){ .faq-q { font-size: 16px; padding: 20px 0; } }
+.ux-badge-float svg { width: 14px; height: 14px; stroke: var(--gold-2); fill: none; stroke-width: 1.6; }
+.ux-badge-float.b1 { top: -12px; right: -14px; animation-delay: 0s; }
+.ux-badge-float.b2 { bottom: 26px; left: -30px; animation-delay: 2s; }
+@media(max-width:768px){ .ux-badge-float { display: none; } }
 </style>
 </head>
 <body>
 
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
 <div class="page-transition"></div>
 
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html" class="active">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html" class="active">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -171,23 +128,20 @@
 
 <!-- HERO -->
 <header class="ux-hero">
-  <div class="orb orb-teal" data-parallax-orb="0.1" style="width:420px;height:420px;top:-100px;right:-60px;"></div>
-  <div class="orb orb-gold" data-parallax-orb="0.07" style="width:300px;height:300px;bottom:-80px;left:-60px;"></div>
-  <canvas id="particles-canvas"></canvas>
   <div class="ux-hero-grid">
-    <div class="hero-content">
-      <div class="ux-eyebrow glass" data-reveal="up">User Experience &amp; Interface Design</div>
-      <h1 data-reveal="up" data-delay="1">Interfaces Users <em class="grad-text">Love.</em></h1>
-      <p class="ux-hero-desc" data-reveal="up" data-delay="2">Thoughtful, beautiful and conversion-driven digital interfaces. We design products people love — from wireframes to pixel-perfect Figma prototypes.</p>
+    <div class="ux-hero-copy">
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>User Experience &amp; Interface Design</div>
+      <h1 data-reveal="up" data-delay="1">Interfaces users <span class="accent">love.</span></h1>
+      <p class="lede" data-reveal="up" data-delay="2">Thoughtful, beautiful and conversion-driven digital interfaces. We design products people love — from wireframes to pixel-perfect Figma prototypes, backed by research at every step.</p>
       <div class="ux-hero-actions" data-reveal="up" data-delay="3">
-        <a href="contact.html" class="btn btn-gold btn-arrow">Get a Free Quote</a>
-        <a href="team.html" class="btn btn-glass">Meet the UX Team</a>
+        <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="team.html" class="btn btn-outline">Meet the UX Team</a>
       </div>
     </div>
     <div class="ux-device" data-reveal="scale" data-delay="2">
-      <div class="ux-badge-float glass b1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Design System</div>
-      <div class="ux-badge-float glass b2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg> Prototyped in Figma</div>
-      <div class="ux-frame glass-dark">
+      <div class="ux-badge-float b1"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Design System</div>
+      <div class="ux-badge-float b2"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg> Prototyped in Figma</div>
+      <div class="ux-frame">
         <div class="ux-frame-bar"><span></span><span></span><span></span></div>
         <div class="ux-wire w1"></div>
         <div class="ux-wire w2"></div>
@@ -201,195 +155,220 @@
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">UX Research</span>
-    <span class="marquee-item">Information Architecture</span>
-    <span class="marquee-item">Wireframing</span>
-    <span class="marquee-item">High-Fidelity UI</span>
-    <span class="marquee-item">Prototyping</span>
-    <span class="marquee-item">Usability Testing</span>
-    <span class="marquee-item">UX Research</span>
-    <span class="marquee-item">Information Architecture</span>
-    <span class="marquee-item">Wireframing</span>
-    <span class="marquee-item">High-Fidelity UI</span>
-    <span class="marquee-item">Prototyping</span>
-    <span class="marquee-item">Usability Testing</span>
+<!-- TRUST STRIP -->
+<div class="trust-strip" aria-hidden="true" style="padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1;">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>UX Research</span>
+      <span class="pill"><span class="dot"></span>Information Architecture</span>
+      <span class="pill"><span class="dot"></span>Wireframing</span>
+      <span class="pill"><span class="dot"></span>High-Fidelity UI</span>
+      <span class="pill"><span class="dot"></span>Prototyping</span>
+      <span class="pill"><span class="dot"></span>Usability Testing</span>
+      <span class="pill"><span class="dot"></span>UX Research</span>
+      <span class="pill"><span class="dot"></span>Information Architecture</span>
+      <span class="pill"><span class="dot"></span>Wireframing</span>
+      <span class="pill"><span class="dot"></span>High-Fidelity UI</span>
+    </div>
   </div>
 </div>
 
-<!-- WHAT WE DELIVER -->
-<section class="section" style="background:var(--white);" aria-labelledby="deliver-heading">
-  <div class="section-label" data-reveal="up">What's Included</div>
-  <h2 class="section-title" id="deliver-heading" data-reveal="up" data-delay="1">What We <em>Deliver</em></h2>
-  <div class="ux-feat-grid">
-    <div class="ux-feat-card" data-reveal="up">
-      <span class="ux-feat-num">01</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+<!-- DELIVERABLES — alternating spotlight rows -->
+<section class="section" aria-labelledby="deliver-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>What's Included</div>
+      <h2 class="h2" id="deliver-heading" data-reveal="up" data-delay="1">What we <span class="accent">deliver.</span></h2>
+    </div>
+  </div>
+
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">01 / Discovery</div>
       <h3>UX Research</h3>
-      <p>User interviews, surveys, personas and journey mapping — design decisions grounded in real user insight.</p>
+      <p>User interviews, surveys, personas and journey mapping — design decisions grounded in real user insight, not guesswork.</p>
+      <div class="case-tags"><span class="tile-tag">Interviews</span><span class="tile-tag">Personas</span><span class="tile-tag">Journey Maps</span></div>
     </div>
-    <div class="ux-feat-card" data-reveal="up" data-delay="1">
-      <span class="ux-feat-num">02</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+    <div class="case-visual v1"><span class="cv-grid">01</span></div>
+  </div>
+
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">02 / Structure</div>
       <h3>Information Architecture</h3>
-      <p>Sitemaps, user flows and navigation systems that make complex products feel intuitive.</p>
+      <p>Sitemaps, user flows and navigation systems that make complex products feel intuitive from the first tap.</p>
+      <div class="case-tags"><span class="tile-tag">Sitemaps</span><span class="tile-tag">User Flows</span><span class="tile-tag">Navigation</span></div>
     </div>
-    <div class="ux-feat-card" data-reveal="up" data-delay="2">
-      <span class="ux-feat-num">03</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+    <div class="case-visual v2"><span class="cv-grid">02</span></div>
+  </div>
+
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">03 / Structure</div>
       <h3>Wireframing</h3>
-      <p>Low and mid-fidelity wireframes that establish structure, hierarchy and interaction patterns early.</p>
+      <p>Low and mid-fidelity wireframes that establish structure, hierarchy and interaction patterns early, before visual design begins.</p>
+      <div class="case-tags"><span class="tile-tag">Low-Fi</span><span class="tile-tag">Mid-Fi</span><span class="tile-tag">Hierarchy</span></div>
     </div>
-    <div class="ux-feat-card" data-reveal="up">
-      <span class="ux-feat-num">04</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+    <div class="case-visual v3"><span class="cv-grid">03</span></div>
+  </div>
+
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">04 / Visual Design</div>
       <h3>High-Fidelity UI</h3>
-      <p>Pixel-perfect interface designs in Figma — complete with design systems, components and style guides.</p>
+      <p>Pixel-perfect interface designs in Figma — complete with design systems, components and documented style guides.</p>
+      <div class="case-tags"><span class="tile-tag">Design Systems</span><span class="tile-tag">Components</span><span class="tile-tag">Figma</span></div>
     </div>
-    <div class="ux-feat-card" data-reveal="up" data-delay="1">
-      <span class="ux-feat-num">05</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+    <div class="case-visual v1"><span class="cv-grid">04</span></div>
+  </div>
+
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">05 / Validation</div>
       <h3>Prototyping</h3>
-      <p>Interactive Figma prototypes for user testing and stakeholder sign-off before development begins.</p>
+      <p>Interactive Figma prototypes for user testing and stakeholder sign-off before a single line of code is written.</p>
+      <div class="case-tags"><span class="tile-tag">Interactive</span><span class="tile-tag">Stakeholder Review</span></div>
     </div>
-    <div class="ux-feat-card" data-reveal="up" data-delay="2">
-      <span class="ux-feat-num">06</span>
-      <div class="ux-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+    <div class="case-visual v2"><span class="cv-grid">05</span></div>
+  </div>
+
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">06 / Validation</div>
       <h3>Usability Testing</h3>
       <p>Moderated user testing sessions, heatmap analysis and actionable recommendations to improve conversion.</p>
+      <div class="case-tags"><span class="tile-tag">Moderated Testing</span><span class="tile-tag">Heatmaps</span></div>
     </div>
+    <div class="case-visual v3"><span class="cv-grid">06</span></div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-wrap" style="padding:120px 64px;background:var(--cream-2);" aria-labelledby="process-heading">
-  <div class="section-label" data-reveal="up">Our Approach</div>
-  <h2 class="section-title" id="process-heading" data-reveal="up" data-delay="1">How We <em>Work</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Research</h3>
-      <p>Stakeholder interviews, competitive analysis, user research and design brief alignment.</p>
+<!-- STAT BAND -->
+<section class="stat-band" aria-label="UI/UX design statistics">
+  <div class="stat-grid">
+    <div class="stat-item" data-reveal="up"><div class="stat-num" data-counter="2000" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="1"><div class="stat-num" data-counter="40" data-suffix="+">0</div><div class="stat-label">Specialists on Team</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="4" data-suffix="+">0</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="3"><div class="stat-num" data-counter="98" data-suffix="%">0</div><div class="stat-label">Client Satisfaction</div></div>
+  </div>
+</section>
+
+<!-- PROCESS TIMELINE -->
+<section class="section" aria-labelledby="process-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Approach</div>
+      <h2 class="h2" id="process-heading" data-reveal="up" data-delay="1">How we <span class="accent">work.</span></h2>
     </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Wireframe</h3>
-      <p>Sitemap, user flows and structural wireframes — reviewed and approved before visual design begins.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Prototype</h3>
-      <p>High-fidelity UI with your brand identity, design system and an interactive prototype for testing.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Test &amp; Handoff</h3>
-      <p>Usability testing, then developer-ready Figma files with specs, assets and prototype links.</p>
-    </div>
+  </div>
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Research</h3><p>Stakeholder interviews, competitive analysis, user research and design brief alignment.</p></div><div class="tl-num">01</div></div>
+    <div class="tl-row"><div class="tl-num">02</div><div class="tl-card" data-reveal="right"><h3>Wireframe</h3><p>Sitemap, user flows and structural wireframes — reviewed and approved before visual design begins.</p></div></div>
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Prototype</h3><p>High-fidelity UI with your brand identity, design system and an interactive prototype for testing.</p></div><div class="tl-num">03</div></div>
+    <div class="tl-row"><div class="tl-num">04</div><div class="tl-card" data-reveal="right"><h3>Test &amp; Handoff</h3><p>Usability testing, then developer-ready Figma files with specs, assets and prototype links.</p></div></div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why-us" style="padding:120px 64px;" aria-labelledby="why-heading">
-  <div class="section-label" data-reveal="up">Why Choose WPC</div>
-  <h2 class="section-title" id="why-heading" data-reveal="up" data-delay="1">Design <em>Backed by Data</em></h2>
-  <div class="why-list" style="margin-top:60px;border-top:1px solid var(--border-mid);">
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--border-mid);" data-reveal="up">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">01</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">Research-Led Design</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">Every interface decision is grounded in real user insight — not guesswork or trends.</p>
+<section class="section" aria-labelledby="why-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Why Choose WPC</div>
+      <h2 class="h2" id="why-heading" data-reveal="up" data-delay="1">Design backed by <span class="accent">data.</span></h2>
     </div>
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--border-mid);" data-reveal="up" data-delay="1">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">02</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">Scalable Design Systems</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">Every UI project includes a scalable design system with components, tokens and documentation.</p>
-    </div>
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;" data-reveal="up" data-delay="2">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">03</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">Developer-Ready Handoff</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">Annotated Figma files, exported assets, spacing specs and interactive prototype links — every time.</p>
-    </div>
+  </div>
+  <div class="grid-3">
+    <article class="tile" data-tilt data-reveal="up">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+      <h3>Research-Led Design</h3>
+      <p>Every interface decision is grounded in real user insight — not guesswork or trends.</p>
+    </article>
+    <article class="tile" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div></div>
+      <h3>Scalable Design Systems</h3>
+      <p>Every UI project includes a scalable design system with components, tokens and documentation.</p>
+    </article>
+    <article class="tile" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
+      <h3>Developer-Ready Handoff</h3>
+      <p>Annotated Figma files, exported assets, spacing specs and interactive prototype links — every time.</p>
+    </article>
   </div>
 </section>
 
 <!-- TOOLKIT -->
-<section class="tech-wrap" aria-labelledby="tech-heading">
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Our Toolkit</div>
-  <h2 class="section-title" id="tech-heading" data-reveal="up" data-delay="1">Software We <em>Use</em></h2>
-  <div class="tech-marquee-wrap" style="margin-top:48px;">
-    <div class="tech-marquee-track">
-      <span class="tech-badge"><span class="dot"></span>Figma</span>
-      <span class="tech-badge"><span class="dot"></span>FigJam</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe XD</span>
-      <span class="tech-badge"><span class="dot"></span>Framer</span>
-      <span class="tech-badge"><span class="dot"></span>Principle</span>
-      <span class="tech-badge"><span class="dot"></span>Maze</span>
-      <span class="tech-badge"><span class="dot"></span>Figma</span>
-      <span class="tech-badge"><span class="dot"></span>FigJam</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe XD</span>
-      <span class="tech-badge"><span class="dot"></span>Framer</span>
-      <span class="tech-badge"><span class="dot"></span>Principle</span>
+<section class="section-sm" aria-labelledby="tech-heading" style="text-align:center;">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;"><span class="dot"></span>Our Toolkit</div>
+  <h2 class="h2" id="tech-heading" data-reveal="up" data-delay="1">Software we <span class="accent">use.</span></h2>
+  <div class="pill-marquee-wrap" style="margin-top:44px;">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Figma</span>
+      <span class="pill"><span class="dot"></span>FigJam</span>
+      <span class="pill"><span class="dot"></span>Adobe XD</span>
+      <span class="pill"><span class="dot"></span>Framer</span>
+      <span class="pill"><span class="dot"></span>Maze</span>
+      <span class="pill"><span class="dot"></span>Figma</span>
+      <span class="pill"><span class="dot"></span>FigJam</span>
+      <span class="pill"><span class="dot"></span>Adobe XD</span>
+      <span class="pill"><span class="dot"></span>Framer</span>
+      <span class="pill"><span class="dot"></span>Maze</span>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:var(--white);" aria-labelledby="faq-heading">
-  <div class="section-label" data-reveal="up">FAQ</div>
-  <h2 class="section-title" id="faq-heading" data-reveal="up" data-delay="1">Common <em>Questions</em></h2>
+<section class="section" aria-labelledby="faq-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>FAQ</div>
+  <h2 class="h2" id="faq-heading" data-reveal="up" data-delay="1">Common <span class="accent">questions.</span></h2>
   <div class="faq-list" data-reveal="up" data-delay="1">
     <div class="faq-item">
-      <div class="faq-q">What design tools do you use?<div class="faq-toggle">+</div></div>
-      <div class="faq-a">Figma is our primary tool for all UI/UX work. We also use FigJam, Maze for testing, and Lottie for animations.</div>
+      <div class="faq-q">What design tools do you use?</div>
+      <div class="faq-a">Figma is our primary tool for all UI/UX work. We also use FigJam for workshops, Maze for usability testing, and Adobe XD or Framer where a project calls for it.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Do you provide design systems?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Do you provide design systems?</div>
       <div class="faq-a">Yes. Every UI project includes a scalable design system with components, tokens and documentation.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can you redesign an existing product?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Can you redesign an existing product?</div>
       <div class="faq-a">Absolutely. We perform UX audits, identify pain points and redesign with clear rationale behind every decision.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Will the designs be developer-ready?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Will the designs be developer-ready?</div>
       <div class="faq-a">Yes. Handoff includes annotated Figma files, exported assets, spacing specs and interactive prototype links.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Design</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Ready?</div>
-  <h2 data-reveal="up" data-delay="1">Let's Design a Product<br>People <em>Love.</em></h2>
-  <p data-reveal="up" data-delay="2">From first wireframe to final pixel.<br>Your users — our obsession.</p>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready When You Are</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Let's design a product people <span class="accent">love.</span></h2>
+  <p data-reveal="up" data-delay="2">From first wireframe to final pixel — your users, our obsession.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Start a Project</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
-        <li><a href="service-seo.html">SEO Services</a></li>
-        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
         <li><a href="service-app-development.html">App Development</a></li>
+        <li><a href="service-graphic-design.html">Graphic Designing</a></li>
+        <li><a href="service-branding.html">Design &amp; Branding</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -404,26 +383,31 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
@@ -431,18 +415,7 @@
 
 <script src="shared.js"></script>
 <script>
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click', function(){
-    var item = q.closest('.faq-item');
-    var wasOpen = item.classList.contains('open');
-    item.parentElement.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-    if(!wasOpen) item.classList.add('open');
-  });
-});
-</script>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -450,31 +423,28 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html" class="active">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html" class="active">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -482,7 +452,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -494,10 +464,10 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

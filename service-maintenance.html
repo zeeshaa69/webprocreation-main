@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>Website Maintenance &amp; Support | Web Pro Creation</title>
 <meta name="description" content="Web Pro Creation keeps your website fast, secure and up-to-date with professional maintenance plans — 24/7 monitoring, security scanning, backups, updates and expert support.">
-<meta name="keywords" content="website maintenance, WordPress maintenance, website support, uptime monitoring, security monitoring, website backups">
+<meta name="keywords" content="website maintenance, WordPress maintenance, website support, uptime monitoring, security monitoring, website backups, Web Pro Creation">
 <link rel="canonical" href="https://webprocreation.com/service-maintenance.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="Website Maintenance &amp; Support | Web Pro Creation">
-<meta property="og:description" content="Keep your site fast, secure and up-to-date — 24/7 monitoring, backups and expert support.">
+<meta property="og:description" content="Keep your site fast, secure and up-to-date — 24/7 monitoring, backups and expert support from Web Pro Creation.">
 <meta property="og:url" content="https://webprocreation.com/service-maintenance.html">
 <meta property="og:image" content="https://webprocreation.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -51,91 +51,88 @@
 </script>
 
 <style id="page-css">
-/* ── SVC HERO — split layout ──────────────────────────── */
-.svc-hero {
-  min-height: 92vh;
-  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center;
-  padding: 150px 64px 80px;
-  position: relative; overflow: hidden;
-  background: var(--cream);
-}
-.svc-hero::after { content:''; position:absolute; inset:0; background:var(--grad-mesh); z-index:0; }
-.svc-hero-content { position: relative; z-index: 2; }
-.svc-hero h1 { font-family:var(--font-display); font-weight:400; font-size:clamp(42px,5.6vw,74px); line-height:1.02; letter-spacing:-0.02em; color:var(--ink); margin-bottom:24px; }
-.svc-hero h1 em { font-style: italic; }
-.svc-hero .hero-sub { font-size:16.5px; color:var(--charcoal); max-width:520px; line-height:1.85; font-weight:300; margin-bottom:38px; }
+/* ── HERO ─────────────────────────────────────────────── */
+.svc-hero { min-height: 90vh; display: flex; align-items: center; padding: 150px 48px 60px; position: relative; z-index: 1; }
+.svc-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; width: 100%; }
+.svc-hero h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; font-size: clamp(38px, 5vw, 66px); line-height: 1.04; color: var(--text); margin: 22px 0 24px; }
+.svc-hero .lede { max-width: 500px; margin-bottom: 34px; }
+.svc-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+@media(max-width:1024px){ .svc-hero-grid { grid-template-columns: 1fr; } .uptime-panel { order: -1; max-width: 420px; margin: 0 auto 10px; } }
+@media(max-width:768px){ .svc-hero { padding: 120px 20px 40px; min-height: auto; } }
 
-/* Uptime monitor glass panel */
-.uptime-panel { position: relative; z-index: 2; padding: 34px; }
-.uptime-panel .up-status { display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:26px; }
-.uptime-panel .up-status .dot { width:8px; height:8px; border-radius:50%; background:#3FA79E; animation: pulseGlow 2s ease-in-out infinite; }
-.up-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-top:1px solid var(--border); font-size:13px; }
+/* ── UPTIME PANEL ─────────────────────────────────────── */
+.uptime-panel { background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-lg); }
+.up-status { display:flex; align-items:center; gap:10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
+.up-status .dot { width:8px; height:8px; border-radius:50%; background: var(--green); box-shadow: 0 0 10px var(--green); animation: pulseGlow 2s ease-in-out infinite; }
+.up-row { display:flex; justify-content:space-between; align-items:center; padding: 14px 0; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-dim); }
 .up-row:first-of-type { border-top:none; }
-.up-row span:first-child { color:var(--charcoal); }
-.up-row span:last-child { font-family:var(--font-mono); color:var(--ink); font-weight:700; }
-.up-bar { display:flex; gap:3px; margin-top:22px; }
-.up-bar i { flex:1; height:26px; border-radius:3px; background: linear-gradient(180deg, rgba(63,167,158,0.75), rgba(63,167,158,0.35)); }
-.up-bar i:nth-child(7n) { background: linear-gradient(180deg, rgba(212,175,90,0.75), rgba(212,175,90,0.35)); }
+.up-row span:last-child { font-family: var(--font-mono); color: var(--text); font-weight: 700; }
+.up-bar { display:flex; gap:3px; margin-top: 22px; }
+.up-bar i { flex:1; height: 26px; border-radius: 3px; background: linear-gradient(180deg, rgba(52,211,153,0.75), rgba(52,211,153,0.28)); }
+.up-bar i:nth-child(7n) { background: linear-gradient(180deg, rgba(245,166,35,0.75), rgba(245,166,35,0.28)); }
 
-@media(max-width:1024px){
-  .svc-hero { grid-template-columns:1fr; padding:130px 40px 60px; }
-}
-@media(max-width:768px){
-  .svc-hero { padding:118px 20px 52px; gap:40px; }
-  .uptime-panel { padding:26px; }
-}
+/* ── COVERAGE ROWS (case-row style, alternating) ──────── */
+.case-copy .case-list { list-style:none; margin-top: 4px; }
+.case-copy .case-list li { display:flex; gap:10px; align-items:flex-start; font-size: 13.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
+.case-copy .case-list li svg { flex-shrink:0; width:16px; height:16px; margin-top:2px; stroke: var(--gold-2); }
 
-/* ── FEATURE GRID (glass cards, 3-up) ─────────────────── */
-.mnt-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
-.mnt-card { display:flex; flex-direction:column; }
-.mnt-icon { width:48px; height:48px; border-radius:13px; display:flex; align-items:center; justify-content:center; background:var(--grad-gold-soft); border:1px solid var(--glass-border); margin-bottom:20px; }
-.mnt-icon svg { width:21px; height:21px; stroke:var(--gold-dim); fill:none; stroke-width:1.5; }
-.mnt-card h3 { font-family:var(--font-display); font-size:20px; font-weight:500; color:var(--ink); margin-bottom:9px; }
-.mnt-card p { font-size:13.5px; color:var(--charcoal); line-height:1.75; }
-@media(max-width:1024px){ .mnt-grid { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:600px){ .mnt-grid { grid-template-columns:1fr; } }
+/* ── WHY IT MATTERS ───────────────────────────────────── */
+.approach-row { display: grid; grid-template-columns: 50px 1fr; gap: 18px; padding: 26px 0; border-top: 1px solid var(--line); }
+.approach-row:last-child { border-bottom: 1px solid var(--line); }
+.approach-row-num { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); }
+.approach-row h3 { font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--text); margin-bottom: 6px; }
+.approach-row p { font-size: 13.5px; color: var(--text-dim); line-height: 1.75; }
+.why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0 48px; margin-top: 50px; }
+@media(max-width:800px){ .why-grid { grid-template-columns: 1fr; } }
 
-/* ── PLAN ROWS (coverage list, not invented pricing) ──── */
-.mnt-scope { padding: 0 64px 120px; }
-@media(max-width:768px){ .mnt-scope { padding:0 20px 60px; } }
+/* ── FAQ ──────────────────────────────────────────────── */
+.faq-list { max-width: 820px; margin-top: 44px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 4px; cursor: none; }
+.faq-q h3 { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; color: var(--text); }
+.faq-chevron { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; transition: transform 0.35s var(--ease); color: var(--text-dim); }
+.faq-item.open .faq-chevron { transform: rotate(45deg); background: var(--grad-primary); color: #14101C; border-color: transparent; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
+.faq-item.open .faq-a { max-height: 240px; }
+.faq-a p { font-size: 13.5px; color: var(--text-dim); line-height: 1.8; padding: 0 4px 24px; max-width: 680px; }
+
+.next-svc { padding: 70px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; z-index: 1; }
+.next-svc-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-2); margin-bottom: 10px; }
+.next-svc-title { font-family: var(--font-display); font-size: clamp(24px,3.2vw,38px); font-weight: 700; color: var(--text); }
+@media(max-width:768px){ .next-svc { padding: 44px 20px; } }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
-<!-- Cursor -->
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
-<!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- NAV -->
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html" class="active">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html" class="active">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -148,219 +145,235 @@
 
 <!-- HERO -->
 <header class="svc-hero">
-  <div class="orb orb-teal" data-parallax-orb="0.09" style="width:380px;height:380px;top:-60px;left:-100px;"></div>
-  <div class="orb orb-gold" data-parallax-orb="0.06" style="width:280px;height:280px;bottom:-60px;right:10%;"></div>
-
-  <div class="svc-hero-content">
-    <div class="hero-label glass" data-reveal="up" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);padding:9px 20px;border-radius:100px;margin-bottom:28px;">Ongoing Website Care</div>
-    <h1 data-reveal="up" data-delay="1">Website <em class="grad-text">Maintenance</em><br>&amp; Support.</h1>
-    <p class="hero-sub" data-reveal="up" data-delay="2">Keep your website fast, secure and up-to-date with our professional maintenance plans. We handle updates, monitoring, backups and support — so you never have to worry about your website again.</p>
-    <div class="hero-actions" data-reveal="up" data-delay="3">
-      <a href="contact.html" class="btn btn-gold btn-arrow">Get a Free Quote</a>
-      <a href="team.html" class="btn btn-glass">Meet the Maintenance Team</a>
+  <div class="svc-hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Ongoing Website Care</div>
+      <h1 data-reveal="up" data-delay="1">Never worry about your website <span class="accent">again.</span></h1>
+      <p class="lede" data-reveal="up" data-delay="2">Keep your website fast, secure and up-to-date with our professional maintenance plans. We handle updates, monitoring, backups and support — so you don't have to.</p>
+      <div class="svc-hero-actions" data-reveal="up" data-delay="3">
+        <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="team.html" class="btn btn-outline">Meet the Support Team</a>
+      </div>
     </div>
-  </div>
-
-  <div class="uptime-panel glass" data-reveal="scale" data-delay="2">
-    <div class="up-status"><span class="dot"></span>All Systems Operational</div>
-    <div class="up-row"><span>Uptime (30 days)</span><span>99.98%</span></div>
-    <div class="up-row"><span>Avg. Response Time</span><span>&lt; 4 hrs</span></div>
-    <div class="up-row"><span>Backups</span><span>Daily · Offsite</span></div>
-    <div class="up-row"><span>Security Scans</span><span>24/7</span></div>
-    <div class="up-bar" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <div class="uptime-panel" data-reveal="scale" data-delay="2" data-tilt>
+      <div class="up-status"><span class="dot"></span>All Systems Operational</div>
+      <div class="up-row"><span>Uptime (30 days)</span><span>99.98%</span></div>
+      <div class="up-row"><span>Avg. Response Time</span><span>&lt; 4 hrs</span></div>
+      <div class="up-row"><span>Backups</span><span>Daily · Offsite</span></div>
+      <div class="up-row"><span>Security Scans</span><span>24/7</span></div>
+      <div class="up-bar" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
     </div>
   </div>
 </header>
 
 <!-- MARQUEE -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Core Updates</span>
-    <span class="marquee-item">Security Monitoring</span>
-    <span class="marquee-item">Uptime Monitoring</span>
-    <span class="marquee-item">Performance Optimisation</span>
-    <span class="marquee-item">Regular Backups</span>
-    <span class="marquee-item">Content Updates</span>
-    <span class="marquee-item">Core Updates</span>
-    <span class="marquee-item">Security Monitoring</span>
-    <span class="marquee-item">Uptime Monitoring</span>
-    <span class="marquee-item">Performance Optimisation</span>
-    <span class="marquee-item">Regular Backups</span>
-    <span class="marquee-item">Content Updates</span>
+<div class="trust-strip" aria-label="Service facts">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Core Updates</span>
+      <span class="pill"><span class="dot"></span>Security Monitoring</span>
+      <span class="pill"><span class="dot"></span>Uptime Monitoring</span>
+      <span class="pill"><span class="dot"></span>Performance Optimisation</span>
+      <span class="pill"><span class="dot"></span>Regular Backups</span>
+      <span class="pill"><span class="dot"></span>Content Updates</span>
+      <span class="pill"><span class="dot"></span>Core Updates</span>
+      <span class="pill"><span class="dot"></span>Security Monitoring</span>
+      <span class="pill"><span class="dot"></span>Uptime Monitoring</span>
+      <span class="pill"><span class="dot"></span>Performance Optimisation</span>
+    </div>
   </div>
 </div>
 
-<!-- FEATURES -->
-<section class="section" aria-labelledby="mnt-features-heading">
-  <div class="section-label" data-reveal="up">What's Included</div>
-  <h2 class="section-title" id="mnt-features-heading" data-reveal="up" data-delay="1">What We <em>Cover</em></h2>
-  <div class="mnt-grid">
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="0">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-      <h3>Core Updates</h3>
-      <p>CMS, plugin and theme updates tested in a staging environment before applying to your live site.</p>
+<!-- WHAT WE COVER — alternating case rows -->
+<section class="section" aria-labelledby="cover-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>What's Included</div>
+  <h2 class="h2" id="cover-heading" data-reveal="up" data-delay="1">What we <span class="accent">cover.</span></h2>
+
+  <div style="margin-top:40px;">
+    <div class="case-row" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">01 / Core Updates</div>
+        <h3>Core, Plugin &amp; Theme Updates</h3>
+        <p>Every update is tested in a staging environment before it ever touches your live site — no surprises, no broken pages.</p>
+        <div class="case-tags"><span class="tile-tag">Staging Tested</span><span class="tile-tag">Scheduled</span></div>
+      </div>
+      <div class="case-visual v1"><span class="cv-grid">01</span></div>
     </div>
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="1">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h3>Security Monitoring</h3>
-      <p>24/7 malware scanning, firewall management, and immediate response to any security threats.</p>
+
+    <div class="case-row rev" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">02 / Security</div>
+        <h3>Security Monitoring</h3>
+        <p>24/7 malware scanning, firewall management and immediate response to any security threats we detect.</p>
+        <div class="case-tags"><span class="tile-tag">24/7 Scans</span><span class="tile-tag">Firewall</span></div>
+      </div>
+      <div class="case-visual v2"><span class="cv-grid">02</span></div>
     </div>
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="2">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <h3>Uptime Monitoring</h3>
-      <p>Real-time uptime monitoring with instant alerts and rapid response if your site goes down.</p>
+
+    <div class="case-row" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">03 / Uptime</div>
+        <h3>Uptime Monitoring</h3>
+        <p>Real-time monitoring with instant alerts and rapid response the moment your site shows any sign of trouble.</p>
+        <div class="case-tags"><span class="tile-tag">Real-Time</span><span class="tile-tag">Instant Alerts</span></div>
+      </div>
+      <div class="case-visual v3"><span class="cv-grid">03</span></div>
     </div>
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="0">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-      <h3>Performance Optimisation</h3>
-      <p>Monthly speed checks, image compression, caching optimisation and Core Web Vitals improvements.</p>
+
+    <div class="case-row rev" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">04 / Performance</div>
+        <h3>Performance Optimisation</h3>
+        <p>Monthly speed checks, image compression, caching optimisation and Core Web Vitals improvements.</p>
+        <div class="case-tags"><span class="tile-tag">Speed Checks</span><span class="tile-tag">Core Web Vitals</span></div>
+      </div>
+      <div class="case-visual v1"><span class="cv-grid">04</span></div>
     </div>
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="1">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-      <h3>Regular Backups</h3>
-      <p>Automated daily backups stored securely offsite — restore your site to any point in minutes.</p>
+
+    <div class="case-row" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">05 / Backups</div>
+        <h3>Regular Backups</h3>
+        <p>Automated daily backups stored securely offsite — restore your site to any point in minutes if the worst happens.</p>
+        <div class="case-tags"><span class="tile-tag">Daily</span><span class="tile-tag">Offsite</span></div>
+      </div>
+      <div class="case-visual v2"><span class="cv-grid">05</span></div>
     </div>
-    <div class="glass-card mnt-card" data-magnetic data-reveal="up" data-delay="2">
-      <div class="mnt-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-      <h3>Content Updates</h3>
-      <p>Monthly content changes, image swaps, page edits and minor additions handled by our team.</p>
+
+    <div class="case-row rev" data-reveal="fade">
+      <div class="case-copy">
+        <div class="case-index">06 / Content</div>
+        <h3>Content Updates</h3>
+        <p>Monthly content changes, image swaps, page edits and minor additions handled directly by our team.</p>
+        <div class="case-tags"><span class="tile-tag">Monthly Hours</span><span class="tile-tag">Managed</span></div>
+      </div>
+      <div class="case-visual v3"><span class="cv-grid">06</span></div>
     </div>
   </div>
 </section>
 
-<!-- WHY / SLA-style list -->
-<section class="mnt-scope" aria-labelledby="mnt-why-heading">
-  <div class="section-label" data-reveal="up">Why It Matters</div>
-  <h2 class="section-title" id="mnt-why-heading" data-reveal="up" data-delay="1">The Cost of <em>Neglect</em></h2>
-  <div class="why-list">
-    <div class="why-row" data-reveal="up">
-      <span class="why-row-num">01</span>
-      <h3>Security Risk</h3>
-      <p>Outdated plugins and themes are the #1 cause of website hacks. Unpatched vulnerabilities compound silently until they're exploited.</p>
-    </div>
-    <div class="why-row" data-reveal="up" data-delay="1">
-      <span class="why-row-num">02</span>
-      <h3>Lost Revenue</h3>
-      <p>Every minute of downtime is lost traffic, leads and sales. Real-time monitoring catches issues before customers do.</p>
-    </div>
-    <div class="why-row" data-reveal="up" data-delay="2">
-      <span class="why-row-num">03</span>
-      <h3>Falling Rankings</h3>
-      <p>Slow, broken or insecure sites are penalised by search engines. Ongoing optimisation protects the SEO equity you've built.</p>
-    </div>
-    <div class="why-row" data-reveal="up">
-      <span class="why-row-num">04</span>
-      <h3>Data Loss</h3>
-      <p>Without recent backups, a single failed update or attack can erase years of content. We back up daily, offsite, automatically.</p>
+<!-- PROCESS TIMELINE -->
+<section class="section" aria-labelledby="process-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Approach</div>
+  <h2 class="h2" id="process-heading" data-reveal="up" data-delay="1">How we keep you <span class="accent">running.</span></h2>
+  <p class="lede" data-reveal="up" data-delay="2" style="margin-top:18px;">A structured, transparent process so your site stays fast, secure and online — every day of the year.</p>
+
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Audit</h3><p>We access your site, audit its current state, set up monitoring tools and document every system.</p></div><div class="tl-num">01</div></div>
+    <div class="tl-row"><div class="tl-num">02</div><div class="tl-card" data-reveal="right"><h3>Monitor</h3><p>Continuous uptime, security and performance monitoring — 365 days a year, with instant alerts.</p></div></div>
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Update &amp; Patch</h3><p>Scheduled core, plugin and theme updates staged and tested before going live — plus backups and speed checks.</p></div><div class="tl-num">03</div></div>
+    <div class="tl-row"><div class="tl-num">04</div><div class="tl-card" data-reveal="right"><h3>Support &amp; Report</h3><p>A clear monthly report on site health and tasks completed, plus rapid-response support when you need us.</p></div></div>
+  </div>
+</section>
+
+<!-- TECH MARQUEE -->
+<section class="section-sm" aria-labelledby="tech-heading" style="text-align:center;">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;"><span class="dot"></span>Our Toolkit</div>
+  <h2 class="h2" id="tech-heading" data-reveal="up" data-delay="1">Monitoring &amp; <span class="accent">security stack.</span></h2>
+  <div class="pill-marquee-wrap" style="margin-top:44px;">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Cloudflare</span>
+      <span class="pill"><span class="dot"></span>UptimeRobot</span>
+      <span class="pill"><span class="dot"></span>WP Engine</span>
+      <span class="pill"><span class="dot"></span>Automated Backups</span>
+      <span class="pill"><span class="dot"></span>Google Search Console</span>
+      <span class="pill"><span class="dot"></span>AWS &amp; Cloud</span>
+      <span class="pill"><span class="dot"></span>Cloudflare</span>
+      <span class="pill"><span class="dot"></span>UptimeRobot</span>
+      <span class="pill"><span class="dot"></span>WP Engine</span>
+      <span class="pill"><span class="dot"></span>Automated Backups</span>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-wrap" aria-labelledby="mnt-process-heading" style="padding:120px 64px;background:var(--cream-2);position:relative;overflow:hidden;">
-  <div class="section-label" data-reveal="up">Our Approach</div>
-  <h2 class="section-title" id="mnt-process-heading" data-reveal="up" data-delay="1">How We <em>Keep You Running</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Audit</h3>
-      <p>We access your site, audit its current state, set up monitoring tools and document every system.</p>
+<!-- WHY IT MATTERS -->
+<section class="section" aria-labelledby="why-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>Why It Matters</div>
+  <h2 class="h2" id="why-heading" data-reveal="up" data-delay="1">The cost of <span class="accent">neglect.</span></h2>
+  <div class="why-grid">
+    <div class="approach-row" data-reveal="up">
+      <span class="approach-row-num">01</span>
+      <div><h3>Security risk</h3><p>Outdated plugins and themes are the #1 cause of website hacks. Unpatched vulnerabilities compound silently until they're exploited.</p></div>
     </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Monitor</h3>
-      <p>Continuous uptime, security and performance monitoring — 365 days a year, with instant alerts.</p>
+    <div class="approach-row" data-reveal="up" data-delay="1">
+      <span class="approach-row-num">02</span>
+      <div><h3>Lost revenue</h3><p>Every minute of downtime is lost traffic, leads and sales. Real-time monitoring catches issues before customers do.</p></div>
     </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Update</h3>
-      <p>Scheduled core, plugin and theme updates staged and tested before going live — plus backups and speed checks.</p>
+    <div class="approach-row" data-reveal="up" data-delay="2">
+      <span class="approach-row-num">03</span>
+      <div><h3>Falling rankings</h3><p>Slow, broken or insecure sites are penalised by search engines. Ongoing optimisation protects the SEO equity you've built.</p></div>
     </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Support</h3>
-      <p>A clear monthly report on site health, tasks completed and recommendations — plus rapid-response support.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TECHNOLOGIES -->
-<section class="tech-wrap" aria-labelledby="mnt-tech-heading">
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Our Toolkit</div>
-  <h2 class="section-title" id="mnt-tech-heading" data-reveal="up" data-delay="1">Monitoring &amp; <em>Security Stack</em></h2>
-  <div class="tech-marquee-wrap" style="margin-top:48px;">
-    <div class="tech-marquee-track">
-      <span class="tech-badge"><span class="dot"></span>Cloudflare</span>
-      <span class="tech-badge"><span class="dot"></span>UptimeRobot</span>
-      <span class="tech-badge"><span class="dot"></span>WP Engine</span>
-      <span class="tech-badge"><span class="dot"></span>Sucuri</span>
-      <span class="tech-badge"><span class="dot"></span>Jetpack</span>
-      <span class="tech-badge"><span class="dot"></span>AWS &amp; Cloud Backups</span>
-      <span class="tech-badge"><span class="dot"></span>Google Search Console</span>
-      <span class="tech-badge"><span class="dot"></span>Cloudflare</span>
-      <span class="tech-badge"><span class="dot"></span>UptimeRobot</span>
-      <span class="tech-badge"><span class="dot"></span>WP Engine</span>
-      <span class="tech-badge"><span class="dot"></span>Sucuri</span>
+    <div class="approach-row" data-reveal="up" data-delay="3">
+      <span class="approach-row-num">04</span>
+      <div><h3>Data loss</h3><p>Without recent backups, a single failed update or attack can erase years of content. We back up daily, offsite, automatically.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" aria-labelledby="mnt-faq-heading">
-  <div class="section-label" data-reveal="up">FAQ</div>
-  <h2 class="section-title" id="mnt-faq-heading" data-reveal="up" data-delay="1">Common <em>Questions</em></h2>
-  <div class="grid-2" style="margin-top:56px;max-width:1000px;">
-    <div class="card card-accent" data-reveal="up" data-delay="0"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">What if something breaks?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Emergency fixes are included in all maintenance plans — we respond within 4 hours for critical issues.</p>
+<section class="section" aria-labelledby="faq-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>FAQ</div>
+  <h2 class="h2" id="faq-heading" data-reveal="up" data-delay="1">Common <span class="accent">questions.</span></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><h3>What if something breaks?</h3><span class="faq-chevron">+</span></div>
+      <div class="faq-a"><p>Emergency fixes are included in all maintenance plans — we respond within 4 hours for critical issues.</p></div>
     </div>
-    <div class="card card-accent" data-reveal="up" data-delay="1"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Do I need maintenance if my site rarely changes?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Yes. Security threats and plugin vulnerabilities don't wait for content updates — regular maintenance is essential for every site.</p>
+    <div class="faq-item">
+      <div class="faq-q"><h3>Do I need maintenance if my site rarely changes?</h3><span class="faq-chevron">+</span></div>
+      <div class="faq-a"><p>Yes. Security threats and plugin vulnerabilities don't wait for content updates — regular maintenance is essential for every site.</p></div>
     </div>
-    <div class="card card-accent" data-reveal="up" data-delay="2"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Can you take over maintenance from another agency?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Yes. We handle seamless transitions — auditing the current state and taking full ownership from day one.</p>
+    <div class="faq-item">
+      <div class="faq-q"><h3>Can you take over maintenance from another agency?</h3><span class="faq-chevron">+</span></div>
+      <div class="faq-a"><p>Yes. We handle seamless transitions — auditing the current state and taking full ownership from day one.</p></div>
     </div>
-    <div class="card card-accent" data-reveal="up" data-delay="3"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Are content changes included?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Yes. All plans include a monthly allocation of content edit hours — upgradeable for larger sites.</p>
+    <div class="faq-item">
+      <div class="faq-q"><h3>Are content changes included?</h3><span class="faq-chevron">+</span></div>
+      <div class="faq-a"><p>Yes. All plans include a monthly allocation of content edit hours — upgradeable for larger sites.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Secure</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Ready?</div>
-  <h2 data-reveal="up" data-delay="1">Never Worry About<br>Your Website <em>Again.</em></h2>
+<!-- NEXT SERVICE -->
+<section class="next-svc">
+  <div>
+    <div class="next-svc-label" data-reveal="up">Next Service</div>
+    <div class="next-svc-title" data-reveal="up" data-delay="1">Website Development</div>
+  </div>
+  <a href="service-web-development.html" class="btn btn-grad btn-arrow" data-reveal="up" data-delay="2">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready When You Are</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Never worry about your website <span class="accent">again.</span></h2>
   <p data-reveal="up" data-delay="2">24/7 monitoring, backups, updates and support — handled.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Get a Free Quote</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
+        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-seo.html">SEO Services</a></li>
         <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -375,37 +388,39 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · Lilburn<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- Back to top -->
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 </a>
 
 <script src="shared.js"></script>
-
-<!-- MOBILE MENU SCRIPT -->
 <script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -413,31 +428,28 @@
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html" class="active">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html" class="active">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -445,7 +457,7 @@
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -457,10 +469,10 @@
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

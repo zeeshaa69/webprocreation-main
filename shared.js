@@ -210,6 +210,32 @@ document.querySelectorAll('[data-tilt]').forEach(el=>{
   el.addEventListener('mouseleave',()=>el.style.transform='');
 });
 
+/* ── MAGNETIC GLASS CARDS ───────────────────────────── */
+document.querySelectorAll('.glass-card[data-magnetic]').forEach(el=>{
+  el.addEventListener('mousemove', e=>{
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
+    el.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-6px)`;
+  });
+  el.addEventListener('mouseleave', ()=> el.style.transform = '');
+});
+
+/* ── ORB PARALLAX ──────────────────────────────────── */
+const orbs = document.querySelectorAll('.orb[data-parallax-orb]');
+if(orbs.length){
+  window.addEventListener('scroll', ()=>{
+    const sy = window.scrollY;
+    orbs.forEach(o=>{
+      const speed = parseFloat(o.dataset.parallaxOrb) || 0.15;
+      o.style.transform = `translate3d(0, ${sy*speed}px, 0)`;
+    });
+  }, { passive: true });
+}
+
+/* ── ANIMATED COUNTING NUMBERS IN VIEW (stat bands) ──── */
+/* handled by existing [data-counter] observer above */
+
 /* ── TEXT SPLIT ANIMATION ──────────────────────────── */
 document.querySelectorAll('[data-split]').forEach(el=>{
   const text=el.textContent;

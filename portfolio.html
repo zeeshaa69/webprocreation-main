@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>Portfolio | Web Pro Creation</title>
 <meta name="description" content="Selected work from Web Pro Creation — websites, apps, brand identities, SEO and social media campaigns delivering real growth for clients across 30+ countries.">
 <meta name="keywords" content="WPC portfolio, web development case studies, branding projects, SEO results, app development projects, digital agency work">
 <link rel="canonical" href="https://webprocreation.com/portfolio.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="Portfolio | Web Pro Creation">
@@ -39,134 +38,49 @@
 
 <style id="page-css">
 /* ── PORTFOLIO HERO ───────────────────────────────────── */
-.portfolio-hero {
-  min-height: 78vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 64px 60px;
-  position: relative; overflow: hidden;
-  background: var(--grad-ink); background-image: var(--grad-mesh-dark), var(--grad-ink);
-  color: var(--cream);
-}
-.portfolio-hero .hero-eyebrow { color: var(--gold); }
-.portfolio-hero .hero-eyebrow::before { background: var(--gold); }
-.portfolio-hero-content { position: relative; z-index: 2; max-width: 700px; }
-@media(max-width:768px){ .portfolio-hero { padding: 130px 20px 44px; min-height:auto; } }
+.portfolio-hero { min-height: 72vh; display: flex; align-items: center; padding: 150px 48px 40px; position: relative; z-index: 1; }
+.portfolio-hero-content { max-width: 720px; }
+.portfolio-hero h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; font-size: clamp(40px,5.4vw,72px); line-height: 1.03; color: var(--text); margin: 22px 0 22px; }
+@media(max-width:768px){ .portfolio-hero { padding: 130px 20px 30px; min-height:auto; } }
 
-/* ── FILTERS ──────────────────────────────────────────── */
-.portfolio-filters {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  padding: 44px 64px; position: relative; z-index: 2;
-}
-.filter-btn {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 12px 24px; border-radius: 100px;
-  background: var(--glass-bg); border: 1px solid var(--glass-border);
-  backdrop-filter: blur(14px); color: var(--charcoal);
-  cursor: none; transition: all 0.3s var(--ease-out);
-}
-.filter-btn:hover { border-color: var(--gold); color: var(--gold-dim); }
-.filter-btn.active { background: var(--grad-ink); color: var(--cream); border-color: var(--ink); }
-@media(max-width:768px){ .portfolio-filters { padding: 28px 20px; gap: 8px; } .filter-btn { padding: 10px 18px; font-size: 10px; } }
-
-/* ── PORTFOLIO GRID (asymmetric work cards) ─────────────── */
-.portfolio-wrap { padding: 0 64px 120px; }
-.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.portfolio-card {
-  border-radius: 22px; overflow: hidden; display: flex; flex-direction: column;
-  background: var(--white); border: 1px solid var(--border);
-  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), opacity 0.4s, display 0.4s;
-}
-.portfolio-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.portfolio-card.hidden-filter { display: none; }
-.portfolio-card.featured { grid-column: span 2; }
-.portfolio-card.featured .pc-visual { height: 320px; }
-.pc-visual {
-  position: relative; height: 220px; overflow: hidden;
-  background: linear-gradient(150deg,#B8933A,#1F6F6B 120%);
-  display: flex; align-items: center; justify-content: center;
-}
-.pc-visual-inner {
-  font-family: var(--font-display); font-weight: 700; font-style: italic;
-  font-size: 46px; color: rgba(255,255,255,0.22); letter-spacing: 0.02em;
-}
-.pc-tag {
-  position: absolute; top: 20px; left: 20px;
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--white); background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
-  padding: 8px 16px; border-radius: 100px;
-}
-.pc-overlay {
-  position: absolute; inset: 0; background: rgba(15,14,12,0.55);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.4s;
-}
-.pc-overlay span { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--cream); }
-.portfolio-card:hover .pc-overlay { opacity: 1; }
-.pc-info { padding: 28px 30px 32px; display: flex; flex-direction: column; flex: 1; }
-.pc-category { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 12px; }
-.pc-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 12px; line-height: 1.25; }
-.pc-desc { font-size: 13.5px; color: var(--charcoal); line-height: 1.75; margin-bottom: 20px; flex: 1; }
-.pc-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
-.pc-year { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.pc-arrow { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--ink); transition: transform 0.4s var(--ease-out), background 0.3s, color 0.3s; }
-.portfolio-card:hover .pc-arrow { transform: rotate(45deg); background: var(--ink); color: var(--cream); }
-
-@media(max-width:1024px){ .portfolio-wrap { padding: 0 40px 80px; } .portfolio-grid { grid-template-columns: repeat(2,1fr); } .portfolio-card.featured { grid-column: span 2; } }
-@media(max-width:768px){
-  .portfolio-wrap { padding: 0 20px 56px; }
-  .portfolio-grid { grid-template-columns: 1fr; gap: 18px; }
-  .portfolio-card.featured { grid-column: span 1; }
-  .portfolio-card.featured .pc-visual { height: 220px; }
-  .pc-title { font-size: 19px; }
-}
-
-/* ── PROCESS-STYLE APPROACH STRIP ────────────────────── */
-.approach-wrap { padding: 110px 64px; background: var(--cream-2); }
-@media(max-width:768px){ .approach-wrap { padding: 56px 20px; } }
-
-/* ── CTA STRIP (gold) ─────────────────────────────────── */
-.portfolio-cta { padding: 100px 64px; text-align: center; position: relative; overflow: hidden; background: var(--grad-gold); color: var(--white); }
-.portfolio-cta h2 { font-family: var(--font-display); font-size: clamp(32px,4.5vw,58px); font-weight: 400; margin-bottom: 18px; }
-.portfolio-cta p { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
-@media(max-width:768px){ .portfolio-cta { padding: 60px 20px; } }
+/* ── EXTRA CASE VISUAL VARIANTS (cycle beyond v1-v3) ──── */
+.case-visual.v4::before { background: radial-gradient(120% 100% at 20% 100%, rgba(52,211,153,0.28), transparent 60%), linear-gradient(160deg,#171B34,#0A0C14); }
+.case-visual.v5::before { background: radial-gradient(120% 100% at 80% 0%, rgba(245,166,35,0.24), rgba(139,92,246,0.2) 60%, transparent 80%), linear-gradient(160deg,#171B34,#0A0C14); }
+.case-visual.v6::before { background: radial-gradient(120% 100% at 50% 100%, rgba(139,92,246,0.3), transparent 60%), linear-gradient(160deg,#171B34,#0A0C14); }
+.case-year { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
-<!-- Cursor -->
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
-<!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- NAV -->
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html" class="active">Portfolio</a></li>
@@ -179,217 +93,202 @@
 
 <!-- HERO -->
 <header class="portfolio-hero">
-  <div class="orb orb-gold" data-parallax-orb="0.1" style="width:400px;height:400px;top:-90px;right:-80px;" aria-hidden="true"></div>
-  <div class="orb orb-teal" data-parallax-orb="0.06" style="width:260px;height:260px;bottom:-60px;left:10%;" aria-hidden="true"></div>
   <div class="portfolio-hero-content">
-    <div class="hero-label glass-dark" data-reveal="up">Our Work</div>
-    <h1 class="section-title" style="font-size:clamp(46px,6.5vw,92px);color:var(--cream);margin-top:26px;" data-reveal="up" data-delay="1">Selected <em>Projects</em></h1>
-    <p class="hero-desc" style="color:rgba(250,248,243,0.6);margin-top:22px;margin-bottom:0;" data-reveal="up" data-delay="2">Over 2,000 projects delivered across 11 services. Here's a curated selection of work we're proud of.</p>
+    <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Work</div>
+    <h1 data-reveal="up" data-delay="1">Selected <span class="accent">projects.</span></h1>
+    <p class="lede" data-reveal="up" data-delay="2">Over 2,000 projects delivered across 11 services. Here's a curated selection of work we're proud of.</p>
   </div>
 </header>
 
-<!-- FILTERS -->
-<div class="portfolio-filters" id="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
-  <button class="filter-btn active" data-filter="all" data-reveal="fade">All Work</button>
-  <button class="filter-btn" data-filter="web" data-reveal="fade">Web Dev</button>
-  <button class="filter-btn" data-filter="brand" data-reveal="fade">Branding</button>
-  <button class="filter-btn" data-filter="seo" data-reveal="fade">SEO</button>
-  <button class="filter-btn" data-filter="social" data-reveal="fade">Social Media</button>
-  <button class="filter-btn" data-filter="app" data-reveal="fade">App Dev</button>
-  <button class="filter-btn" data-filter="video" data-reveal="fade">Video</button>
+<!-- TRUST STRIP -->
+<div class="trust-strip" aria-label="Portfolio facts">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>2,000+ Projects Delivered</span>
+      <span class="pill"><span class="dot"></span>11 Core Services</span>
+      <span class="pill"><span class="dot"></span>30+ Countries Served</span>
+      <span class="pill"><span class="dot"></span>98% Client Satisfaction</span>
+      <span class="pill"><span class="dot"></span>2,000+ Projects Delivered</span>
+      <span class="pill"><span class="dot"></span>11 Core Services</span>
+      <span class="pill"><span class="dot"></span>30+ Countries Served</span>
+      <span class="pill"><span class="dot"></span>98% Client Satisfaction</span>
+    </div>
+  </div>
 </div>
 
-<!-- PORTFOLIO GRID -->
-<section class="portfolio-wrap" aria-label="Portfolio projects">
-  <div class="portfolio-grid" id="portfolio-grid">
+<!-- PROJECTS -->
+<section class="section" aria-labelledby="work-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Case Studies</div>
+      <h2 class="h2" id="work-heading" data-reveal="up" data-delay="1">Real outcomes, <span class="accent">real numbers.</span></h2>
+    </div>
+  </div>
 
-    <article class="portfolio-card featured" data-reveal="up" data-category="web brand">
-      <div class="pc-visual">
-        <div class="pc-visual-inner">NOVA</div>
-        <div class="pc-tag">Featured</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">Website Development · Branding</div>
-        <h3 class="pc-title">Nova Tech — Corporate Website &amp; Brand Identity</h3>
-        <p class="pc-desc">Complete digital transformation for a London-based fintech startup — brand identity, website, and SEO strategy delivering 340% traffic growth in 6 months.</p>
-        <div class="pc-meta"><span class="pc-year">2024</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">01 / Website Development · Branding</div>
+      <h3>Nova Tech — Corporate Website &amp; Brand Identity</h3>
+      <p>Complete digital transformation for a London-based fintech startup — brand identity, website, and SEO strategy delivering 340% traffic growth in 6 months.</p>
+      <div class="case-tags"><span class="tile-tag">Branding</span><span class="tile-tag">Web Development</span><span class="tile-tag">SEO</span></div>
+      <div class="case-year">2024</div>
+    </div>
+    <div class="case-visual v1"><span class="cv-grid">01</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-delay="1" data-category="seo">
-      <div class="pc-visual" style="background:linear-gradient(150deg,#1C1B18,#4A3A15 120%);">
-        <div class="pc-visual-inner">SEO</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">SEO Services</div>
-        <h3 class="pc-title">Atlas Legal — Page 1 Rankings</h3>
-        <p class="pc-desc">Took a law firm from page 5 to position 1 for 28 competitive keywords within 4 months. 520% increase in organic leads.</p>
-        <div class="pc-meta"><span class="pc-year">2024</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">02 / SEO Services</div>
+      <h3>Atlas Legal — Page 1 Rankings</h3>
+      <p>Took a law firm from page 5 to position 1 for 28 competitive keywords within 4 months — a 520% increase in organic leads.</p>
+      <div class="case-tags"><span class="tile-tag">SEO</span><span class="tile-tag">28 Keywords Ranked</span></div>
+      <div class="case-year">2024</div>
+    </div>
+    <div class="case-visual v2"><span class="cv-grid">02</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-category="app">
-      <div class="pc-visual" style="background:var(--ink-2);">
-        <div class="pc-visual-inner" style="color:rgba(184,147,58,0.3);">APP</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">App Development</div>
-        <h3 class="pc-title">Rhythm — Fitness Tracking App</h3>
-        <p class="pc-desc">iOS and Android fitness app with AI-powered coaching. 50,000+ downloads in the first 3 months post-launch.</p>
-        <div class="pc-meta"><span class="pc-year">2024</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">03 / App Development</div>
+      <h3>Rhythm — Fitness Tracking App</h3>
+      <p>iOS and Android fitness app with AI-powered coaching — 50,000+ downloads in the first three months post-launch.</p>
+      <div class="case-tags"><span class="tile-tag">iOS</span><span class="tile-tag">Android</span><span class="tile-tag">AI Coaching</span></div>
+      <div class="case-year">2024</div>
+    </div>
+    <div class="case-visual v3"><span class="cv-grid">03</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-delay="1" data-category="brand">
-      <div class="pc-visual" style="background:linear-gradient(150deg,var(--gold-pale),var(--gold-light) 140%);">
-        <div class="pc-visual-inner" style="color:rgba(15,14,12,0.25);">BRAND</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">Design &amp; Branding</div>
-        <h3 class="pc-title">Oro Coffee — Brand Identity</h3>
-        <p class="pc-desc">Complete brand identity for a premium coffee chain — logo, packaging, menu design, and retail collateral across 12 locations.</p>
-        <div class="pc-meta"><span class="pc-year">2023</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">04 / Design &amp; Branding</div>
+      <h3>Oro Coffee — Brand Identity</h3>
+      <p>Complete brand identity for a premium coffee chain — logo, packaging, menu design, and retail collateral across 12 locations.</p>
+      <div class="case-tags"><span class="tile-tag">Logo &amp; Identity</span><span class="tile-tag">Packaging</span><span class="tile-tag">12 Locations</span></div>
+      <div class="case-year">2023</div>
+    </div>
+    <div class="case-visual v4"><span class="cv-grid">04</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-delay="2" data-category="social video">
-      <div class="pc-visual" style="background:linear-gradient(150deg,#3FA79E,#0F0E0C 120%);">
-        <div class="pc-visual-inner">REEL</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">Video Editing · Social Media</div>
-        <h3 class="pc-title">Pulse Media — Content Series</h3>
-        <p class="pc-desc">Monthly video content series for a lifestyle brand — 2M+ total views, 400% Instagram follower growth over 6 months.</p>
-        <div class="pc-meta"><span class="pc-year">2024</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">05 / Video Editing · Social Media</div>
+      <h3>Pulse Media — Content Series</h3>
+      <p>Monthly video content series for a lifestyle brand — 2M+ total views and 400% Instagram follower growth over six months.</p>
+      <div class="case-tags"><span class="tile-tag">Video Editing</span><span class="tile-tag">2M+ Views</span></div>
+      <div class="case-year">2024</div>
+    </div>
+    <div class="case-visual v5"><span class="cv-grid">05</span></div>
+  </div>
 
-    <article class="portfolio-card featured" data-reveal="up" data-category="web">
-      <div class="pc-visual" style="background:var(--ink);">
-        <div class="pc-visual-inner" style="color:rgba(184,147,58,0.18);">STORE</div>
-        <div class="pc-tag">E-Commerce</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">E-Commerce Development</div>
-        <h3 class="pc-title">Luxe Living — Shopify E-Commerce Store</h3>
-        <p class="pc-desc">Premium Shopify store for a home decor brand — custom theme, 200+ product catalogue, and payment integration. £2M+ in first-year revenue through the platform.</p>
-        <div class="pc-meta"><span class="pc-year">2024</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">06 / E-Commerce Development</div>
+      <h3>Luxe Living — Shopify E-Commerce Store</h3>
+      <p>Premium Shopify store for a home decor brand — custom theme, 200+ product catalogue and payment integration. £2M+ in first-year revenue through the platform.</p>
+      <div class="case-tags"><span class="tile-tag">Shopify</span><span class="tile-tag">CRO</span><span class="tile-tag">3-week delivery</span></div>
+      <div class="case-year">2024</div>
+    </div>
+    <div class="case-visual v6"><span class="cv-grid">06</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-category="web">
-      <div class="pc-visual" style="background:linear-gradient(150deg,#B8933A,#1F6F6B 120%);">
-        <div class="pc-visual-inner">WEB</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">Website Development</div>
-        <h3 class="pc-title">Meridian Architects</h3>
-        <p class="pc-desc">Portfolio website for a London architecture firm — award-winning design with custom CMS and project showcase system.</p>
-        <div class="pc-meta"><span class="pc-year">2023</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">07 / Website Development</div>
+      <h3>Meridian Architects</h3>
+      <p>Portfolio website for a London architecture firm — award-winning design with a custom CMS and project showcase system.</p>
+      <div class="case-tags"><span class="tile-tag">Custom CMS</span><span class="tile-tag">Portfolio Site</span></div>
+      <div class="case-year">2023</div>
+    </div>
+    <div class="case-visual v1"><span class="cv-grid">07</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-delay="1" data-category="social">
-      <div class="pc-visual" style="background:linear-gradient(135deg,#f0ebe0,var(--cream));">
-        <div class="pc-visual-inner" style="color:rgba(184,147,58,0.3);">SMM</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">Social Media Management</div>
-        <h3 class="pc-title">Fresh Harvest — Brand Growth</h3>
-        <p class="pc-desc">Social media management for an organic food brand — grew from 2K to 85K followers in 12 months with 8% engagement rate.</p>
-        <div class="pc-meta"><span class="pc-year">2023</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
+  <div class="case-row rev" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">08 / Social Media Management</div>
+      <h3>Fresh Harvest — Brand Growth</h3>
+      <p>Social media management for an organic food brand — grew from 2K to 85K followers in 12 months with an 8% engagement rate.</p>
+      <div class="case-tags"><span class="tile-tag">85K Followers</span><span class="tile-tag">8% Engagement</span></div>
+      <div class="case-year">2023</div>
+    </div>
+    <div class="case-visual v2"><span class="cv-grid">08</span></div>
+  </div>
 
-    <article class="portfolio-card" data-reveal="up" data-delay="2" data-category="app">
-      <div class="pc-visual" style="background:var(--cream-3);">
-        <div class="pc-visual-inner" style="color:rgba(184,147,58,0.3);">SaaS</div>
-        <div class="pc-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="pc-info">
-        <div class="pc-category">App Development · UI/UX</div>
-        <h3 class="pc-title">TaskFlow — SaaS Platform</h3>
-        <p class="pc-desc">Full-stack project management SaaS built with React and Node.js — 10,000 active users within the first quarter of launch.</p>
-        <div class="pc-meta"><span class="pc-year">2025</span><span class="pc-arrow" aria-hidden="true">→</span></div>
-      </div>
-    </article>
-
+  <div class="case-row" data-reveal="fade">
+    <div class="case-copy">
+      <div class="case-index">09 / App Development · UI/UX</div>
+      <h3>TaskFlow — SaaS Platform</h3>
+      <p>Full-stack project management SaaS built with React and Node.js — 10,000 active users within the first quarter of launch.</p>
+      <div class="case-tags"><span class="tile-tag">React</span><span class="tile-tag">Node.js</span><span class="tile-tag">SaaS</span></div>
+      <div class="case-year">2025</div>
+    </div>
+    <div class="case-visual v3"><span class="cv-grid">09</span></div>
   </div>
 </section>
 
-<!-- APPROACH / PROCESS -->
-<section class="approach-wrap" aria-labelledby="approach-heading">
-  <div class="section-label" data-reveal="up">How Each Project Comes Together</div>
-  <h2 class="section-title" id="approach-heading" data-reveal="up" data-delay="1">From Brief to <em>Launch</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Discover</h3>
-      <p>We dig into your goals, audience and market to define a clear, measurable strategy for the project.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Design</h3>
-      <p>Wireframes, brand systems and UI concepts crafted with precision and intent, reviewed with you at every step.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Develop</h3>
-      <p>Clean, scalable code — web, software and SaaS builds engineered for performance and launched on schedule.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Deliver &amp; Grow</h3>
-      <p>Launch, monitor and optimise — with ongoing support and reporting that compounds results over time.</p>
+<!-- TECH / INDUSTRY MARQUEE -->
+<section class="section-sm" aria-labelledby="tech-heading" style="text-align:center;">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;"><span class="dot"></span>Tools &amp; Industries</div>
+  <h2 class="h2" id="tech-heading" data-reveal="up" data-delay="1">What we <span class="accent">work with.</span></h2>
+  <div class="pill-marquee-wrap" style="margin-top:44px;">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>React &amp; Next.js</span>
+      <span class="pill"><span class="dot"></span>Node.js</span>
+      <span class="pill"><span class="dot"></span>Shopify</span>
+      <span class="pill"><span class="dot"></span>Figma</span>
+      <span class="pill"><span class="dot"></span>Swift / Kotlin</span>
+      <span class="pill"><span class="dot"></span>Fintech</span>
+      <span class="pill"><span class="dot"></span>Legal</span>
+      <span class="pill"><span class="dot"></span>Fitness &amp; Wellness</span>
+      <span class="pill"><span class="dot"></span>Hospitality</span>
+      <span class="pill"><span class="dot"></span>Architecture</span>
+      <span class="pill"><span class="dot"></span>Food &amp; Beverage</span>
+      <span class="pill"><span class="dot"></span>SaaS</span>
+      <span class="pill"><span class="dot"></span>React &amp; Next.js</span>
+      <span class="pill"><span class="dot"></span>Node.js</span>
+      <span class="pill"><span class="dot"></span>Shopify</span>
     </div>
   </div>
 </section>
 
-<!-- STATS BAND -->
+<!-- STAT BAND -->
 <section class="stat-band" aria-label="Portfolio statistics">
-  <div class="stat-band-grid">
+  <div class="stat-grid">
     <div class="stat-item" data-reveal="up"><div class="stat-num" data-counter="2000" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
     <div class="stat-item" data-reveal="up" data-delay="1"><div class="stat-num" data-counter="30" data-suffix="+">0</div><div class="stat-label">Countries Served</div></div>
-    <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="11" data-suffix="">0</div><div class="stat-label">Core Services</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="11">0</div><div class="stat-label">Core Services</div></div>
     <div class="stat-item" data-reveal="up" data-delay="3"><div class="stat-num" data-counter="98" data-suffix="%">0</div><div class="stat-label">Client Satisfaction</div></div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="portfolio-cta">
-  <h2 data-reveal="up">Your Project Could Be Next.</h2>
-  <p data-reveal="up" data-delay="1">Let's create something extraordinary together.</p>
-  <a href="contact.html" class="btn btn-dark btn-arrow" data-reveal="up" data-delay="2">Start a Project</a>
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready When You Are</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Your project could be <span class="accent">next.</span></h2>
+  <p data-reveal="up" data-delay="2">Let's create something extraordinary together.</p>
+  <div data-reveal="up" data-delay="3">
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
+        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-seo.html">SEO Services</a></li>
         <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -404,28 +303,31 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- Back to top -->
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
@@ -433,27 +335,7 @@
 
 <script src="shared.js"></script>
 <script>
-/* ── PORTFOLIO FILTERING ────────────────────────────── */
-(function(){
-  var buttons = document.querySelectorAll('.filter-btn');
-  var cards = document.querySelectorAll('.portfolio-card');
-  buttons.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      buttons.forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      var filter = btn.dataset.filter;
-      cards.forEach(function(card){
-        var cats = (card.dataset.category || '').split(' ');
-        var show = filter === 'all' || cats.indexOf(filter) !== -1;
-        card.classList.toggle('hidden-filter', !show);
-      });
-    });
-  });
-})();
-</script>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -461,31 +343,28 @@
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -493,7 +372,7 @@
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -505,10 +384,10 @@
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

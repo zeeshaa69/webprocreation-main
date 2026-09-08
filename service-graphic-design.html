@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>Graphic Design Services | Web Pro Creation</title>
-<meta name="description" content="Bold visual design from Web Pro Creation — social media graphics, print collateral, infographics, presentation design and banner ads crafted with premium precision.">
+<meta name="description" content="Web Pro Creation delivers bold visual design — social graphics, print collateral, infographics, presentation design and banner ads, crafted with premium precision.">
 <meta name="keywords" content="graphic design agency, social media graphics, print design, infographics, presentation design, banner ad design, Web Pro Creation">
 <link rel="canonical" href="https://webprocreation.com/service-graphic-design.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="Graphic Design Services | Web Pro Creation">
-<meta property="og:description" content="Bold, unforgettable visual design — social media graphics, print collateral, infographics and more, crafted with purpose.">
+<meta property="og:description" content="Bold, unforgettable visual design — social graphics, print collateral, infographics and more, crafted with purpose.">
 <meta property="og:url" content="https://webprocreation.com/service-graphic-design.html">
 <meta property="og:image" content="https://webprocreation.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -47,101 +47,65 @@
 
 <style id="page-css">
 /* ── GD HERO ─────────────────────────────────────────── */
-.gd-hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex; align-items: center;
-  padding: 140px 64px 60px;
-  overflow: hidden;
-  background: var(--grad-mesh), var(--cream);
+.gd-hero { min-height: 92vh; display: flex; align-items: center; padding: 150px 48px 60px; position: relative; z-index: 1; }
+.gd-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; }
+.gd-hero-copy h1 {
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em;
+  font-size: clamp(40px, 5.4vw, 74px); line-height: 1.03; color: var(--text); margin: 24px 0 26px;
 }
-.gd-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; width: 100%; }
-.gd-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--gold-dim);
-  padding: 9px 20px; border-radius: 100px;
-  margin-bottom: 30px;
-}
-.gd-eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--grad-gold); animation: pulseGlow 2s ease-in-out infinite; }
-.gd-hero h1 {
-  font-family: var(--font-display); font-weight: 400;
-  font-size: clamp(46px, 6.4vw, 92px); line-height: 0.98; letter-spacing: -0.02em;
-  color: var(--ink); margin-bottom: 26px;
-}
-.gd-hero h1 em { font-style: italic; }
-.gd-hero-desc { font-size: 17px; color: var(--charcoal); max-width: 520px; line-height: 1.85; margin-bottom: 40px; font-weight: 300; }
-.gd-hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
-.gd-swatches { position: relative; display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
-.gd-swatch {
-  aspect-ratio: 1; border-radius: 22px; position: relative; overflow: hidden;
-  display: flex; align-items: flex-end; padding: 20px;
-  animation: floatY 7s ease-in-out infinite;
-}
-.gd-swatch span { position: relative; z-index: 1; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
-.gd-swatch:nth-child(1) { background: linear-gradient(150deg,#D4AF5A,#8A6A24); animation-delay: 0s; }
-.gd-swatch:nth-child(2) { background: linear-gradient(150deg,#3FA79E,#1F6F6B); margin-top: 30px; animation-delay: 1.5s; }
-.gd-swatch:nth-child(3) { background: linear-gradient(150deg,#1C1B18,#4A3A15); margin-top: -30px; animation-delay: 3s; }
-.gd-swatch:nth-child(4) { background: linear-gradient(150deg,#B8933A,#0F0E0C); animation-delay: 4.5s; }
-@media(max-width:1024px){ .gd-hero-grid { grid-template-columns: 1fr; } .gd-swatches { max-width: 420px; } }
+.gd-hero-copy .lede { font-size: 16.5px; max-width: 500px; margin-bottom: 40px; }
+.gd-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+@media(max-width:1024px){ .gd-hero-grid { grid-template-columns: 1fr; } .gd-swatch-grid { order: -1; max-width: 380px; margin: 0 auto 20px; } }
 @media(max-width:768px){ .gd-hero { padding: 120px 20px 50px; } }
 
-/* ── DELIVERABLES BENTO ──────────────────────────────── */
-.gd-icon {
-  width: 52px; height: 52px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--grad-gold-soft); border: 1px solid var(--glass-border);
-  margin-bottom: 20px;
+/* Swatch stack — asymmetric floating color tiles as the hero visual */
+.gd-swatch-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; max-width: 420px; margin: 0 auto; }
+.gd-swatch {
+  aspect-ratio: 1; border-radius: var(--radius-md); position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; padding: 18px; border: 1px solid var(--line-2);
+  animation: floatY 7s ease-in-out infinite; box-shadow: var(--shadow-md);
 }
-.gd-icon svg { width: 24px; height: 24px; stroke: var(--gold-dim); fill: none; stroke-width: 1.5; }
-.gd-tile-title { font-family: var(--font-display); font-size: 21px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
-.gd-tile-desc { font-size: 13.5px; color: var(--charcoal); line-height: 1.75; }
+.gd-swatch span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+.gd-swatch:nth-child(1) { background: linear-gradient(150deg,#F5A623,#8A5A16); animation-delay: 0s; }
+.gd-swatch:nth-child(2) { background: linear-gradient(150deg,#8B5CF6,#3D2570); margin-top: 26px; animation-delay: 1.4s; }
+.gd-swatch:nth-child(3) { background: linear-gradient(150deg,#22D3EE,#0E5C68); margin-top: -26px; animation-delay: 2.8s; }
+.gd-swatch:nth-child(4) { background: linear-gradient(150deg,#34D399,#0F5A40); animation-delay: 4.2s; }
 
-/* ── FAQ ──────────────────────────────────────────────── */
-.faq-list { margin-top: 48px; max-width: 780px; }
-.faq-item { border-bottom: 1px solid var(--border-mid); overflow: hidden; }
-.faq-q { padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: pointer; font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--ink); transition: color 0.3s; user-select: none; }
-.faq-q:hover { color: var(--gold); }
-.faq-toggle { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--muted); flex-shrink: 0; transition: transform 0.4s, border-color 0.3s, color 0.3s; }
-.faq-item.open .faq-toggle { transform: rotate(45deg); border-color: var(--gold); color: var(--gold); background: var(--grad-gold-soft); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out), padding 0.3s; font-size: 14.5px; color: var(--charcoal); font-weight: 300; line-height: 1.9; }
-.faq-item.open .faq-a { max-height: 300px; padding-bottom: 26px; }
-
-@media(max-width:768px){ .faq-q { font-size: 16px; padding: 20px 0; } }
+/* ── PROCESS strip label re-use of sec-head ─────────── */
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 50px; }
 </style>
 </head>
 <body>
 
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
 <div class="page-transition"></div>
 
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html" class="active">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html" class="active">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -154,20 +118,17 @@
 
 <!-- HERO -->
 <header class="gd-hero">
-  <div class="orb orb-gold" data-parallax-orb="0.1" style="width:420px;height:420px;top:-100px;right:0;"></div>
-  <div class="orb orb-teal" data-parallax-orb="0.07" style="width:300px;height:300px;bottom:-60px;left:-40px;"></div>
-  <canvas id="particles-canvas"></canvas>
   <div class="gd-hero-grid">
-    <div class="hero-content">
-      <div class="gd-eyebrow glass" data-reveal="up">Visual Design Services</div>
-      <h1 data-reveal="up" data-delay="1">Graphic <em class="grad-text">Design</em> That Gets Noticed.</h1>
-      <p class="gd-hero-desc" data-reveal="up" data-delay="2">Bold, beautiful and unforgettable visual design — from social media graphics to full brand collateral. Every pixel crafted with purpose, every asset built to convert.</p>
+    <div class="gd-hero-copy">
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Visual Design Services</div>
+      <h1 data-reveal="up" data-delay="1">Graphic design that <span class="accent">gets noticed.</span></h1>
+      <p class="lede" data-reveal="up" data-delay="2">Bold, beautiful and unforgettable visual design — from social graphics to full brand collateral. Every pixel crafted with purpose, every asset built to convert.</p>
       <div class="gd-hero-actions" data-reveal="up" data-delay="3">
-        <a href="contact.html" class="btn btn-gold btn-arrow">Get a Free Quote</a>
-        <a href="team.html" class="btn btn-glass">Meet the Design Team</a>
+        <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="team.html" class="btn btn-outline">Meet the Design Team</a>
       </div>
     </div>
-    <div class="gd-swatches" data-reveal="scale" data-delay="2" aria-hidden="true">
+    <div class="gd-swatch-grid" data-reveal="scale" data-delay="2" aria-hidden="true">
       <div class="gd-swatch"><span>Social</span></div>
       <div class="gd-swatch"><span>Print</span></div>
       <div class="gd-swatch"><span>Presentation</span></div>
@@ -176,190 +137,201 @@
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Social Media Graphics</span>
-    <span class="marquee-item">Print Design</span>
-    <span class="marquee-item">Infographics</span>
-    <span class="marquee-item">Brand Collateral</span>
-    <span class="marquee-item">Presentation Design</span>
-    <span class="marquee-item">Banner &amp; Ad Design</span>
-    <span class="marquee-item">Social Media Graphics</span>
-    <span class="marquee-item">Print Design</span>
-    <span class="marquee-item">Infographics</span>
-    <span class="marquee-item">Brand Collateral</span>
-    <span class="marquee-item">Presentation Design</span>
-    <span class="marquee-item">Banner &amp; Ad Design</span>
+<!-- TRUST STRIP -->
+<div class="trust-strip" aria-hidden="true" style="padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1;">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Social Media Graphics</span>
+      <span class="pill"><span class="dot"></span>Print Design</span>
+      <span class="pill"><span class="dot"></span>Infographics</span>
+      <span class="pill"><span class="dot"></span>Brand Collateral</span>
+      <span class="pill"><span class="dot"></span>Presentation Design</span>
+      <span class="pill"><span class="dot"></span>Banner &amp; Ad Design</span>
+      <span class="pill"><span class="dot"></span>Social Media Graphics</span>
+      <span class="pill"><span class="dot"></span>Print Design</span>
+      <span class="pill"><span class="dot"></span>Infographics</span>
+      <span class="pill"><span class="dot"></span>Brand Collateral</span>
+    </div>
   </div>
 </div>
 
-<!-- DELIVERABLES -->
+<!-- DELIVERABLES BENTO -->
 <section class="section" aria-labelledby="deliver-heading">
-  <div class="section-label" data-reveal="up">What's Included</div>
-  <h2 class="section-title" id="deliver-heading" data-reveal="up" data-delay="1">What We <em>Deliver</em></h2>
-  <div class="bento-grid" style="margin-top:56px;">
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up">
-      <div class="gd-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-      <h3 class="gd-tile-title">Social Media Graphics</h3>
-      <p class="gd-tile-desc">Scroll-stopping posts, stories, banners and carousel graphics — consistent, branded and audience-ready.</p>
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>What's Included</div>
+      <h2 class="h2" id="deliver-heading" data-reveal="up" data-delay="1">What we <span class="accent">deliver.</span></h2>
+    </div>
+  </div>
+
+  <div class="bento-grid">
+    <article class="tile b-2x2" data-tilt data-reveal="up">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <span class="tile-status"><span class="dot"></span>Most Requested</span>
+      </div>
+      <h3>Social Media Graphics</h3>
+      <p>Scroll-stopping posts, stories, banners and carousel graphics — consistent, branded and audience-ready across every platform.</p>
+      <div class="tile-tags"><span class="tile-tag">Feed Posts</span><span class="tile-tag">Stories</span><span class="tile-tag">Carousels</span></div>
     </article>
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="1">
-      <div class="gd-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-      <h3 class="gd-tile-title">Print Design</h3>
-      <p class="gd-tile-desc">Business cards, brochures, flyers, posters and packaging — print-ready files with bleed and crop marks.</p>
+
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <span class="tile-meta">Bleed · Crop Marks</span>
+      </div>
+      <h3>Print Design</h3>
+      <p>Business cards, brochures, flyers, posters and packaging — print-ready files, done right the first time.</p>
     </article>
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="2">
-      <div class="gd-icon"><svg viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 0 1 5.5 8h.5a5 5 0 0 1 10 0h.5a5 5 0 0 1 5 7.9"/><path d="M16 16l-4 4-4-4"/><line x1="12" y1="12" x2="12" y2="20"/></svg></div>
-      <h3 class="gd-tile-title">Infographics</h3>
-      <p class="gd-tile-desc">Data visualisation, process diagrams and educational infographics that communicate complex ideas simply.</p>
+
+    <article class="tile b-1x1" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 0 1 5.5 8h.5a5 5 0 0 1 10 0h.5a5 5 0 0 1 5 7.9"/><path d="M16 16l-4 4-4-4"/><line x1="12" y1="12" x2="12" y2="20"/></svg></div></div>
+      <h3>Infographics</h3>
+      <p>Data visualisation and process diagrams that communicate complex ideas simply.</p>
     </article>
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up">
-      <div class="gd-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-      <h3 class="gd-tile-title">Brand Collateral</h3>
-      <p class="gd-tile-desc">Pitch decks, proposal templates, letterheads and email signatures — every touchpoint premium and consistent.</p>
+
+    <article class="tile b-1x1" data-tilt data-reveal="up">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div></div>
+      <h3>Brand Collateral</h3>
+      <p>Pitch decks, proposal templates, letterheads and signatures — every touchpoint on-brand.</p>
     </article>
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="1">
-      <div class="gd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-      <h3 class="gd-tile-title">Presentation Design</h3>
-      <p class="gd-tile-desc">PowerPoint and Google Slides templates that look like they were designed by an award-winning agency.</p>
+
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <span class="tile-meta">PowerPoint · Slides</span>
+      </div>
+      <h3>Presentation Design</h3>
+      <p>Decks that look like they were designed by an award-winning agency — because they were.</p>
     </article>
-    <article class="glass-card bento-2x1 dark" data-magnetic data-reveal="up" data-delay="2" style="background: var(--grad-ink); background-image: var(--grad-mesh-dark), var(--grad-ink); color: var(--cream);">
-      <div class="gd-icon" style="background: rgba(212,175,90,0.14); border-color: rgba(212,175,90,0.3);"><svg viewBox="0 0 24 24" stroke="#D4AF5A"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
-      <h3 class="gd-tile-title" style="color:var(--cream);">Banner &amp; Ad Design</h3>
-      <p class="gd-tile-desc" style="color:rgba(250,248,243,0.6);">Display ads, social ads and digital banners optimised for click-through across every major platform.</p>
+
+    <article class="tile b-2x1 tile-dark" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <span class="tile-meta">Display · Social</span>
+      </div>
+      <h3>Banner &amp; Ad Design</h3>
+      <p>Display ads, social ads and digital banners optimised for click-through on every major platform.</p>
     </article>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-wrap" style="padding:120px 64px;background:var(--cream-2);" aria-labelledby="process-heading">
-  <div class="section-label" data-reveal="up">Our Approach</div>
-  <h2 class="section-title" id="process-heading" data-reveal="up" data-delay="1">How We <em>Work</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Creative Brief</h3>
-      <p>We gather brand guidelines, inspiration, target audience and deliverable specifications.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Concept Development</h3>
-      <p>2–3 distinct design directions presented for your feedback and direction.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Design Execution</h3>
-      <p>Chosen direction refined and expanded into all required deliverables.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Review &amp; Deliver</h3>
-      <p>Structured revision rounds, then all source and export-ready files handed over.</p>
+<!-- PROCESS TIMELINE -->
+<section class="section" aria-labelledby="process-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Approach</div>
+      <h2 class="h2" id="process-heading" data-reveal="up" data-delay="1">How we <span class="accent">work.</span></h2>
     </div>
   </div>
-</section>
-
-<!-- TOOLKIT -->
-<section class="tech-wrap" aria-labelledby="tech-heading">
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Our Toolkit</div>
-  <h2 class="section-title" id="tech-heading" data-reveal="up" data-delay="1">Software We <em>Use</em></h2>
-  <div class="tech-marquee-wrap" style="margin-top:48px;">
-    <div class="tech-marquee-track">
-      <span class="tech-badge"><span class="dot"></span>Adobe Photoshop</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe Illustrator</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe InDesign</span>
-      <span class="tech-badge"><span class="dot"></span>Canva</span>
-      <span class="tech-badge"><span class="dot"></span>Figma</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe Express</span>
-      <span class="tech-badge"><span class="dot"></span>After Effects</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe Photoshop</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe Illustrator</span>
-      <span class="tech-badge"><span class="dot"></span>Adobe InDesign</span>
-      <span class="tech-badge"><span class="dot"></span>Canva</span>
-      <span class="tech-badge"><span class="dot"></span>Figma</span>
-    </div>
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Creative Brief</h3><p>We gather brand guidelines, inspiration, target audience and deliverable specifications.</p></div><div class="tl-num">01</div></div>
+    <div class="tl-row"><div class="tl-num">02</div><div class="tl-card" data-reveal="right"><h3>Concept Development</h3><p>2–3 distinct design directions presented for your feedback and direction.</p></div></div>
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Design Execution</h3><p>Your chosen direction refined and expanded into every required deliverable.</p></div><div class="tl-num">03</div></div>
+    <div class="tl-row"><div class="tl-num">04</div><div class="tl-card" data-reveal="right"><h3>Review &amp; Deliver</h3><p>Structured revision rounds, then all source and export-ready files handed over.</p></div></div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why-us" style="padding:120px 64px;" aria-labelledby="why-heading">
-  <div class="section-label" data-reveal="up">Why Choose WPC</div>
-  <h2 class="section-title" id="why-heading" data-reveal="up" data-delay="1">Design <em>That Performs</em></h2>
-  <div class="why-list" style="margin-top:60px;border-top:1px solid var(--border-mid);">
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--border-mid);" data-reveal="up">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">01</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">Fast Turnaround</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">Single graphics in 24–48 hours, full collateral sets in 5–10 days — with rush service for urgent requests.</p>
+<section class="section" aria-labelledby="why-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Why Choose WPC</div>
+      <h2 class="h2" id="why-heading" data-reveal="up" data-delay="1">Design that <span class="accent">performs.</span></h2>
     </div>
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--border-mid);" data-reveal="up" data-delay="1">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">02</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">Source Files Included</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">Every final design ships with editable source files in Illustrator, Photoshop or Figma — yours to keep.</p>
-    </div>
-    <div class="why-row" style="display:grid;grid-template-columns:90px 260px 1fr;gap:32px;align-items:center;padding:32px 0;" data-reveal="up" data-delay="2">
-      <span class="why-row-num" style="font-family:var(--font-mono);font-size:13px;color:var(--gold);">03</span>
-      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);">On-Brand, Always</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;max-width:620px;">We study your existing design language — or pair with our Branding service — to keep every asset cohesive.</p>
+  </div>
+  <div class="grid-3">
+    <article class="tile" data-tilt data-reveal="up">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div></div>
+      <h3>Fast Turnaround</h3>
+      <p>Single graphics in 24–48 hours, full collateral sets in 5–10 days — with rush service for urgent requests.</p>
+    </article>
+    <article class="tile" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
+      <h3>Source Files Included</h3>
+      <p>Every final design ships with editable source files in Illustrator, Photoshop or Figma — yours to keep.</p>
+    </article>
+    <article class="tile" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></div>
+      <h3>On-Brand, Always</h3>
+      <p>We study your existing design language — or pair with our Branding service — to keep every asset cohesive.</p>
+    </article>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section class="section-sm" aria-labelledby="tech-heading" style="text-align:center;">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;"><span class="dot"></span>Our Toolkit</div>
+  <h2 class="h2" id="tech-heading" data-reveal="up" data-delay="1">Software we <span class="accent">use.</span></h2>
+  <div class="pill-marquee-wrap" style="margin-top:44px;">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Adobe Photoshop</span>
+      <span class="pill"><span class="dot"></span>Adobe Illustrator</span>
+      <span class="pill"><span class="dot"></span>Adobe InDesign</span>
+      <span class="pill"><span class="dot"></span>Canva</span>
+      <span class="pill"><span class="dot"></span>Figma</span>
+      <span class="pill"><span class="dot"></span>Adobe Express</span>
+      <span class="pill"><span class="dot"></span>After Effects</span>
+      <span class="pill"><span class="dot"></span>Adobe Photoshop</span>
+      <span class="pill"><span class="dot"></span>Adobe Illustrator</span>
+      <span class="pill"><span class="dot"></span>Canva</span>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:var(--white);" aria-labelledby="faq-heading">
-  <div class="section-label" data-reveal="up">FAQ</div>
-  <h2 class="section-title" id="faq-heading" data-reveal="up" data-delay="1">Common <em>Questions</em></h2>
+<section class="section" aria-labelledby="faq-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>FAQ</div>
+  <h2 class="h2" id="faq-heading" data-reveal="up" data-delay="1">Common <span class="accent">questions.</span></h2>
   <div class="faq-list" data-reveal="up" data-delay="1">
     <div class="faq-item">
-      <div class="faq-q">Do you provide source files?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Do you provide source files?</div>
       <div class="faq-a">Yes. All final designs come with source files in Adobe Illustrator, Photoshop or Figma — yours to keep.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What if I don't have a brand guide?<div class="faq-toggle">+</div></div>
-      <div class="faq-a">We work from your brand colours and logo if available, or recommend pairing with our Branding service for a complete identity.</div>
+      <div class="faq-q">What if I don't have a brand guide?</div>
+      <div class="faq-a">We work from your existing brand colours and logo if available, or recommend pairing with our Branding service for a complete identity.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">How fast can you turn around graphics?<div class="faq-toggle">+</div></div>
-      <div class="faq-a">Single graphics: 24–48 hours. Full collateral sets: 5–10 days. Rush service available for urgent requests.</div>
+      <div class="faq-q">How fast can you turn around graphics?</div>
+      <div class="faq-a">Single graphics: 24–48 hours. Full collateral sets: 5–10 days. Rush service is available for urgent requests.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can you match our existing brand style?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Can you match our existing brand style?</div>
       <div class="faq-a">Absolutely. We study your existing design language and ensure every new asset feels cohesive and on-brand.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Design</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Ready?</div>
-  <h2 data-reveal="up" data-delay="1">Let's Design<br><em>Something</em><br>Unforgettable.</h2>
-  <p data-reveal="up" data-delay="2">Every pixel crafted with purpose.<br>Your brand — our creativity.</p>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready When You Are</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Let's design something <span class="accent">unforgettable.</span></h2>
+  <p data-reveal="up" data-delay="2">Every pixel crafted with purpose — your brand, our creativity.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Start a Project</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
-        <li><a href="service-seo.html">SEO Services</a></li>
-        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
         <li><a href="service-app-development.html">App Development</a></li>
+        <li><a href="service-graphic-design.html">Graphic Designing</a></li>
+        <li><a href="service-branding.html">Design &amp; Branding</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -374,26 +346,31 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
@@ -401,19 +378,7 @@
 
 <script src="shared.js"></script>
 <script>
-/* ── FAQ ACCORDION ───────────────────────────────────── */
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click', function(){
-    var item = q.closest('.faq-item');
-    var wasOpen = item.classList.contains('open');
-    item.parentElement.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-    if(!wasOpen) item.classList.add('open');
-  });
-});
-</script>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -421,31 +386,28 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html" class="active">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html" class="active">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -453,7 +415,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -465,10 +427,10 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

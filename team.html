@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>Our Team | Web Pro Creation</title>
 <meta name="description" content="Meet the 40+ specialists behind Web Pro Creation — 10 departments spanning development, design, marketing and growth, led by founders Zeesha and Afan Aziz.">
 <meta name="keywords" content="WPC team, web pro creation team, digital agency specialists, founders, department leads, agency staff">
 <link rel="canonical" href="https://webprocreation.com/team.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="Our Team | Web Pro Creation">
@@ -43,142 +42,87 @@
 
 <style id="page-css">
 /* ── TEAM HERO ────────────────────────────────────────── */
-.team-hero {
-  min-height: 88vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 64px 80px;
-  position: relative; overflow: hidden;
-  background: var(--grad-ink); background-image: var(--grad-mesh-dark), var(--grad-ink);
-  color: var(--cream);
-}
-.team-hero .hero-eyebrow { color: var(--gold); }
-.team-hero .hero-eyebrow::before { background: var(--gold); }
-.team-hero-content { position: relative; z-index: 2; max-width: 780px; }
-@media(max-width:768px){ .team-hero { padding: 130px 20px 56px; min-height:auto; } }
+.team-hero { min-height: 76vh; display: flex; align-items: center; padding: 150px 48px 40px; position: relative; z-index: 1; }
+.team-hero-content { max-width: 720px; }
+.team-hero h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; font-size: clamp(40px,5.4vw,72px); line-height: 1.03; color: var(--text); margin: 22px 0 22px; }
+@media(max-width:768px){ .team-hero { padding: 130px 20px 30px; min-height:auto; } }
 
-/* ── TEAM STATS ROW (glass, overlapping hero) ────────── */
-.team-stats-row {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  margin: -70px 64px 0; position: relative; z-index: 5;
-  border-radius: 22px; overflow: hidden;
+/* ── LEADER SPOTLIGHT CARDS ──────────────────────────── */
+.leader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.leader-card-big {
+  position: relative; overflow: hidden; border-radius: var(--radius-lg);
+  background: var(--surface-2); border: 1px solid var(--line-2);
+  padding: 44px 40px; display: flex; flex-direction: column;
 }
-.ts-stat { padding: 40px 32px; text-align: center; }
-.ts-stat-num { font-family: var(--font-display); font-size: 40px; color: var(--ink); }
-.ts-stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
-@media(max-width:1024px){ .team-stats-row { grid-template-columns: repeat(2,1fr); margin: -50px 40px 0; } }
-@media(max-width:768px){ .team-stats-row { margin: -40px 16px 0; } .ts-stat { padding: 26px 16px; } .ts-stat-num { font-size: 28px; } }
-
-/* ── LEADERSHIP ───────────────────────────────────────── */
-.leadership-wrap { padding: 150px 64px 90px; }
-.leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
-.leader-exec-card {
-  position: relative; overflow: hidden; border-radius: 22px;
-  background: var(--grad-ink); background-image: var(--grad-mesh-dark), var(--grad-ink);
-  color: var(--cream); padding: 48px 44px;
-}
-.lec-divider { height: 3px; width: 60px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin-bottom: 28px; border-radius: 4px; }
-.lec-badge { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; }
-.lec-name { font-family: var(--font-display); font-size: 40px; font-weight: 500; margin-bottom: 6px; }
-.lec-title { font-size: 13px; color: rgba(250,248,243,0.55); margin-bottom: 22px; }
-.lec-desc { font-size: 14px; color: rgba(250,248,243,0.65); line-height: 1.9; max-width: 460px; }
-.lec-initial {
-  position: absolute; right: -20px; bottom: -40px;
-  font-family: var(--font-display); font-size: 200px; font-weight: 700;
-  color: rgba(212,175,90,0.06); line-height: 1; pointer-events: none;
-}
-@media(max-width:1024px){ .leadership-wrap { padding: 100px 40px 70px; } .leadership-grid { grid-template-columns: 1fr; } }
-@media(max-width:768px){ .leadership-wrap { padding: 76px 20px 56px; } .leader-exec-card { padding: 32px 26px; } .lec-name { font-size: 30px; } }
+.leader-card-big::before { content:''; position:absolute; inset:0; background: radial-gradient(90% 70% at 100% 0%, rgba(139,92,246,0.2), transparent 60%), radial-gradient(70% 60% at 0% 100%, rgba(245,166,35,0.16), transparent 60%); }
+.leader-card-big > * { position: relative; z-index: 1; }
+.leader-avatar { width: 58px; height: 58px; border-radius: 16px; background: var(--grad-primary); color: #14101C; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 22px; margin-bottom: 24px; }
+.leader-badge { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-2); margin-bottom: 10px; }
+.leader-name { font-family: var(--font-display); font-weight: 700; font-size: 30px; color: var(--text); margin-bottom: 4px; }
+.leader-title { font-size: 13px; color: var(--text-faint); margin-bottom: 18px; }
+.leader-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.8; margin-bottom: auto; }
+.leader-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.leader-initial-bg { position: absolute; right: -10px; bottom: -30px; font-family: var(--font-display); font-weight: 700; font-size: 180px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; z-index: 0; }
+@media(max-width:900px){ .leader-grid { grid-template-columns: 1fr; } }
 
 /* ── DEPARTMENT SECTIONS ──────────────────────────────── */
-.dept-section { padding: 70px 64px; border-top: 1px solid var(--border-mid); }
-.dept-section:nth-child(odd) { background: var(--cream-2); }
-.dept-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
-.dept-title-wrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-.dept-icon {
-  width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--grad-gold-soft); border: 1px solid var(--glass-border);
-}
-.dept-icon svg { width: 24px; height: 24px; stroke: var(--gold-dim); fill: none; stroke-width: 1.5; }
-.dept-name { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ink); }
-.dept-name em { font-style: italic; color: var(--gold); }
-.dept-count { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); width: 100%; margin-top: 4px; }
-.dept-link-btn { flex-shrink: 0; }
+.dept-block { padding-top: 60px; }
+.dept-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+.dept-icon-sm { width: 44px; height: 44px; border-radius: 12px; background: var(--surface-3); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dept-icon-sm svg { width: 20px; height: 20px; stroke: var(--gold-2); fill: none; stroke-width: 1.6; }
+.dept-head h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px,2.6vw,30px); color: var(--text); }
+.dept-head h3 .accent-sm { color: var(--gold-2); }
+.dept-count-badge { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); background: var(--surface); border: 1px solid var(--line); padding: 6px 14px; border-radius: 100px; }
+.dept-svc-link { margin-left: auto; }
 
-.leader-card {
-  display: flex; align-items: center; gap: 20px;
-  padding: 26px 30px; margin-bottom: 24px;
-  background: var(--white); border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: 4px;
+.people-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.person-tile {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 20px 18px; transition: transform 0.35s var(--ease), border-color 0.3s;
 }
-.leader-initial {
-  width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
-  background: var(--grad-gold); color: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 20px; order: -1;
-}
-.leader-name { font-family: var(--font-display); font-size: 19px; color: var(--ink); }
-.leader-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dim); margin-top: 4px; }
+.person-tile:hover { transform: translateY(-3px); border-color: var(--line-hover); }
+.person-tile.lead { background: var(--surface-2); border-color: var(--line-2); grid-column: span 2; display: flex; align-items: center; gap: 16px; }
+.person-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--grad-primary); color: #14101C; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 15px; flex-shrink: 0; }
+.person-tile.lead .person-avatar { width: 48px; height: 48px; font-size: 17px; }
+.person-name { font-family: var(--font-body); font-size: 13.5px; font-weight: 600; color: var(--text); margin-top: 14px; }
+.person-tile.lead .person-name { margin-top: 0; }
+.person-role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--text-faint); margin-top: 4px; text-transform: uppercase; }
 
-.members-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-.member-card {
-  padding: 20px 18px; background: var(--glass-bg);
-  backdrop-filter: blur(14px); border: 1px solid var(--glass-border);
-  border-radius: 12px; transition: transform 0.35s var(--ease-out), border-color 0.3s;
-}
-.member-card:hover { transform: translateY(-4px); border-color: rgba(184,147,58,0.4); }
-.member-num { font-family: var(--font-mono); font-size: 10px; color: var(--gold); }
-.member-name { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--ink); margin-top: 10px; }
-.member-bar { height: 2px; width: 24px; background: var(--grad-gold); margin-top: 12px; border-radius: 2px; }
-
-@media(max-width:1024px){ .dept-section { padding: 56px 40px; } .members-grid { grid-template-columns: repeat(3,1fr); } }
-@media(max-width:768px){
-  .dept-section { padding: 44px 20px; }
-  .dept-header { margin-bottom: 28px; }
-  .leader-card { padding: 20px; flex-wrap: wrap; }
-  .members-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
-  .member-card { padding: 16px 14px; }
-}
-@media(max-width:480px){ .members-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:1024px){ .people-grid { grid-template-columns: repeat(3,1fr); } .person-tile.lead { grid-column: span 3; } }
+@media(max-width:640px){ .people-grid { grid-template-columns: repeat(2,1fr); } .person-tile.lead { grid-column: span 2; } .dept-svc-link { margin-left: 0; width: 100%; } }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
-<!-- Cursor -->
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
-<!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- NAV -->
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -191,307 +135,271 @@
 
 <!-- HERO -->
 <header class="team-hero">
-  <div class="orb orb-gold" data-parallax-orb="0.1" style="width:420px;height:420px;top:-100px;right:-100px;" aria-hidden="true"></div>
-  <div class="orb orb-teal" data-parallax-orb="0.07" style="width:280px;height:280px;bottom:-60px;left:-60px;" aria-hidden="true"></div>
   <div class="team-hero-content">
-    <div class="hero-label glass-dark" data-reveal="up">The People Behind the Magic</div>
-    <h1 class="section-title" style="font-size:clamp(48px,7vw,100px);color:var(--cream);margin-top:28px;" data-reveal="up" data-delay="1">Meet Our <em>Team</em></h1>
-    <p class="hero-desc" style="color:rgba(250,248,243,0.6);margin-top:24px;margin-bottom:0;" data-reveal="up" data-delay="2">40+ elite specialists across 10 departments — united by craft, driven by excellence, and committed to making your brand unforgettable.</p>
+    <div class="eyebrow" data-reveal="up"><span class="dot"></span>The People Behind the Magic</div>
+    <h1 data-reveal="up" data-delay="1">Meet our <span class="accent">team.</span></h1>
+    <p class="lede" data-reveal="up" data-delay="2">40+ elite specialists across 10 departments — united by craft, driven by excellence, and committed to making your brand unforgettable.</p>
   </div>
 </header>
 
-<!-- STATS ROW -->
-<div class="team-stats-row glass" data-reveal="scale" aria-label="Team statistics">
-  <div class="ts-stat"><div class="ts-stat-num" data-counter="40" data-suffix="+">0</div><div class="ts-stat-label">Team Members</div></div>
-  <div class="ts-stat"><div class="ts-stat-num" data-counter="10">0</div><div class="ts-stat-label">Departments</div></div>
-  <div class="ts-stat"><div class="ts-stat-num" data-counter="2000" data-suffix="+">0</div><div class="ts-stat-label">Projects Done</div></div>
-  <div class="ts-stat"><div class="ts-stat-num" data-counter="4" data-suffix="+">0</div><div class="ts-stat-label">Years Active</div></div>
-</div>
+<!-- STAT BAND -->
+<section class="stat-band" aria-label="Team statistics">
+  <div class="stat-grid">
+    <div class="stat-item" data-reveal="up"><div class="stat-num" data-counter="40" data-suffix="+">0</div><div class="stat-label">Team Members</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="1"><div class="stat-num" data-counter="10">0</div><div class="stat-label">Departments</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="2000" data-suffix="+">0</div><div class="stat-label">Projects Done</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="3"><div class="stat-num" data-counter="4" data-suffix="+">0</div><div class="stat-label">Years Active</div></div>
+  </div>
+</section>
 
 <!-- LEADERSHIP -->
-<section class="leadership-wrap" aria-labelledby="leadership-heading">
-  <div class="section-label" data-reveal="up">Company Leadership</div>
-  <h2 class="section-title" id="leadership-heading" data-reveal="up" data-delay="1">The <em>Founders</em></h2>
-  <div class="leadership-grid">
-    <article class="leader-exec-card" data-reveal="up" data-tilt>
-      <div class="lec-divider"></div>
-      <div class="lec-badge">CEO &amp; Founder</div>
-      <h3 class="lec-name">Zeesha</h3>
-      <div class="lec-title">Chief Executive Officer · Founder</div>
-      <p class="lec-desc">Visionary behind Web Pro Creation. Zeesha founded WPC in 2021 with a single mission — to make premium digital services accessible to businesses of all sizes. Leads strategy, growth and client partnerships across all three offices.</p>
-      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:10px;padding:10px 22px;">WhatsApp</a>
-        <a href="https://calendly.com/workzeesha/30min" target="_blank" rel="noopener" class="btn btn-glass" style="font-size:10px;padding:10px 22px;background:rgba(255,255,255,0.08);color:var(--cream);border-color:rgba(250,248,243,0.2);">Book a Call</a>
+<section class="section" aria-labelledby="leadership-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Company Leadership</div>
+      <h2 class="h2" id="leadership-heading" data-reveal="up" data-delay="1">The <span class="accent">founders.</span></h2>
+    </div>
+  </div>
+  <div class="leader-grid">
+    <article class="leader-card-big" data-reveal="up" data-tilt>
+      <div class="leader-avatar">Z</div>
+      <div class="leader-badge">CEO &amp; Founder</div>
+      <h3 class="leader-name">Zeesha</h3>
+      <div class="leader-title">Chief Executive Officer · Founder</div>
+      <p class="leader-desc">Visionary behind Web Pro Creation. Zeesha founded WPC in 2021 with a single mission — to make premium digital services accessible to businesses of all sizes. Leads strategy, growth and client partnerships across all three offices.</p>
+      <div class="leader-actions">
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" class="btn btn-grad btn-sm">WhatsApp</a>
+        <a href="https://calendly.com/workzeesha/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Book a Call</a>
       </div>
-      <div class="lec-initial" aria-hidden="true">Z</div>
+      <div class="leader-initial-bg" aria-hidden="true">Z</div>
     </article>
-    <article class="leader-exec-card" data-reveal="up" data-delay="1" data-tilt>
-      <div class="lec-divider" style="background:linear-gradient(90deg,var(--teal-light),transparent);"></div>
-      <div class="lec-badge">Co-Founder</div>
-      <h3 class="lec-name">Afan Aziz</h3>
-      <div class="lec-title">Co-Founder · Head of Website Maintenance</div>
-      <p class="lec-desc">Co-founder of WPC and Head of Website Maintenance, Afan brings deep technical expertise and operational precision to every project — overseeing the technical health, performance and reliability of all client websites.</p>
-      <div style="margin-top:28px;">
-        <a href="contact.html" class="btn btn-glass btn-arrow" style="font-size:10px;padding:10px 22px;background:rgba(255,255,255,0.08);color:var(--cream);border-color:rgba(250,248,243,0.2);">Get in Touch</a>
+    <article class="leader-card-big" data-reveal="up" data-delay="1" data-tilt>
+      <div class="leader-avatar">A</div>
+      <div class="leader-badge">Co-Founder</div>
+      <h3 class="leader-name">Afan Aziz</h3>
+      <div class="leader-title">Co-Founder · Head of Website Maintenance</div>
+      <p class="leader-desc">Co-founder of WPC and Head of Website Maintenance, Afan brings deep technical expertise and operational precision to every project — overseeing the technical health, performance and reliability of all client websites.</p>
+      <div class="leader-actions">
+        <a href="contact.html" class="btn btn-ghost btn-sm btn-arrow">Get in Touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="lec-initial" aria-hidden="true">A</div>
+      <div class="leader-initial-bg" aria-hidden="true">A</div>
     </article>
   </div>
 </section>
 
-<!-- DEPT: WEB DEVELOPMENT -->
-<section class="dept-section" aria-labelledby="dept-web">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-      <h2 class="dept-name" id="dept-web" data-reveal="up">Website <em>Development</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 3 Members</div>
+<!-- DEPARTMENTS -->
+<section class="section" aria-labelledby="departments-heading" style="padding-top:0;">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Departments</div>
+      <h2 class="h2" id="departments-heading" data-reveal="up" data-delay="1">Built by <span class="accent">specialists.</span></h2>
     </div>
-    <a href="service-web-development.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
   </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">S</div>
-    <div><div class="leader-name">Syeda Naqvii</div><div class="leader-title">Head of Website Development</div></div>
+
+  <!-- Website Development -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3 data-reveal="up">Website <span class="accent-sm">Development</span></h3>
+      <span class="dept-count-badge">1 Leader · 3 Members</span>
+      <a href="service-web-development.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">S</div><div><div class="person-name">Syeda Naqvii</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">M</div><div class="person-name">Muhammad Ali</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">H</div><div class="person-name">Hassan Khan</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">B</div><div class="person-name">Bilal Ahmed</div></div>
+    </div>
   </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Muhammad Ali</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Hassan Khan</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Bilal Ahmed</div><div class="member-bar"></div></div>
+
+  <!-- Social Media -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+      <h3 data-reveal="up">Social Media <span class="accent-sm">Management</span></h3>
+      <span class="dept-count-badge">1 Leader · 5 Members</span>
+      <a href="service-social-media.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">A</div><div><div class="person-name">Ansar Ahmed</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">U</div><div class="person-name">Usman Tariq</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">A</div><div class="person-name">Abdullah Sheikh</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">H</div><div class="person-name">Hamza Malik</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">A</div><div class="person-name">Awais Iqbal</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">Z</div><div class="person-name">Zubair Ahmed</div></div>
+    </div>
+  </div>
+
+  <!-- Video Editing -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <h3 data-reveal="up">Video <span class="accent-sm">Editing</span></h3>
+      <span class="dept-count-badge">1 Leader · 3 Members</span>
+      <a href="service-video-editing.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">A</div><div><div class="person-name">Ahmed</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">S</div><div class="person-name">Saad Hussain</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">U</div><div class="person-name">Umar Farooq</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">T</div><div class="person-name">Talha Anwar</div></div>
+    </div>
+  </div>
+
+  <!-- Graphic Design -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+      <h3 data-reveal="up">Graphic <span class="accent-sm">Designers</span></h3>
+      <span class="dept-count-badge">1 Leader · 5 Members</span>
+      <a href="service-graphic-design.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">F</div><div><div class="person-name">Fawad Ahmad</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">F</div><div class="person-name">Fahad Khan</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">D</div><div class="person-name">Daniyal Ahmed</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">S</div><div class="person-name">Salman Raza</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">S</div><div class="person-name">Shahzaib Ali</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">M</div><div class="person-name">Muneeb Khan</div></div>
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3 data-reveal="up">SEO <span class="accent-sm">Specialists</span></h3>
+      <span class="dept-count-badge">1 Leader · 2 Members</span>
+      <a href="service-seo.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">H</div><div><div class="person-name">Hoor Fatima</div><div class="person-role">Team Lead</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">H</div><div class="person-name">Haris Ahmed</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">R</div><div class="person-name">Rizwan Malik</div></div>
+    </div>
+  </div>
+
+  <!-- Digital Marketing -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg></div>
+      <h3 data-reveal="up">Digital <span class="accent-sm">Marketing</span></h3>
+      <span class="dept-count-badge">1 Leader · 4 Members</span>
+      <a href="service-digital-marketing.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">M</div><div><div class="person-name">Mohammad Hassan</div><div class="person-role">Specialist</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">I</div><div class="person-name">Imran Haider</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">N</div><div class="person-name">Noman Ali</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">A</div><div class="person-name">Adnan Sheikh</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">F</div><div class="person-name">Farhan Ahmed</div></div>
+    </div>
+  </div>
+
+  <!-- App Development -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <h3 data-reveal="up">App <span class="accent-sm">Development</span></h3>
+      <span class="dept-count-badge">2 Leaders · 5 Members</span>
+      <a href="service-app-development.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">Z</div><div><div class="person-name">Zubair</div><div class="person-role">Co-Head</div></div></div>
+      <div class="person-tile lead" data-reveal="up" data-delay="1"><div class="person-avatar">Q</div><div><div class="person-name">Qasim</div><div class="person-role">Co-Head</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">Y</div><div class="person-name">Yasir Khan</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">K</div><div class="person-name">Kashif Raza</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">W</div><div class="person-name">Waqas Ahmed</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">N</div><div class="person-name">Naveed Iqbal</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">J</div><div class="person-name">Junaid Khan</div></div>
+    </div>
+  </div>
+
+  <!-- UI/UX -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <h3 data-reveal="up">UI / UX <span class="accent-sm">Design</span></h3>
+      <span class="dept-count-badge">2 Leaders · 5 Members</span>
+      <a href="service-ui-ux.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">Z</div><div><div class="person-name">Zubair</div><div class="person-role">Co-Head</div></div></div>
+      <div class="person-tile lead" data-reveal="up" data-delay="1"><div class="person-avatar">Q</div><div><div class="person-name">Qasim</div><div class="person-role">Co-Head</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">S</div><div class="person-name">Shayan Malik</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">T</div><div class="person-name">Taha Ahmed</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">A</div><div class="person-name">Ayesha Noor</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">S</div><div class="person-name">Syeda Fatima</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">M</div><div class="person-name">Mahnoor Ahmed</div></div>
+    </div>
+  </div>
+
+  <!-- Design & Branding -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3 data-reveal="up">Design &amp; <span class="accent-sm">Branding</span></h3>
+      <span class="dept-count-badge">1 Leader · 5 Members</span>
+      <a href="service-branding.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">F</div><div><div class="person-name">Fawad Ahmad</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">Z</div><div class="person-name">Zainab Ali</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">E</div><div class="person-name">Eman Fatima</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">A</div><div class="person-name">Alina Raza</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">I</div><div class="person-name">Iqra Khan</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">S</div><div class="person-name">Sana Malik</div></div>
+    </div>
+  </div>
+
+  <!-- Website Maintenance -->
+  <div class="dept-block">
+    <div class="dept-head">
+      <div class="dept-icon-sm"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3 data-reveal="up">Website <span class="accent-sm">Maintenance</span></h3>
+      <span class="dept-count-badge">1 Leader · 5 Members</span>
+      <a href="service-maintenance.html" class="btn btn-outline btn-sm dept-svc-link">View Service</a>
+    </div>
+    <div class="people-grid">
+      <div class="person-tile lead" data-reveal="up"><div class="person-avatar">A</div><div><div class="person-name">Afan Aziz</div><div class="person-role">Head of Dept.</div></div></div>
+      <div class="person-tile" data-reveal="up"><div class="person-avatar">A</div><div class="person-name">Areeba Ahmed</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="1"><div class="person-avatar">L</div><div class="person-name">Laiba Noor</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="2"><div class="person-avatar">M</div><div class="person-name">Maryam Khan</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="3"><div class="person-avatar">H</div><div class="person-name">Hoor Fatima</div></div>
+      <div class="person-tile" data-reveal="up" data-delay="4"><div class="person-avatar">A</div><div class="person-name">Ahmed Raza</div></div>
+    </div>
   </div>
 </section>
 
-<!-- DEPT: SOCIAL MEDIA -->
-<section class="dept-section" aria-labelledby="dept-smm">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
-      <h2 class="dept-name" id="dept-smm" data-reveal="up">Social Media <em>Management</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
-    </div>
-    <a href="service-social-media.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">A</div>
-    <div><div class="leader-name">Ansar Ahmed</div><div class="leader-title">Head of Social Media</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Usman Tariq</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Abdullah Sheikh</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Hamza Malik</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Awais Iqbal</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Zubair Ahmed</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: VIDEO EDITING -->
-<section class="dept-section" aria-labelledby="dept-video">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-      <h2 class="dept-name" id="dept-video" data-reveal="up">Video <em>Editing</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 3 Members</div>
-    </div>
-    <a href="service-video-editing.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">A</div>
-    <div><div class="leader-name">Ahmed</div><div class="leader-title">Head of Video Editing</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Saad Hussain</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Umar Farooq</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Talha Anwar</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: GRAPHIC DESIGN -->
-<section class="dept-section" aria-labelledby="dept-graphic">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-      <h2 class="dept-name" id="dept-graphic" data-reveal="up">Graphic <em>Designers</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
-    </div>
-    <a href="service-graphic-design.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">F</div>
-    <div><div class="leader-name">Fawad Ahmad</div><div class="leader-title">Head of Graphic Designers</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Fahad Khan</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Daniyal Ahmed</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Salman Raza</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Shahzaib Ali</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Muneeb Khan</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: SEO -->
-<section class="dept-section" aria-labelledby="dept-seo">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h2 class="dept-name" id="dept-seo" data-reveal="up">SEO <em>Specialists</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 2 Members</div>
-    </div>
-    <a href="service-seo.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">H</div>
-    <div><div class="leader-name">Hoor Fatima</div><div class="leader-title">SEO Specialist &amp; Team Lead</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Haris Ahmed</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Rizwan Malik</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: DIGITAL MARKETING -->
-<section class="dept-section" aria-labelledby="dept-dm">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg></div>
-      <h2 class="dept-name" id="dept-dm" data-reveal="up">Digital <em>Marketing</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 4 Members</div>
-    </div>
-    <a href="service-digital-marketing.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">M</div>
-    <div><div class="leader-name">Mohammad Hassan</div><div class="leader-title">Digital Marketing Specialist</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Imran Haider</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Noman Ali</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Adnan Sheikh</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Farhan Ahmed</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: APP DEVELOPMENT -->
-<section class="dept-section" aria-labelledby="dept-app">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-      <h2 class="dept-name" id="dept-app" data-reveal="up">App <em>Development</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">2 Leaders · 5 Members</div>
-    </div>
-    <a href="service-app-development.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;" data-reveal="up">
-    <div class="leader-card" style="margin-bottom:0;"><div class="leader-initial">Z</div><div><div class="leader-name">Zubair</div><div class="leader-title">Co-Head of App Development</div></div></div>
-    <div class="leader-card" style="margin-bottom:0;"><div class="leader-initial">Q</div><div><div class="leader-name">Qasim</div><div class="leader-title">Co-Head of App Development</div></div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Yasir Khan</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Kashif Raza</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Waqas Ahmed</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Naveed Iqbal</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Junaid Khan</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: UI/UX -->
-<section class="dept-section" aria-labelledby="dept-uiux">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-      <h2 class="dept-name" id="dept-uiux" data-reveal="up">UI / UX <em>Design</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">2 Leaders · 5 Members</div>
-    </div>
-    <a href="service-ui-ux.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;" data-reveal="up">
-    <div class="leader-card" style="margin-bottom:0;"><div class="leader-initial">Z</div><div><div class="leader-name">Zubair</div><div class="leader-title">Co-Head of UI Development</div></div></div>
-    <div class="leader-card" style="margin-bottom:0;"><div class="leader-initial">Q</div><div><div class="leader-name">Qasim</div><div class="leader-title">Co-Head of UI Development</div></div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Shayan Malik</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Taha Ahmed</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Ayesha Noor</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Syeda Fatima</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Mahnoor Ahmed</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: DESIGN & BRANDING -->
-<section class="dept-section" aria-labelledby="dept-brand">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-      <h2 class="dept-name" id="dept-brand" data-reveal="up">Design &amp; <em>Branding</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
-    </div>
-    <a href="service-branding.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">F</div>
-    <div><div class="leader-name">Fawad Ahmad</div><div class="leader-title">Head of Design &amp; Branding</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Zainab Ali</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Eman Fatima</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Alina Raza</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Iqra Khan</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Sana Malik</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- DEPT: WEBSITE MAINTENANCE -->
-<section class="dept-section" aria-labelledby="dept-maint">
-  <div class="dept-header">
-    <div class="dept-title-wrap">
-      <div class="dept-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-      <h2 class="dept-name" id="dept-maint" data-reveal="up">Website <em>Maintenance</em></h2>
-      <div class="dept-count" data-reveal="up" data-delay="1">1 Leader · 5 Members</div>
-    </div>
-    <a href="service-maintenance.html" class="btn btn-outline btn-arrow dept-link-btn" data-reveal="up" data-delay="2">View Service</a>
-  </div>
-  <div class="leader-card" data-reveal="up">
-    <div class="leader-initial">A</div>
-    <div><div class="leader-name">Afan Aziz</div><div class="leader-title">Head of Website Maintenance</div></div>
-  </div>
-  <div class="members-grid">
-    <div class="member-card" data-reveal="up"><span class="member-num">01</span><div class="member-name">Areeba Ahmed</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="1"><span class="member-num">02</span><div class="member-name">Laiba Noor</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="2"><span class="member-num">03</span><div class="member-name">Maryam Khan</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="3"><span class="member-num">04</span><div class="member-name">Hoor Fatima</div><div class="member-bar"></div></div>
-    <div class="member-card" data-reveal="up" data-delay="4"><span class="member-num">05</span><div class="member-name">Ahmed Raza</div><div class="member-bar"></div></div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Talent</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Join Us</div>
-  <h2 data-reveal="up" data-delay="1">Work with<br><em>the Best.</em></h2>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Join Us</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Work with <span class="accent">the best.</span></h2>
   <p data-reveal="up" data-delay="2">Ready to start your project? Our team is ready to bring your vision to life.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Start a Project</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
+        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-seo.html">SEO Services</a></li>
         <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -506,37 +414,39 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- Back to top -->
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 </a>
 
 <script src="shared.js"></script>
-
-<!-- MOBILE MENU SCRIPT -->
 <script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -544,31 +454,28 @@
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -576,7 +483,7 @@
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -588,10 +495,10 @@
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

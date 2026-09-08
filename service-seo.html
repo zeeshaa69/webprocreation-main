@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>SEO Services | Web Pro Creation</title>
-<meta name="description" content="Data-driven SEO services from Web Pro Creation — technical SEO, keyword research, on-page optimisation, link building and local SEO that push your site to the top of Google and turn organic traffic into revenue.">
+<meta name="description" content="Data-driven SEO from Web Pro Creation — technical SEO, keyword strategy, on-page optimisation, link building and local SEO engineered to turn organic traffic into revenue.">
 <meta name="keywords" content="SEO services, search engine optimization, technical SEO, keyword research, link building, local SEO agency, Web Pro Creation">
 <link rel="canonical" href="https://webprocreation.com/service-seo.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
 <meta property="og:title" content="SEO Services | Web Pro Creation">
@@ -33,7 +32,7 @@
   "@type": "Service",
   "serviceType": "Search Engine Optimization",
   "name": "SEO Services",
-  "description": "Technical SEO, keyword research, on-page optimisation, link building, local SEO and analytics reporting delivered by Web Pro Creation.",
+  "description": "Technical SEO, keyword strategy, on-page optimisation, link building, local SEO and analytics reporting delivered by Web Pro Creation.",
   "provider": {
     "@type": "Organization",
     "name": "Web Pro Creation",
@@ -48,102 +47,87 @@
 
 <style id="page-css">
 /* ── SEO HERO ─────────────────────────────────────────── */
-.svc-hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex; align-items: center;
-  padding: 140px 64px 60px;
-  overflow: hidden;
-  background: var(--cream);
-}
-.svc-hero::after { content:''; position:absolute; inset:0; background: var(--grad-mesh); z-index:0; }
-.svc-hero-inner { position: relative; z-index: 3; max-width: 720px; }
-.svc-hero h1 { font-family: var(--font-display); font-weight:400; font-size: clamp(46px,6.6vw,88px); line-height: 1.0; letter-spacing:-0.02em; color: var(--ink); margin: 26px 0 26px; }
-.svc-hero h1 em { font-style: italic; }
-.svc-hero-desc { font-size: 17px; color: var(--charcoal); max-width: 540px; line-height: 1.85; margin-bottom: 40px; font-weight: 300; }
-.svc-hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
-.svc-badge-row { position:relative; z-index:2; display:flex; gap:14px; flex-wrap:wrap; margin-bottom: 6px; }
-.svc-badge {
-  display:inline-flex; align-items:center; gap:9px;
-  font-family: var(--font-mono); font-size: 10px; letter-spacing:0.16em; text-transform:uppercase;
-  color: var(--ink-3); padding: 10px 18px; border-radius:100px;
-}
-.svc-badge svg { width:14px; height:14px; stroke:var(--gold); fill:none; stroke-width:1.6; }
-
-.svc-aside {
-  position: absolute; right: 64px; bottom: 90px; z-index: 3;
-  padding: 30px 34px; border-radius: 22px;
-  animation: floatY 6s ease-in-out infinite;
-}
-.svc-aside-item { padding: 14px 0; text-align: right; }
-.svc-aside-num { font-family: var(--font-display); font-size: 32px; color: var(--ink); }
-.svc-aside-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
-.svc-aside-divider { height: 1px; background: var(--border-mid); margin: 2px 0; }
-@media(max-width:1100px){ .svc-aside { display:none; } }
+.svc-hero { min-height: 92vh; display: flex; align-items: center; padding: 150px 48px 60px; position: relative; z-index: 1; }
+.svc-hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; width: 100%; }
+.svc-hero-copy h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; font-size: clamp(40px, 5.2vw, 68px); line-height: 1.03; color: var(--text); margin: 22px 0 24px; }
+.svc-hero-copy .lede { font-size: 16.5px; max-width: 500px; margin-bottom: 36px; }
+.svc-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+@media(max-width:1024px){ .svc-hero-grid { grid-template-columns: 1fr; } .svc-hero-visual { order: -1; max-width: 320px; margin: 0 auto 10px; } }
 @media(max-width:768px){ .svc-hero { padding: 120px 20px 50px; min-height:auto; } }
 
-/* ── WHY LIST (differentiators) ──────────────────────── */
-.svc-why { padding: 120px 64px; }
-.svc-why-list { margin-top: 56px; border-top: 1px solid var(--border-mid); }
-.svc-why-row { display:grid; grid-template-columns: 90px 260px 1fr; gap:32px; align-items:center; padding:30px 0; border-bottom:1px solid var(--border-mid); transition:background 0.3s; }
-.svc-why-row:hover { background: var(--grad-gold-soft); }
-.svc-why-num { font-family: var(--font-mono); font-size:13px; color:var(--gold); }
-.svc-why-row h3 { font-family: var(--font-display); font-size:22px; font-weight:500; color:var(--ink); }
-.svc-why-row p { font-size:14px; color:var(--charcoal); line-height:1.8; max-width:620px; }
-@media(max-width:900px){ .svc-why-row { grid-template-columns:1fr; gap:8px; padding:22px 0; } }
+/* ── RANK DIAL (hero visual) ──────────────────────────── */
+.rank-dial { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 400px; margin: 0 auto; }
+.rank-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed var(--line-2); }
+.rank-ring.r2 { inset: 14%; border-style: solid; border-color: var(--line); animation: rotateSlow 46s linear infinite; }
+.rank-core { position: absolute; inset: 28%; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line-2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; box-shadow: var(--shadow-lg); }
+.rank-core .big { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--text); }
+.rank-core .sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+.rank-tag { position: absolute; padding: 9px 16px; border-radius: 100px; background: var(--surface); border: 1px solid var(--line-2); font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); box-shadow: var(--shadow-sm); display:flex; align-items:center; gap:7px; }
+.rank-tag .dot { width:5px; height:5px; border-radius:50%; background: var(--grad-primary); }
+.rank-tag.t1 { top: -6%; left: 6%; animation: floatY 5s ease-in-out infinite; }
+.rank-tag.t2 { top: 30%; right: -10%; animation: floatY 6s ease-in-out infinite 0.4s; }
+.rank-tag.t3 { bottom: 4%; left: -4%; animation: floatY 5.5s ease-in-out infinite 0.8s; }
+
+/* ── SEO SIGNALS ROW (compact stat strip in hero) ─────── */
+.sig-row { display:flex; gap: 26px; margin-top: 34px; flex-wrap: wrap; }
+.sig-item { display:flex; flex-direction:column; gap:2px; }
+.sig-num { font-family: var(--font-display); font-weight:700; font-size: 24px; color: var(--text); }
+.sig-lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing:0.08em; text-transform:uppercase; color: var(--text-faint); }
+
+/* ── DIFFERENTIATOR ROWS ──────────────────────────────── */
+.diff-list { margin-top: 56px; border-top: 1px solid var(--line); }
+.diff-row { display: grid; grid-template-columns: 70px 1fr; gap: 26px; align-items: flex-start; padding: 32px 0; border-bottom: 1px solid var(--line); transition: background 0.3s; }
+.diff-row:hover { background: var(--surface); }
+.diff-num { font-family: var(--font-mono); font-size: 13px; color: var(--gold-2); padding-top: 4px; }
+.diff-row h3 { font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--text); margin-bottom: 8px; }
+.diff-row p { font-size: 14px; color: var(--text-dim); line-height: 1.8; max-width: 640px; }
+@media(max-width:700px){ .diff-row { grid-template-columns: 1fr; gap: 6px; } }
 
 /* ── FAQ ──────────────────────────────────────────────── */
-.svc-faq-wrap { max-width: 780px; margin-top: 56px; }
-.faq-item { border-bottom: 1px solid var(--border-mid); }
-.faq-q { padding: 26px 4px; display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer; font-family: var(--font-display); font-size: 20px; font-weight:500; color: var(--ink); transition:color 0.3s; user-select:none; }
-.faq-q:hover { color: var(--gold); }
-.faq-toggle { width:34px; height:34px; flex-shrink:0; border-radius:50%; border:1px solid var(--border-mid); display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--muted); transition:transform 0.4s, border-color 0.3s, color 0.3s; }
-.faq-item.open .faq-toggle { transform: rotate(135deg); border-color: var(--gold); color: var(--gold); background: var(--grad-gold-soft); }
-.faq-a { max-height:0; overflow:hidden; transition: max-height 0.5s var(--ease-out); font-size:14px; color: var(--charcoal); line-height:1.9; padding: 0 4px; }
-.faq-item.open .faq-a { max-height: 260px; padding-bottom: 24px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q { padding: 24px 4px; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: none; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); transition: color 0.3s; user-select: none; }
+.faq-q:hover { color: var(--gold-2); }
+.faq-toggle { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; font-size: 17px; color: var(--text-faint); transition: transform 0.4s, border-color 0.3s, color 0.3s; }
+.faq-item.open .faq-toggle { transform: rotate(135deg); border-color: var(--gold); color: var(--gold-2); background: var(--surface-3); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); font-size: 13.5px; color: var(--text-dim); line-height: 1.85; padding: 0 4px; }
+.faq-item.open .faq-a { max-height: 260px; padding-bottom: 22px; }
 
 @media(max-width:768px){
-  .svc-hero h1 { font-size: clamp(38px,10vw,58px); }
-  .svc-why-list { margin-top: 36px; }
+  .svc-hero-copy h1 { font-size: clamp(34px,9vw,50px); }
 }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
-<!-- Cursor -->
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
-<!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- NAV -->
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html" class="active">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -156,204 +140,227 @@
 
 <!-- HERO -->
 <header class="svc-hero">
-  <div class="orb orb-gold" data-parallax-orb="0.12" style="width:420px;height:420px;top:-100px;right:-80px;"></div>
-  <div class="orb orb-teal" data-parallax-orb="0.08" style="width:320px;height:320px;bottom:-60px;left:-60px;"></div>
-
-  <div class="svc-hero-inner">
-    <div class="svc-badge-row">
-      <span class="svc-badge glass" data-reveal="fade" data-delay="1"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search Engine Optimisation</span>
+  <div class="svc-hero-grid">
+    <div class="svc-hero-copy">
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Search Engine Optimization</div>
+      <h1 data-reveal="up" data-delay="1">Search rankings, <span class="accent">engineered.</span></h1>
+      <p class="lede" data-reveal="up" data-delay="2">Data-driven SEO strategies that push your website to the top of Google — attracting the right audience and turning organic traffic into real, compounding revenue.</p>
+      <div class="svc-hero-actions" data-reveal="up" data-delay="3">
+        <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free SEO Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="team.html" class="btn btn-outline">Meet the SEO Team</a>
+      </div>
+      <div class="sig-row" data-reveal="up" data-delay="4">
+        <div class="sig-item"><div class="sig-num">60–90</div><div class="sig-lbl">Days to First Gains</div></div>
+        <div class="sig-item"><div class="sig-num">White-Hat</div><div class="sig-lbl">Every Tactic, Always</div></div>
+        <div class="sig-item"><div class="sig-num">Monthly</div><div class="sig-lbl">Ranking &amp; ROI Reports</div></div>
+      </div>
     </div>
-    <h1 data-reveal="up" data-delay="1">Search Rankings, <em class="grad-text">Engineered.</em></h1>
-    <p class="svc-hero-desc" data-reveal="up" data-delay="2">Data-driven SEO strategies that push your website to the top of Google — attracting the right audience and turning organic traffic into real revenue.</p>
-    <div class="svc-hero-actions" data-reveal="up" data-delay="3">
-      <a href="contact.html" class="btn btn-gold btn-arrow">Get a Free Quote</a>
-      <a href="team.html" class="btn btn-glass">Meet the SEO Team</a>
+    <div class="svc-hero-visual" data-reveal="scale" data-delay="2">
+      <div class="rank-dial">
+        <div class="rank-ring r1"></div>
+        <div class="rank-ring r2"></div>
+        <div class="rank-core"><div class="big">Page 1</div><div class="sub">Target Rank</div></div>
+        <div class="rank-tag t1"><span class="dot"></span>Core Web Vitals</div>
+        <div class="rank-tag t2"><span class="dot"></span>Keyword Intent</div>
+        <div class="rank-tag t3"><span class="dot"></span>Backlink Authority</div>
+      </div>
     </div>
-  </div>
-
-  <div class="svc-aside glass" data-reveal="scale" data-delay="2">
-    <div class="svc-aside-item"><div class="svc-aside-num" data-counter="2000" data-suffix="+">0</div><div class="svc-aside-label">Projects Delivered</div></div>
-    <div class="svc-aside-divider"></div>
-    <div class="svc-aside-item"><div class="svc-aside-num" data-counter="4" data-suffix="+">0</div><div class="svc-aside-label">Years of Excellence</div></div>
-    <div class="svc-aside-divider"></div>
-    <div class="svc-aside-item"><div class="svc-aside-num" data-counter="98" data-suffix="%">0</div><div class="svc-aside-label">Client Satisfaction</div></div>
   </div>
 </header>
 
-<!-- TECH MARQUEE -->
-<div class="tech-marquee-wrap" style="padding:36px 0;border-top:1px solid var(--border-mid);border-bottom:1px solid var(--border-mid);background:var(--cream-2);" aria-hidden="true">
-  <div class="tech-marquee-track">
-    <span class="tech-badge"><span class="dot"></span>Google Search Console</span>
-    <span class="tech-badge"><span class="dot"></span>Ahrefs</span>
-    <span class="tech-badge"><span class="dot"></span>SEMrush</span>
-    <span class="tech-badge"><span class="dot"></span>Google Analytics</span>
-    <span class="tech-badge"><span class="dot"></span>Screaming Frog</span>
-    <span class="tech-badge"><span class="dot"></span>Google Business Profile</span>
-    <span class="tech-badge"><span class="dot"></span>Yoast SEO</span>
-    <span class="tech-badge"><span class="dot"></span>GTmetrix</span>
-    <span class="tech-badge"><span class="dot"></span>Google Search Console</span>
-    <span class="tech-badge"><span class="dot"></span>Ahrefs</span>
-    <span class="tech-badge"><span class="dot"></span>SEMrush</span>
-    <span class="tech-badge"><span class="dot"></span>Google Analytics</span>
+<!-- TOOLKIT MARQUEE -->
+<div class="trust-strip" aria-label="SEO toolkit">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Google Search Console</span>
+      <span class="pill"><span class="dot"></span>Ahrefs</span>
+      <span class="pill"><span class="dot"></span>SEMrush</span>
+      <span class="pill"><span class="dot"></span>Google Analytics</span>
+      <span class="pill"><span class="dot"></span>Screaming Frog</span>
+      <span class="pill"><span class="dot"></span>Google Business Profile</span>
+      <span class="pill"><span class="dot"></span>GTmetrix</span>
+      <span class="pill"><span class="dot"></span>Google Search Console</span>
+      <span class="pill"><span class="dot"></span>Ahrefs</span>
+      <span class="pill"><span class="dot"></span>SEMrush</span>
+      <span class="pill"><span class="dot"></span>Google Analytics</span>
+    </div>
   </div>
 </div>
 
-<!-- FEATURES — BENTO -->
+<!-- WHAT WE DELIVER — BENTO -->
 <section class="section" aria-labelledby="deliver-heading">
-  <div class="section-label" data-reveal="up">What's Included</div>
-  <h2 class="section-title" id="deliver-heading" data-reveal="up" data-delay="1">What We <em>Deliver</em></h2>
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>What's Included</div>
+      <h2 class="h2" id="deliver-heading" data-reveal="up" data-delay="1">Every ranking lever, <span class="accent">pulled together.</span></h2>
+    </div>
+  </div>
 
-  <div class="bento-grid" style="margin-top:56px;">
-    <article class="glass-card bento-2x2" data-magnetic data-reveal="up">
-      <span class="svc-why-num" style="display:block;margin-bottom:auto;">01</span>
-      <div class="svc-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--grad-gold-soft);border:1px solid var(--glass-border);margin:18px 0 20px;"><svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--gold-dim)" fill="none" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:10px;">Technical SEO</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.75;">Site speed, Core Web Vitals, crawlability, structured data and indexation — the foundation of lasting rankings.</p>
+  <div class="bento-grid">
+    <article class="tile b-2x2" data-tilt data-reveal="up">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <span class="tile-status"><span class="dot"></span>Foundation</span>
+      </div>
+      <h3>Technical SEO</h3>
+      <p>Site speed, Core Web Vitals, crawlability, structured data and indexation — the infrastructure lasting rankings are built on.</p>
+      <div class="tile-tags"><span class="tile-tag">Core Web Vitals</span><span class="tile-tag">Schema</span><span class="tile-tag">Crawl Budget</span></div>
+      <a href="contact.html" class="tile-link">Request an audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </article>
 
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="1">
-      <div class="svc-icon" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--grad-gold-soft);border:1px solid var(--glass-border);margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--gold-dim)" fill="none" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:8px;">Keyword Research</h3>
-      <p style="font-size:13px;color:var(--charcoal);line-height:1.7;">Deep keyword analysis revealing high-intent, low-competition opportunities your competitors are missing.</p>
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <span class="tile-meta">Intent · Volume · Gaps</span>
+      </div>
+      <h3>Keyword Research</h3>
+      <p>Deep keyword analysis revealing high-intent, low-competition opportunities your competitors are missing.</p>
     </article>
 
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="2">
-      <div class="svc-icon" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--grad-gold-soft);border:1px solid var(--glass-border);margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--gold-dim)" fill="none" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:8px;">On-Page Optimisation</h3>
-      <p style="font-size:13px;color:var(--charcoal);line-height:1.7;">Title tags, meta descriptions, heading structure, internal linking and content optimisation on every page.</p>
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <span class="tile-meta">Titles · Meta · Content</span>
+      </div>
+      <h3>On-Page Optimisation</h3>
+      <p>Title tags, meta descriptions, heading structure, internal linking and content optimisation across every page.</p>
     </article>
 
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up">
-      <div class="svc-icon" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--grad-gold-soft);border:1px solid var(--glass-border);margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--gold-dim)" fill="none" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:8px;">Link Building</h3>
-      <p style="font-size:13px;color:var(--charcoal);line-height:1.7;">High-authority backlink acquisition through ethical, white-hat outreach — the kind that lasts.</p>
+    <article class="tile b-2x1" data-tilt data-reveal="up">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+      </div>
+      <h3>Link Building</h3>
+      <p>High-authority backlink acquisition through ethical, white-hat outreach — the kind that lasts.</p>
     </article>
 
-    <article class="glass-card bento-2x1" data-magnetic data-reveal="up" data-delay="1">
-      <div class="svc-icon" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--grad-gold-soft);border:1px solid var(--glass-border);margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--gold-dim)" fill="none" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:8px;">Local SEO</h3>
-      <p style="font-size:13px;color:var(--charcoal);line-height:1.7;">Google Business Profile optimisation, local citations and map-pack rankings for local businesses.</p>
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      </div>
+      <h3>Local SEO</h3>
+      <p>Google Business Profile optimisation, local citations and map-pack rankings for storefront and multi-location businesses.</p>
     </article>
 
-    <article class="glass-card bento-2x2 dark" data-magnetic data-reveal="up" data-delay="2" style="color:var(--cream);background:var(--grad-ink);background-image:var(--grad-mesh-dark),var(--grad-ink);">
-      <div class="svc-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(212,175,90,0.14);border:1px solid rgba(212,175,90,0.3);margin-bottom:20px;"><svg width="24" height="24" viewBox="0 0 24 24" stroke="#D4AF5A" fill="none" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--cream);margin-bottom:10px;">Reporting &amp; Analytics</h3>
-      <p style="font-size:14px;color:rgba(250,248,243,0.6);line-height:1.75;">Monthly ranking reports, traffic analysis and clear ROI metrics — full transparency, always.</p>
+    <article class="tile b-2x2 tile-dark" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top">
+        <div class="tile-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <span class="tile-status"><span class="dot"></span>Ongoing</span>
+      </div>
+      <h3>Reporting &amp; Analytics</h3>
+      <p>Monthly ranking reports, traffic analysis and clear ROI metrics — full transparency on exactly what's moving the needle, always.</p>
+      <a href="contact.html" class="tile-link">Talk to us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </article>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-wrap" style="padding:120px 64px;background:var(--cream-2);position:relative;overflow:hidden;" aria-labelledby="process-heading">
-  <div class="section-label" data-reveal="up">Our Approach</div>
-  <h2 class="section-title" id="process-heading" data-reveal="up" data-delay="1">How We <em>Work</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Audit &amp; Discovery</h3>
-      <p>A complete technical and content audit paired with deep keyword research to uncover every issue and opportunity.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Strategy &amp; On-Page</h3>
-      <p>A custom roadmap prioritised by impact, with on-page optimisation across titles, meta data and content.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Authority &amp; Links</h3>
-      <p>Systematic, white-hat link acquisition through outreach and content marketing that builds lasting authority.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Track, Report &amp; Refine</h3>
-      <p>Monthly ranking checks, traffic reports and strategy refinements based on real data.</p>
-    </div>
+<!-- STAT BAND -->
+<section class="stat-band" aria-label="SEO performance benchmarks">
+  <div class="stat-grid">
+    <div class="stat-item" data-reveal="up"><div class="stat-num" data-counter="2000" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="1"><div class="stat-num" data-counter="4" data-suffix="+">0</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="98" data-suffix="%">0</div><div class="stat-label">Client Satisfaction</div></div>
+    <div class="stat-item" data-reveal="up" data-delay="3"><div class="stat-num" data-counter="30" data-suffix="+">0</div><div class="stat-label">Countries Served</div></div>
   </div>
 </section>
 
-<!-- WHY LIST -->
-<section class="svc-why" aria-labelledby="why-heading">
-  <div class="section-label" data-reveal="up">Why WPC SEO</div>
-  <h2 class="section-title" id="why-heading" data-reveal="up" data-delay="1">Built For The <em>Long Game</em></h2>
-  <div class="svc-why-list">
-    <div class="svc-why-row" data-reveal="up">
-      <span class="svc-why-num">01</span>
-      <h3>White-Hat Only</h3>
-      <p>Every tactic we use is ethical and sustainable — no shortcuts that risk a future penalty, ever.</p>
+<!-- PROCESS TIMELINE -->
+<section class="section" aria-labelledby="process-heading">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Approach</div>
+      <h2 class="h2" id="process-heading" data-reveal="up" data-delay="1">Built for the <span class="accent">long game.</span></h2>
     </div>
-    <div class="svc-why-row" data-reveal="up" data-delay="1">
-      <span class="svc-why-num">02</span>
-      <h3>Full Transparency</h3>
-      <p>Monthly ranking, traffic and ROI reports — you always know exactly what we're doing and why.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Audit</h3><p>A complete technical and content audit paired with deep keyword research to uncover every issue and opportunity.</p></div><div class="tl-num">01</div></div>
+    <div class="tl-row"><div class="tl-num">02</div><div class="tl-card" data-reveal="right"><h3>Keyword Strategy</h3><p>A custom roadmap of high-intent keywords, prioritised by impact and mapped to your site architecture.</p></div></div>
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>On-Page &amp; Technical</h3><p>Titles, meta data, content and Core Web Vitals fixed and optimised, plus systematic white-hat link acquisition.</p></div><div class="tl-num">03</div></div>
+    <div class="tl-row"><div class="tl-num">04</div><div class="tl-card" data-reveal="right"><h3>Reporting &amp; Growth</h3><p>Monthly ranking checks, traffic reports and strategy refinements based on real data — compounding, month over month.</p></div></div>
+  </div>
+</section>
+
+<!-- WHY WPC SEO — DIFFERENTIATOR ROWS -->
+<section class="section" aria-labelledby="why-heading" style="padding-top:0;">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Why WPC SEO</div>
+      <h2 class="h2" id="why-heading" data-reveal="up" data-delay="1">No shortcuts. <span class="accent">No penalties.</span></h2>
     </div>
-    <div class="svc-why-row" data-reveal="up" data-delay="2">
-      <span class="svc-why-num">03</span>
-      <h3>Technical + Content</h3>
-      <p>One team handling both disciplines together, instead of siloed specialists working in isolation.</p>
+  </div>
+  <div class="diff-list">
+    <div class="diff-row" data-reveal="up">
+      <span class="diff-num">01</span>
+      <div><h3>White-Hat Only</h3><p>Every tactic we use is ethical and sustainable — no shortcuts that risk a future penalty, ever.</p></div>
     </div>
-    <div class="svc-why-row" data-reveal="up">
-      <span class="svc-why-num">04</span>
-      <h3>Local &amp; Global Reach</h3>
-      <p>From map-pack rankings for a single storefront to international SEO across markets — we scale with you.</p>
+    <div class="diff-row" data-reveal="up" data-delay="1">
+      <span class="diff-num">02</span>
+      <div><h3>Full Transparency</h3><p>Monthly ranking, traffic and ROI reports — you always know exactly what we're doing and why.</p></div>
+    </div>
+    <div class="diff-row" data-reveal="up" data-delay="2">
+      <span class="diff-num">03</span>
+      <div><h3>Technical + Content, One Team</h3><p>Both disciplines handled together by one accountable team, instead of siloed specialists working in isolation.</p></div>
+    </div>
+    <div class="diff-row" data-reveal="up">
+      <span class="diff-num">04</span>
+      <div><h3>Local &amp; Global Reach</h3><p>From map-pack rankings for a single storefront to international SEO across markets — we scale with you.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:var(--cream-2);" aria-labelledby="faq-heading">
-  <div class="section-label" data-reveal="up">FAQ</div>
-  <h2 class="section-title" id="faq-heading" data-reveal="up" data-delay="1">Common <em>Questions</em></h2>
-  <div class="svc-faq-wrap" data-reveal="up" data-delay="2">
+<section class="section" aria-labelledby="faq-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>FAQ</div>
+  <h2 class="h2" id="faq-heading" data-reveal="up" data-delay="1">Common <span class="accent">questions.</span></h2>
+  <div class="faq-list" style="max-width:780px;margin-top:48px;" data-reveal="up" data-delay="2">
     <div class="faq-item">
-      <div class="faq-q">How long does SEO take to work?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">How long does SEO take to work?<span class="faq-toggle">+</span></div>
       <div class="faq-a">Initial improvements in 60–90 days. Significant ranking gains typically visible in 4–6 months. SEO is a long-term investment.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Do you guarantee first-page rankings?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Do you guarantee first-page rankings?<span class="faq-toggle">+</span></div>
       <div class="faq-a">No ethical agency can guarantee specific rankings — Google's algorithm is always evolving. We guarantee our effort, methodology and transparency.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Is local SEO different?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">Is local SEO different?<span class="faq-toggle">+</span></div>
       <div class="faq-a">Yes. Local SEO focuses on Google Business Profile, local citations and geo-targeted keywords. We offer dedicated local SEO packages.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What if my site was penalised?<div class="faq-toggle">+</div></div>
+      <div class="faq-q">What if my site was penalised?<span class="faq-toggle">+</span></div>
       <div class="faq-a">We perform full penalty audits and recovery strategies — identifying toxic links and on-site issues that triggered the penalty.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Rank</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Ready?</div>
-  <h2 data-reveal="up" data-delay="1">Let's Get You<br>Found <em>First.</em></h2>
-  <p data-reveal="up" data-delay="2">Turn organic search into your most reliable growth channel.<br>Free SEO audit on every discovery call.</p>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready?</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Let's get you <span class="accent">found first.</span></h2>
+  <p data-reveal="up" data-delay="2">Turn organic search into your most reliable growth channel — free SEO audit on every discovery call.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Start a Project</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
+        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-seo.html">SEO Services</a></li>
         <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -368,28 +375,31 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- Back to top -->
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
@@ -397,18 +407,7 @@
 
 <script src="shared.js"></script>
 <script>
-/* ── FAQ ACCORDION ──────────────────────────────────── */
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.querySelector('.faq-q').addEventListener('click', ()=>{
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(o=>{ if(o!==item) o.classList.remove('open'); });
-    item.classList.toggle('open', !isOpen);
-  });
-});
-</script>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -416,31 +415,28 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html" class="active">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -448,7 +444,7 @@ document.querySelectorAll('.faq-item').forEach(item=>{
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -460,10 +456,10 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 

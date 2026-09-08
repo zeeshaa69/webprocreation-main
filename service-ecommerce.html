@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <title>E-Commerce Development Agency | Web Pro Creation</title>
 <meta name="description" content="Web Pro Creation builds high-converting Shopify and WooCommerce stores — custom storefronts, payment integrations, inventory systems and conversion-rate optimisation engineered to sell and scale.">
 <meta name="keywords" content="e-commerce development, Shopify development agency, WooCommerce development, online store design, payment gateway integration, conversion rate optimisation">
 <link rel="canonical" href="https://webprocreation.com/service-ecommerce.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0F0E0C">
+<meta name="theme-color" content="#0A0C14">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Web Pro Creation">
@@ -43,6 +43,10 @@
       {"@type":"PostalAddress","streetAddress":"124–128 City Road","addressLocality":"London","addressCountry":"GB"},
       {"@type":"PostalAddress","streetAddress":"4060 Lawrenceville Hwy","addressLocality":"Lilburn","addressCountry":"US"},
       {"@type":"PostalAddress","streetAddress":"Gulshan-e-Iqbal, Near NIPA","addressLocality":"Karachi","addressCountry":"PK"}
+    ],
+    "contactPoint": [
+      {"@type":"ContactPoint","telephone":"+1-631-364-2268","contactType":"customer service"},
+      {"@type":"ContactPoint","telephone":"+92-305-8218156","contactType":"customer service"}
     ]
   },
   "areaServed": "Worldwide",
@@ -51,96 +55,70 @@
 </script>
 
 <style id="page-css">
-/* ── SVC HERO ─────────────────────────────────────────── */
-.svc-hero {
-  min-height: 92vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 140px 64px 80px;
-  position: relative; overflow: hidden;
-  background: var(--cream);
-}
-.svc-hero::after { content:''; position:absolute; inset:0; background:var(--grad-mesh); z-index:0; }
-.svc-hero-content { position: relative; z-index: 2; max-width: 780px; }
-.svc-badges { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px; }
-.svc-badge {
-  display:inline-flex; align-items:center; gap:9px;
-  font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-  color:var(--ink-3); padding:10px 18px; border-radius:100px;
-}
-.svc-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--grad-gold); }
-.svc-hero h1 { font-family:var(--font-display); font-weight:400; font-size:clamp(46px,6.5vw,88px); line-height:1.0; letter-spacing:-0.02em; color:var(--ink); margin-bottom:26px; }
-.svc-hero h1 em { font-style: italic; }
-.svc-hero .hero-sub { font-size:17px; color:var(--charcoal); max-width:560px; line-height:1.85; font-weight:300; margin-bottom:40px; }
-.svc-hero-stats { display:flex; gap:44px; margin-top:52px; flex-wrap:wrap; position:relative; z-index:2; }
-.svc-hero-stat-num { font-family:var(--font-display); font-size:34px; color:var(--ink); }
-.svc-hero-stat-label { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-top:4px; }
+/* ── SVC HERO (split, orbit visual) ──────────────────── */
+.svc-hero { min-height: 92vh; display: flex; align-items: center; padding: 150px 48px 60px; position: relative; z-index: 1; }
+.svc-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; }
+.svc-hero-copy h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; font-size: clamp(38px, 5vw, 68px); line-height: 1.04; color: var(--text); margin: 22px 0 24px; }
+.svc-hero-copy .lede { margin-bottom: 36px; }
+.svc-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+.svc-hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+.svc-hero-stat-num { font-family: var(--font-display); font-weight: 700; font-size: 30px; color: var(--text); }
+.svc-hero-stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 4px; }
+@media(max-width:1024px){ .svc-hero-grid { grid-template-columns: 1fr; } .svc-hero-visual { order: -1; max-width: 320px; margin: 0 auto 10px; } }
+@media(max-width:768px){ .svc-hero { padding: 120px 20px 50px; min-height: auto; } .svc-hero-stats { gap: 26px; } }
 
-/* ── FEATURES — bento ─────────────────────────────────── */
-.ec-feat-tile { display:flex; flex-direction:column; height:100%; }
-.ec-feat-icon { width:50px; height:50px; border-radius:13px; display:flex; align-items:center; justify-content:center; background:var(--grad-gold-soft); border:1px solid var(--glass-border); margin-bottom:20px; }
-.ec-feat-icon svg { width:22px; height:22px; stroke:var(--gold-dim); fill:none; stroke-width:1.5; }
-.ec-feat-tile h3 { font-family:var(--font-display); font-size:21px; font-weight:500; color:var(--ink); margin-bottom:10px; }
-.ec-feat-tile p { font-size:13.5px; color:var(--charcoal); line-height:1.75; }
-.ec-feat-tile.dark { color:var(--cream); background:var(--grad-ink); background-image:var(--grad-mesh-dark), var(--grad-ink); }
-.ec-feat-tile.dark h3 { color:var(--cream); }
-.ec-feat-tile.dark p { color:rgba(250,248,243,0.62); }
-.ec-feat-tile.dark .ec-feat-icon { background:rgba(212,175,90,0.14); border-color:rgba(212,175,90,0.3); }
+/* ── PLATFORM COMPARE ─────────────────────────────────── */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 50px; }
+.compare-col ul { list-style: none; margin-top: 18px; }
+.compare-col li { font-size: 13.5px; color: var(--text-dim); padding: 11px 0; border-top: 1px solid var(--line); display: flex; gap: 10px; }
+.compare-col li:first-child { border-top: none; }
+.compare-col li::before { content: '✓'; color: var(--gold-2); font-weight: 700; flex-shrink: 0; }
+@media(max-width:900px){ .compare-grid { grid-template-columns: 1fr; } }
 
-/* ── WHY (platform comparison rows) ──────────────────── */
-.ec-why { padding: 0 64px 120px; }
-.ec-why-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:56px; border-radius:22px; overflow:hidden; }
-.ec-why-col { background:var(--glass-bg); backdrop-filter:blur(20px) saturate(180%); border:1px solid var(--glass-border); padding:44px 40px; }
-.ec-why-col h3 { font-family:var(--font-display); font-size:26px; font-weight:500; color:var(--ink); margin-bottom:6px; }
-.ec-why-col .ec-tag { font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:block; }
-.ec-why-col ul { list-style:none; }
-.ec-why-col li { font-size:14px; color:var(--charcoal); padding:11px 0; border-top:1px solid var(--border); display:flex; gap:10px; }
-.ec-why-col li::before { content:'✓'; color:var(--gold); font-weight:700; flex-shrink:0; }
-
-@media(max-width:1024px){ .ec-why-grid { grid-template-columns:1fr; } }
-@media(max-width:768px){
-  .svc-hero { padding:120px 20px 56px; min-height:auto; }
-  .svc-hero-stats { gap:28px; margin-top:36px; }
-  .ec-why { padding:0 20px 60px; }
-  .ec-why-col { padding:32px 26px; }
-}
+/* ── FAQ ──────────────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 14px; max-width: 840px; margin-top: 50px; }
+.faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: border-color 0.3s; }
+.faq-item.open, .faq-item:hover { border-color: var(--line-hover); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 26px; cursor: none; font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--text); }
+.faq-q .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--surface-3); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; transition: transform 0.35s var(--ease), background 0.3s; }
+.faq-item.open .faq-q .faq-icon { transform: rotate(45deg); background: var(--grad-primary); }
+.faq-item.open .faq-q .faq-icon svg { stroke: #14101C; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); padding: 0 26px; }
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
+.faq-a p { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="wpc-loader">
-  <div class="loader-logo">W<span>P</span>C</div>
+  <div class="loader-mark">W</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-num">0%</div>
 </div>
 
-<!-- Cursor -->
 <div id="wpc-cursor"></div>
 <div id="wpc-cursor-ring"></div>
-
-<!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- NAV -->
 <nav id="wpc-nav">
-  <a href="index.html" class="nav-logo">W<span>P</span>C</a>
+  <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li data-hover>
-      <a href="#" data-dropdown="services">Services ▾</a>
+      <a href="#" data-dropdown="services">Services</a>
       <div class="nav-dropdown">
         <a href="service-web-development.html">Website Development</a>
-        <a href="service-social-media.html">Social Media Management</a>
-        <a href="service-video-editing.html">Video Editing</a>
-        <a href="service-graphic-design.html">Graphic Designing</a>
+        <a href="service-app-development.html">App Development</a>
         <a href="service-seo.html">SEO Services</a>
         <a href="service-digital-marketing.html">Digital Marketing</a>
-        <a href="service-app-development.html">App Development</a>
-        <a href="service-ui-ux.html">UI/UX Design</a>
-        <a href="service-maintenance.html">Website Maintenance</a>
+        <a href="service-social-media.html">Social Media Management</a>
+        <a href="service-graphic-design.html">Graphic Designing</a>
         <a href="service-branding.html">Design &amp; Branding</a>
+        <a href="service-ui-ux.html">UI/UX Design</a>
         <a href="service-ecommerce.html" class="active">E-Commerce Solutions</a>
+        <a href="service-video-editing.html">Video Editing</a>
+        <a href="service-maintenance.html">Website Maintenance</a>
       </div>
     </li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -153,91 +131,115 @@
 
 <!-- HERO -->
 <header class="svc-hero">
-  <div class="orb orb-gold" data-parallax-orb="0.1" style="width:420px;height:420px;top:-100px;right:-80px;"></div>
-  <div class="orb orb-teal" data-parallax-orb="0.07" style="width:300px;height:300px;bottom:0;left:-60px;"></div>
-  <div class="svc-hero-content">
-    <div class="svc-badges">
-      <span class="svc-badge glass" data-reveal="fade"><span class="dot"></span>Shopify &amp; WooCommerce</span>
-      <span class="svc-badge glass" data-reveal="fade" data-delay="1"><span class="dot"></span>Conversion Engineered</span>
+  <div class="svc-hero-grid">
+    <div class="svc-hero-copy">
+      <div class="eyebrow" data-reveal="up"><span class="dot"></span>Shopify &amp; WooCommerce Development</div>
+      <h1 data-reveal="up" data-delay="1">Stores engineered to <span class="accent">sell &amp; scale.</span></h1>
+      <p class="lede" data-reveal="up" data-delay="2">High-converting online stores built on Shopify, WooCommerce or custom platforms — designed for exceptional customer experience from first click to checkout, and built to grow with your catalogue.</p>
+      <div class="svc-hero-actions" data-reveal="up" data-delay="3">
+        <a href="contact.html" class="btn btn-grad btn-arrow">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="team.html" class="btn btn-outline">Meet the E-Commerce Team</a>
+      </div>
+      <div class="svc-hero-stats" data-reveal="up" data-delay="4">
+        <div><div class="svc-hero-stat-num" data-counter="2000" data-suffix="+">0</div><div class="svc-hero-stat-label">Projects Delivered</div></div>
+        <div><div class="svc-hero-stat-num" data-counter="60" data-suffix="%">0</div><div class="svc-hero-stat-label">Avg. Conversion Lift*</div></div>
+        <div><div class="svc-hero-stat-num" data-counter="50" data-suffix="+">0</div><div class="svc-hero-stat-label">Payment Gateways</div></div>
+      </div>
     </div>
-    <h1 data-reveal="up"><em class="grad-text">E-Commerce</em><br>That Sells &amp; Scales.</h1>
-    <p class="hero-sub" data-reveal="up" data-delay="1">High-converting online stores built on Shopify, WooCommerce or custom platforms — designed to sell, optimised to scale, and engineered for exceptional customer experiences from first click to checkout.</p>
-    <div class="hero-actions" data-reveal="up" data-delay="2">
-      <a href="contact.html" class="btn btn-gold btn-arrow">Get a Free Quote</a>
-      <a href="team.html" class="btn btn-glass">Meet the E-Commerce Team</a>
-    </div>
-    <div class="svc-hero-stats" data-reveal="up" data-delay="3">
-      <div><div class="svc-hero-stat-num" data-counter="2000" data-suffix="+">0</div><div class="svc-hero-stat-label">Projects Delivered</div></div>
-      <div><div class="svc-hero-stat-num" data-counter="60" data-suffix="%">0</div><div class="svc-hero-stat-label">Avg. Conversion Lift*</div></div>
-      <div><div class="svc-hero-stat-num" data-counter="50" data-suffix="+">0</div><div class="svc-hero-stat-label">Payment Gateways</div></div>
+    <div class="svc-hero-visual" data-reveal="scale" data-delay="2">
+      <div class="orbit-wrap">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-ring r3"></div>
+        <div class="orbit-core">
+          <div class="big" data-counter="60" data-suffix="%">0</div>
+          <div class="lbl">Avg. Conversion Lift</div>
+        </div>
+        <div class="orbit-node n1" title="Shopify"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="orbit-node n2" title="Payments"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="orbit-node n3" title="Inventory"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="orbit-node n4" title="Mobile Commerce"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Shopify Development</span>
-    <span class="marquee-item">WooCommerce Stores</span>
-    <span class="marquee-item">Payment Integration</span>
-    <span class="marquee-item">Inventory Management</span>
-    <span class="marquee-item">Conversion Optimisation</span>
-    <span class="marquee-item">Mobile Commerce</span>
-    <span class="marquee-item">Shopify Development</span>
-    <span class="marquee-item">WooCommerce Stores</span>
-    <span class="marquee-item">Payment Integration</span>
-    <span class="marquee-item">Inventory Management</span>
-    <span class="marquee-item">Conversion Optimisation</span>
-    <span class="marquee-item">Mobile Commerce</span>
+<!-- TRUST STRIP -->
+<div class="trust-strip" aria-label="E-commerce capability strip">
+  <div class="pill-marquee-wrap">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Shopify Development</span>
+      <span class="pill"><span class="dot"></span>WooCommerce Stores</span>
+      <span class="pill"><span class="dot"></span>Payment Integration</span>
+      <span class="pill"><span class="dot"></span>Inventory Management</span>
+      <span class="pill"><span class="dot"></span>Conversion Optimisation</span>
+      <span class="pill"><span class="dot"></span>Mobile Commerce</span>
+      <span class="pill"><span class="dot"></span>Shopify Development</span>
+      <span class="pill"><span class="dot"></span>WooCommerce Stores</span>
+      <span class="pill"><span class="dot"></span>Payment Integration</span>
+      <span class="pill"><span class="dot"></span>Inventory Management</span>
+      <span class="pill"><span class="dot"></span>Conversion Optimisation</span>
+      <span class="pill"><span class="dot"></span>Mobile Commerce</span>
+    </div>
   </div>
 </div>
 
-<!-- FEATURES -->
+<!-- DELIVERABLES (bento) -->
 <section class="section" aria-labelledby="ec-features-heading">
-  <div class="section-label" data-reveal="up">What's Included</div>
-  <h2 class="section-title" id="ec-features-heading" data-reveal="up" data-delay="1">What We <em>Deliver</em></h2>
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>What's Included</div>
+  <h2 class="h2" id="ec-features-heading" data-reveal="up" data-delay="1">What we <span class="accent">deliver.</span></h2>
 
-  <div class="bento-grid" style="margin-top:56px;">
-    <article class="glass-card bento-2x2 ec-feat-tile dark" data-magnetic data-reveal="up">
-      <div class="ec-feat-icon" style="background:rgba(212,175,90,0.14);border-color:rgba(212,175,90,0.3);"><svg viewBox="0 0 24 24" stroke="#D4AF5A"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+  <div class="bento-grid" style="margin-top:50px;">
+    <article class="tile b-2x2 tile-dark" data-tilt data-reveal="up">
+      <div class="tile-top">
+        <div class="tile-icon" style="background:rgba(245,166,35,0.14);border-color:rgba(245,166,35,0.3);"><svg viewBox="0 0 24 24" stroke="#FFD37A"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <span class="tile-status"><span class="dot"></span>Core</span>
+      </div>
       <h3>Shopify Development</h3>
-      <p>Custom Shopify themes, app integrations, and store setups that convert browsers into buyers — built for speed and scale.</p>
+      <p>Custom Shopify themes, app integrations, and store setups that convert browsers into buyers — built for speed and scale, from first launch to multi-market rollout.</p>
+      <div class="tile-tags"><span class="tile-tag">Themes</span><span class="tile-tag">Apps</span><span class="tile-tag">Shopify Plus</span></div>
+      <a href="contact.html" class="tile-link">Start a store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </article>
-    <article class="glass-card bento-2x1 ec-feat-tile" data-magnetic data-reveal="up" data-delay="1">
-      <div class="ec-feat-icon"><svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17"/><circle cx="16" cy="18" r="1"/><circle cx="9" cy="18" r="1"/></svg></div>
+
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17"/><circle cx="16" cy="18" r="1"/><circle cx="9" cy="18" r="1"/></svg></div></div>
       <h3>WooCommerce Stores</h3>
       <p>Powerful WordPress-based e-commerce with complete inventory, payment, and order management.</p>
     </article>
-    <article class="glass-card bento-2x1 ec-feat-tile" data-magnetic data-reveal="up" data-delay="2">
-      <div class="ec-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div>
+
+    <article class="tile b-1x1" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div></div>
       <h3>Payment Integration</h3>
-      <p>Stripe, PayPal, Klarna, Apple Pay and 50+ gateways configured securely and seamlessly.</p>
+      <p>Stripe, PayPal, Klarna, Apple Pay and 50+ gateways configured securely.</p>
     </article>
-    <article class="glass-card bento-2x1 ec-feat-tile" data-magnetic data-reveal="up">
-      <div class="ec-feat-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+
+    <article class="tile b-1x1" data-tilt data-reveal="up">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div></div>
       <h3>Inventory Management</h3>
-      <p>Product catalogues, variant management, stock alerts and multi-warehouse support.</p>
+      <p>Catalogues, variants, stock alerts and multi-warehouse support.</p>
     </article>
-    <article class="glass-card bento-2x1 ec-feat-tile" data-magnetic data-reveal="up" data-delay="1">
-      <div class="ec-feat-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="1">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
       <h3>Conversion Optimisation</h3>
-      <p>Cart abandonment recovery, upselling, cross-selling and checkout optimisation to maximise AOV.</p>
+      <p>Cart abandonment recovery, upselling, cross-selling and checkout optimisation to maximise average order value.</p>
     </article>
-    <article class="glass-card bento-2x1 ec-feat-tile" data-magnetic data-reveal="up" data-delay="2">
-      <div class="ec-feat-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+
+    <article class="tile b-2x1" data-tilt data-reveal="up" data-delay="2">
+      <div class="tile-top"><div class="tile-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div></div>
       <h3>Mobile Commerce</h3>
-      <p>Mobile-first store design with PWA capabilities — optimised for the 70%+ of shoppers on mobile.</p>
+      <p>Mobile-first store design with PWA capabilities — optimised for the 70%+ of shoppers browsing on mobile.</p>
     </article>
   </div>
 </section>
 
-<!-- PLATFORM COMPARISON (why-style) -->
-<section class="ec-why" aria-labelledby="ec-why-heading">
-  <div class="section-label" data-reveal="up">Choosing a Platform</div>
-  <h2 class="section-title" id="ec-why-heading" data-reveal="up" data-delay="1">Shopify <em>or</em> WooCommerce</h2>
-  <div class="ec-why-grid">
-    <div class="ec-why-col glass" data-reveal="left">
-      <span class="ec-tag">Fastest to Launch</span>
+<!-- PLATFORM COMPARE -->
+<section class="section" style="padding-top:0;" aria-labelledby="ec-compare-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>Choosing a Platform</div>
+  <h2 class="h2" id="ec-compare-heading" data-reveal="up" data-delay="1">Shopify <span class="accent">or</span> WooCommerce.</h2>
+  <div class="compare-grid">
+    <article class="tile compare-col" data-reveal="left">
+      <div class="tile-top"><span class="tile-status"><span class="dot"></span>Fastest to Launch</span></div>
       <h3>Shopify</h3>
       <ul>
         <li>Hosted, secure and maintenance-light</li>
@@ -245,9 +247,9 @@
         <li>Best for direct-to-consumer brands scaling fast</li>
         <li>Built-in checkout and fraud protection</li>
       </ul>
-    </div>
-    <div class="ec-why-col glass" data-reveal="right">
-      <span class="ec-tag">Maximum Flexibility</span>
+    </article>
+    <article class="tile compare-col" data-reveal="right" data-delay="1">
+      <div class="tile-top"><span class="tile-meta">Maximum Flexibility</span></div>
       <h3>WooCommerce</h3>
       <ul>
         <li>Full ownership of your WordPress store</li>
@@ -255,63 +257,25 @@
         <li>Ideal for content-driven or complex catalogues</li>
         <li>No monthly platform fee — you own the stack</li>
       </ul>
-    </div>
+    </article>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="process-wrap" aria-labelledby="ec-process-heading" style="padding:120px 64px;background:var(--cream-2);position:relative;overflow:hidden;">
-  <div class="section-label" data-reveal="up">Our Approach</div>
-  <h2 class="section-title" id="ec-process-heading" data-reveal="up" data-delay="1">How We <em>Build Your Store</em></h2>
-  <div class="process-track" style="margin-top:60px;">
-    <div class="process-step" data-reveal="up">
-      <div class="process-num">01</div>
-      <h3>Strategy</h3>
-      <p>Product catalogue review, platform selection, payment provider and full e-commerce requirements scoping.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="1">
-      <div class="process-num">02</div>
-      <h3>Store Build</h3>
-      <p>Homepage, product pages, cart and checkout design — built and developed for conversion at every step.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="2">
-      <div class="process-num">03</div>
-      <h3>Integrations</h3>
-      <p>Payment gateways, shipping providers, inventory tools and marketing platforms connected and tested.</p>
-    </div>
-    <div class="process-step" data-reveal="up" data-delay="3">
-      <div class="process-num">04</div>
-      <h3>Launch &amp; Scale</h3>
-      <p>Go-live with full QA, staff training and 30-day post-launch support to optimise for growth.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TECHNOLOGIES -->
-<section class="tech-wrap" aria-labelledby="ec-tech-heading">
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Platforms We Use</div>
-  <h2 class="section-title" id="ec-tech-heading" data-reveal="up" data-delay="1">E-Commerce <em>Toolkit</em></h2>
-  <div class="tech-marquee-wrap" style="margin-top:48px;">
-    <div class="tech-marquee-track">
-      <span class="tech-badge"><span class="dot"></span>Shopify</span>
-      <span class="tech-badge"><span class="dot"></span>WooCommerce</span>
-      <span class="tech-badge"><span class="dot"></span>Stripe</span>
-      <span class="tech-badge"><span class="dot"></span>Klaviyo</span>
-      <span class="tech-badge"><span class="dot"></span>PayPal</span>
-      <span class="tech-badge"><span class="dot"></span>Klarna</span>
-      <span class="tech-badge"><span class="dot"></span>WordPress</span>
-      <span class="tech-badge"><span class="dot"></span>Google Analytics</span>
-      <span class="tech-badge"><span class="dot"></span>Shopify</span>
-      <span class="tech-badge"><span class="dot"></span>WooCommerce</span>
-      <span class="tech-badge"><span class="dot"></span>Stripe</span>
-      <span class="tech-badge"><span class="dot"></span>Klaviyo</span>
-    </div>
+<section class="section" style="padding-top:0;" aria-labelledby="ec-process-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>Our Approach</div>
+  <h2 class="h2" id="ec-process-heading" data-reveal="up" data-delay="1">How we <span class="accent">build your store.</span></h2>
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Strategy</h3><p>Product catalogue review, platform selection, payment provider and full e-commerce requirements scoping.</p></div><div class="tl-num">01</div></div>
+    <div class="tl-row"><div class="tl-num">02</div><div class="tl-card" data-reveal="right"><h3>Store Build</h3><p>Homepage, product pages, cart and checkout design — built and developed for conversion at every step.</p></div></div>
+    <div class="tl-row"><div class="tl-card" data-reveal="left"><h3>Integrations &amp; Payments</h3><p>Payment gateways, shipping providers, inventory tools and marketing platforms connected and tested.</p></div><div class="tl-num">03</div></div>
+    <div class="tl-row"><div class="tl-num">04</div><div class="tl-card" data-reveal="right"><h3>Launch &amp; Scale</h3><p>Go-live with full QA, staff training and 30-day post-launch support to optimise for growth.</p></div></div>
   </div>
 </section>
 
 <!-- STAT BAND -->
 <section class="stat-band" aria-label="E-commerce results">
-  <div class="stat-band-grid">
+  <div class="stat-grid">
     <div class="stat-item" data-reveal="up"><div class="stat-num" data-counter="2000" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
     <div class="stat-item" data-reveal="up" data-delay="1"><div class="stat-num" data-counter="50" data-suffix="+">0</div><div class="stat-label">Payment Gateways Configured</div></div>
     <div class="stat-item" data-reveal="up" data-delay="2"><div class="stat-num" data-counter="3" data-suffix="wk">0</div><div class="stat-label">Typical Store Launch*</div></div>
@@ -319,61 +283,81 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" aria-labelledby="ec-faq-heading">
-  <div class="section-label" data-reveal="up">FAQ</div>
-  <h2 class="section-title" id="ec-faq-heading" data-reveal="up" data-delay="1">Common <em>Questions</em></h2>
-  <div class="grid-2" style="margin-top:56px;max-width:1000px;">
-    <div class="card card-accent" data-reveal="up" data-delay="0"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Shopify or WooCommerce — which is better?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Shopify is faster to launch and simpler to manage; WooCommerce offers more flexibility. We'll recommend the right fit based on your needs.</p>
-    </div>
-    <div class="card card-accent" data-reveal="up" data-delay="1"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Can you migrate my existing store?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Yes. We handle complete migrations — products, customers, orders and SEO redirects — without losing data or rankings.</p>
-    </div>
-    <div class="card card-accent" data-reveal="up" data-delay="2"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">Do you set up payment gateways?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">Yes. Payment gateway integration is included in all e-commerce packages — Stripe, PayPal and local gateways configured securely.</p>
-    </div>
-    <div class="card card-accent" data-reveal="up" data-delay="3"><div class="card-accent"></div>
-      <h3 style="font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);margin-bottom:10px;">How do you optimise for conversions?</h3>
-      <p style="font-size:14px;color:var(--charcoal);line-height:1.8;">We implement proven CRO elements: clear CTAs, trust badges, fast checkout, abandoned-cart emails and product page best practices.</p>
+<!-- TOOLKIT -->
+<section class="section-sm" aria-labelledby="ec-tech-heading" style="text-align:center;">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;"><span class="dot"></span>Platforms We Use</div>
+  <h2 class="h2" id="ec-tech-heading" data-reveal="up" data-delay="1">E-commerce <span class="accent">toolkit.</span></h2>
+  <div class="pill-marquee-wrap" style="margin-top:44px;">
+    <div class="pill-marquee-track">
+      <span class="pill"><span class="dot"></span>Shopify</span>
+      <span class="pill"><span class="dot"></span>WooCommerce</span>
+      <span class="pill"><span class="dot"></span>Stripe</span>
+      <span class="pill"><span class="dot"></span>Klaviyo</span>
+      <span class="pill"><span class="dot"></span>PayPal</span>
+      <span class="pill"><span class="dot"></span>Klarna</span>
+      <span class="pill"><span class="dot"></span>WordPress</span>
+      <span class="pill"><span class="dot"></span>Google Analytics</span>
+      <span class="pill"><span class="dot"></span>Shopify</span>
+      <span class="pill"><span class="dot"></span>WooCommerce</span>
+      <span class="pill"><span class="dot"></span>Stripe</span>
+      <span class="pill"><span class="dot"></span>Klaviyo</span>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-bg-word" aria-hidden="true">Sell</div>
-  <div class="section-label" data-reveal="up" style="justify-content:center;">Ready?</div>
-  <h2 data-reveal="up" data-delay="1">Let's Build a Store<br>That <em>Sells While You Sleep.</em></h2>
-  <p data-reveal="up" data-delay="2">From product page to checkout — engineered for conversion.</p>
+<!-- FAQ -->
+<section class="section" aria-labelledby="ec-faq-heading">
+  <div class="eyebrow" data-reveal="up"><span class="dot"></span>FAQ</div>
+  <h2 class="h2" id="ec-faq-heading" data-reveal="up" data-delay="1">Common <span class="accent">questions.</span></h2>
+  <div class="faq-list">
+    <div class="faq-item" data-reveal="up">
+      <div class="faq-q">Shopify or WooCommerce — which is better?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></div>
+      <div class="faq-a"><p>Shopify is faster to launch and simpler to manage; WooCommerce offers more flexibility. We'll recommend the right fit based on your catalogue, budget and growth plans.</p></div>
+    </div>
+    <div class="faq-item" data-reveal="up" data-delay="1">
+      <div class="faq-q">Can you migrate my existing store?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></div>
+      <div class="faq-a"><p>Yes. We handle complete migrations — products, customers, orders and SEO redirects — without losing data or rankings.</p></div>
+    </div>
+    <div class="faq-item" data-reveal="up" data-delay="2">
+      <div class="faq-q">Do you set up payment gateways?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></div>
+      <div class="faq-a"><p>Yes. Payment gateway integration is included in all e-commerce packages — Stripe, PayPal and local gateways configured securely.</p></div>
+    </div>
+    <div class="faq-item" data-reveal="up" data-delay="3">
+      <div class="faq-q">How do you optimise for conversions?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span></div>
+      <div class="faq-a"><p>We implement proven CRO elements: clear CTAs, trust badges, fast checkout, abandoned-cart emails and product page best practices.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="eyebrow" data-reveal="up" style="justify-content:center;margin:0 auto 20px;width:fit-content;"><span class="dot"></span>Ready?</div>
+  <h2 class="h2" data-reveal="up" data-delay="1">Let's build a store that <span class="accent">sells while you sleep.</span></h2>
+  <p data-reveal="up" data-delay="2">From product page to checkout — engineered for conversion, from day one.</p>
   <div data-reveal="up" data-delay="3">
-    <a href="contact.html" class="btn btn-gold btn-arrow" style="font-size:12px;padding:18px 48px;">Start Your Store</a>
+    <a href="contact.html" class="btn btn-grad btn-arrow">Start Your Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="wpc-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
-      <span class="f-logo">WPC</span>
-      <p>Web Pro Creation — where creativity meets technology. We turn ideas into powerful digital experiences that speak, sell, and succeed. Est. 2021.</p>
+      <a href="index.html" class="nav-logo"><span class="mark">W</span>Web Pro Creation</a>
+      <p>A premium software &amp; digital agency turning ideas into products that speak, sell and succeed. Est. 2021.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
         <li><a href="service-web-development.html">Website Development</a></li>
-        <li><a href="service-social-media.html">Social Media</a></li>
+        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-seo.html">SEO Services</a></li>
         <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-app-development.html">App Development</a></li>
         <li><a href="service-ui-ux.html">UI / UX Design</a></li>
       </ul>
     </div>
@@ -388,37 +372,39 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>124–128 City Road<br>London, United Kingdom</p>
-      <p style="margin-top:12px;">4060 Lawrenceville Hwy<br>Lilburn, United States</p>
-      <p style="margin-top:10px;">Gulshan-e-Iqbal, Near NIPA<br>Karachi, Pakistan</p>
+      <p>London · New York<br>Karachi</p>
       <p style="margin-top:12px;">
-        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;display:block;margin-bottom:3px;">+1 (631) 364-2268</a>
-        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:rgba(250,248,243,0.45);text-decoration:none;">+92 305 8218156</a>
+        <a href="https://wa.me/16313642268" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;display:block;margin-bottom:4px;">+1 (631) 364-2268</a>
+        <a href="https://wa.me/923058218156" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;">+92 305 8218156</a>
       </p>
-      <p style="margin-top:12px;"><a href="https://webprocreation.com" style="color:rgba(250,248,243,0.45);text-decoration:none;">webprocreation.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay in the Loop</h4>
+      <p>Occasional notes on what we're building. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Web Pro Creation. All rights reserved.</p>
-    <p>Crafted with Precision &amp; Excellence.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- Back to top -->
 <div id="back-top" title="Back to top" role="button" aria-label="Back to top">↑</div>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="wpc-float-wa" title="WhatsApp Us" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.848L.057 23.272a.75.75 0 0 0 .92.92l5.424-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.56-5.328-1.532l-.376-.23-3.898 1.052 1.052-3.898-.23-.376A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 </a>
 
 <script src="shared.js"></script>
-
-<!-- MOBILE MENU SCRIPT -->
 <script>
+/* MOBILE MENU */
 (function(){
   var burger = document.querySelector('.nav-hamburger');
   if(!burger) return;
@@ -426,31 +412,28 @@
 
   var overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
-  overlay.id = 'mobileOverlay';
-
   var menu = document.createElement('div');
   menu.className = 'mobile-menu';
-  menu.id = 'mobileMenu';
   menu.innerHTML =
-    '<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>' +
-    '<span class="mobile-nav-logo">WPC<span style="color:var(--gold)">.</span></span>' +
+    '<button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>' +
+    '<span class="mobile-nav-logo"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:#14101C;">W</span>WPC</span>' +
     '<ul class="mobile-nav-links">' +
       '<li><a href="index.html" class="' + (pagePath==='index.html'?'active':'') + '">Home</a></li>' +
       '<li><a href="about.html" class="' + (pagePath==='about.html'?'active':'') + '">About</a></li>' +
       '<li>' +
-        '<div class="mob-svc-toggle" id="mobSvcToggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
-        '<div class="mob-svc-list" id="mobSvcList">' +
+        '<div class="mob-svc-toggle">Services<span class="mob-svc-chevron">&#9660;</span></div>' +
+        '<div class="mob-svc-list">' +
           '<a href="service-web-development.html">Website Development</a>' +
-          '<a href="service-social-media.html">Social Media Management</a>' +
-          '<a href="service-video-editing.html">Video Editing</a>' +
-          '<a href="service-graphic-design.html">Graphic Designing</a>' +
+          '<a href="service-app-development.html">App Development</a>' +
           '<a href="service-seo.html">SEO Services</a>' +
           '<a href="service-digital-marketing.html">Digital Marketing</a>' +
-          '<a href="service-app-development.html">App Development</a>' +
-          '<a href="service-ui-ux.html">UI/UX Design</a>' +
-          '<a href="service-maintenance.html">Website Maintenance</a>' +
+          '<a href="service-social-media.html">Social Media Management</a>' +
+          '<a href="service-graphic-design.html">Graphic Designing</a>' +
           '<a href="service-branding.html">Design &amp; Branding</a>' +
+          '<a href="service-ui-ux.html">UI/UX Design</a>' +
           '<a href="service-ecommerce.html" class="active">E-Commerce Solutions</a>' +
+          '<a href="service-video-editing.html">Video Editing</a>' +
+          '<a href="service-maintenance.html">Website Maintenance</a>' +
         '</div>' +
       '</li>' +
       '<li><a href="portfolio.html" class="' + (pagePath==='portfolio.html'?'active':'') + '">Portfolio</a></li>' +
@@ -458,7 +441,7 @@
       '<li><a href="contact.html" class="' + (pagePath==='contact.html'?'active':'') + '">Contact</a></li>' +
     '</ul>' +
     '<div class="mobile-menu-cta">' +
-      '<a href="contact.html" class="mob-cta-btn mob-cta-dark">Start a Project</a>' +
+      '<a href="contact.html" class="mob-cta-btn mob-cta-grad">Start a Project</a>' +
       '<a href="https://wa.me/923058218156" target="_blank" rel="noopener" class="mob-cta-btn mob-cta-wa">WhatsApp Us</a>' +
     '</div>';
 
@@ -470,10 +453,10 @@
 
   burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
   overlay.addEventListener('click', closeMenu);
-  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  menu.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
 
-  var svcToggle = document.getElementById('mobSvcToggle');
-  var svcList   = document.getElementById('mobSvcList');
+  var svcToggle = menu.querySelector('.mob-svc-toggle');
+  var svcList   = menu.querySelector('.mob-svc-list');
   svcToggle.addEventListener('click', function(){ svcToggle.classList.toggle('open'); svcList.classList.toggle('open'); });
   if(pagePath.indexOf('service-') === 0){ svcToggle.classList.add('open'); svcList.classList.add('open'); }
 
